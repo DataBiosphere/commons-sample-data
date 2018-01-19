@@ -6,7 +6,7 @@ A repo to track various TOPMed and other datasets.
 
 This dataset (~100 WGS) was provided by Goncalo's team (Jonathon LeFaive), the original manifest can be found here:
 
-gs://topmed-irc-share/public/TOPMed.public_samples.manifest.2017.11.30.txt
+    gs://topmed-irc-share/public/TOPMed.public_samples.manifest.2017.11.30.txt
 
 I then replicated this data in AWS and GCP in public buckets to make it easier to share with collaborators for testing.
 
