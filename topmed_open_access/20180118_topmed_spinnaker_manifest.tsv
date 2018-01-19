@@ -1,0 +1,3 @@
+Program	Project	Center Name	Submitter Donor ID	Donor UUID	Submitter Donor Primary Site	Submitter Specimen ID	Specimen UUID	Submitter Specimen Type	Submitter Experimental Design	Submitter Sample ID	Sample UUID	Analysis Type	Workflow Name	Workflow Version	File Type	File Path	Upload File ID	Data Bundle ID	Metadata.json
+TOPMed	1000 Genomes	WashU	NWD100953		B-lymphocyte	HG01110		Normal - blood derived	WGS	HG01110_sample		sequence_upload	spinnaker	1.1.2	cram	/data/NWD100953.recab.cram			
+TOPMed	1001 Genomes	WashU	NWD100953		B-lymphocyte	HG01110		Normal - blood derived	WGS	HG01110_sample		sequence_upload	spinnaker	1.1.2	crai	/data/NWD100953.recab.cram.crai			
