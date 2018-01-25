@@ -4,6 +4,7 @@ import urllib2
 import json
 import io
 import botocore
+from tqdm import tqdm
 
 ENDPOINT = 'commons.ucsc-cgp-dev.org'
 REDWOOD_BUCKET = 'commons-redwood-storage'
@@ -37,6 +38,12 @@ class MetadataServerAPI:
         return ctx
 
 
+def show_progress(progress_bar):
+    def inner(bytes_delta):
+        progress_bar.update(bytes_delta)
+    return inner
+
+
 s3_client = boto3.client('s3')
 
 res = s3_client.list_objects_v2(Bucket=COMMONS_BUCKET)
@@ -53,9 +60,7 @@ for c in res['Contents']:
 
         if len(found_files) == 1:
             bundle_id = found_files[0]['gnosId']
-            # print 'transferring', bundle_id
             try:
-                # print wrp.is_file_name_server(bundle_id)
                 mj_id = wrp.get_metadata_json_file_metadata(bundle_id)['content'][0]['id']
             except KeyError:
                 print 'no metadata.json', file_name
@@ -70,11 +75,26 @@ for c in res['Contents']:
                 metadata_json.seek(0)
                 new_folder = 'topmed_open_access/{}'.format(bundle_id)
                 res = s3_client.upload_fileobj(metadata_json, COMMONS_BUCKET,
-                                               '{}/metadata.json'.format(new_folder))
-                print bundle_id, '\t', file_name
+                                               '{}/metadata.json'.format(
+                                                   new_folder))
+
+                s3_res = boto3.resource('s3')
+                copy_source = {
+                    'Bucket': COMMONS_BUCKET,
+                    'Key': c['Key']
+                }
+                filesize = s3_client.head_object(**copy_source)['ContentLength']
+                with tqdm(total=filesize, unit='B', unit_scale=True,
+                          desc=c['Key']) as bar:
+                    s3_res.meta.client.copy(copy_source, COMMONS_BUCKET,
+                                            "{}/{}".format(new_folder, file_name),
+                                            Callback=show_progress(bar))
+                s3_client.delete_object(**copy_source)
         elif len(found_files) == 0:
             print 'missing', file_name
             msng_cnt += 1
         else:
             print 'dupes found', file_name
             print found_files
+    else:
+        print 'Already organized', c['Key']

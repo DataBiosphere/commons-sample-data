@@ -135,6 +135,7 @@ def main():
             print "Generating Manifest..."
             generate_manifest(columns, manifest_filepath)
             alignment_filepaths = []
+            has_file = False
             for file_link in columns[3:]:
                 save_path = '{}/{}'.format(save_folder, file_link.split('/')[-1])
                 alignment_filepaths.append(save_path)
@@ -145,12 +146,15 @@ def main():
                     if os.path.exists(SPINNAKER_OUTPUTS_DIR):
                         shutil.rmtree(SPINNAKER_OUTPUTS_DIR)
                     download_alignment_files(file_link, save_path)
+                    has_file = os.path.exists(save_path)
+            if not has_file:
+                continue
             print "Uploading alignment files..."
             upload_file()
-            print alignment_filepaths
             for filename in alignment_filepaths:
                 os.remove(filename)
+        print 'Finished Uploading'
 
 
-if __file__ == "main":
+if __name__ == "__main__":
     main()
