@@ -1,0 +1,183 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "https://raw.githubusercontent.com/DataBiosphere/commons-sample-data/feature/spinnaker-metadata-schema/json_schema/spinnaker_metadata/1.1.1/spinnaker_metadata_schema.json",
+  "type": "object",
+  "properties": {
+    "core": {
+      "description": "Type and schema for this object.",
+      "schema_url": {
+        "type": "string",
+        "description": "URL of JSON schema document that validates this version of this module."
+      },
+      "schema_version": {
+        "pattern": "^...*..*$",
+        "type": "string",
+        "description": "Version number in major.minor.patch format. e.g. 3.2.4. Major version changes likely require changes to software. Minor version changes should not require software changes. Patches are just documentation changes."
+      }
+    },
+    "center_name": {
+      "type": "string",
+      "examples": [
+        "UCSC"
+      ]
+    },
+    "donor_uuid": {
+      "type": "string",
+      "examples": [
+        "6b5274b7-0dd0-5cb0-9ad2-2c33981d782a"
+      ]
+    },
+    "program": {
+      "type": "string",
+      "examples": [
+        "norm-prog"
+      ]
+    },
+    "project": {
+      "type": "string",
+      "examples": [
+        "norm-prol-3"
+      ]
+    },
+    "schema_version": {
+      "type": "string",
+      "examples": [
+        "0.0.3"
+      ]
+    },
+    "specimen": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "samples": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "analysis": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "analysis_type": {
+                        "type": "string",
+                        "examples": [
+                          "sequence_upload"
+                        ]
+                      },
+                      "bundle_uuid": {
+                        "type": "string",
+                        "examples": [
+                          "a5d6a459-9114-5050-979a-6cc4825130bb"
+                        ]
+                      },
+                      "workflow_name": {
+                        "type": "string",
+                        "examples": [
+                          "spinnaker"
+                        ]
+                      },
+                      "workflow_outputs": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "file_path": {
+                              "type": "string",
+                              "examples": [
+                                "norm_3.fastq.gz"
+                              ]
+                            },
+                            "file_sha": {
+                              "type": "string",
+                              "examples": [
+                                "sha1$8c206a1a87599f532ce68675536f0b1546900d7a"
+                              ]
+                            },
+                            "file_size": {
+                              "type": "integer",
+                              "examples": [
+                                10485760
+                              ]
+                            },
+                            "file_type": {
+                              "type": "string",
+                              "examples": [
+                                "fastq.gz"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "workflow_version": {
+                        "type": "string",
+                        "examples": [
+                          "1.0.0"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "sample_uuid": {
+                  "type": "string",
+                  "examples": [
+                    "58030811-7edc-5e9c-81fe-067f2104b54a"
+                  ]
+                },
+                "submitter_sample_id": {
+                  "type": "string",
+                  "examples": [
+                    "sample-norm"
+                  ]
+                }
+              }
+            }
+          },
+          "specimen_uuid": {
+            "type": "string",
+            "examples": [
+              "39b4f036-35c0-56de-b4e5-345f56bcb1fb"
+            ]
+          },
+          "submitter_experimental_design": {
+            "type": "string",
+            "examples": [
+              "RNA-Seq"
+            ]
+          },
+          "submitter_specimen_id": {
+            "type": "string",
+            "examples": [
+              "norm-3"
+            ]
+          },
+          "submitter_specimen_type": {
+            "type": "string",
+            "examples": [
+              "Normal - blood derived"
+            ]
+          }
+        }
+      }
+    },
+    "submitter_donor_id": {
+      "type": "string",
+      "examples": [
+        "norm-donor-3"
+      ]
+    },
+    "submitter_donor_primary_site": {
+      "type": "string",
+      "examples": [
+        "prostate gland"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "examples": [
+        "2018-01-04T22:55:48.179358"
+      ]
+    }
+  }
+}
