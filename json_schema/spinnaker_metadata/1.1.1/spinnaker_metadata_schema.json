@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$id": "https://raw.githubusercontent.com/DataBiosphere/commons-sample-data/feature/spinnaker-metadata-schema/json_schema/spinnaker_metadata/1.1.1/spinnaker_metadata_schema.json",
+  "$id": "https://raw.githubusercontent.com/DataBiosphere/commons-sample-data/master/json_schema/spinnaker_metadata/1.1.1/spinnaker_metadata_schema.json",
   "type": "object",
   "properties": {
     "core": {
