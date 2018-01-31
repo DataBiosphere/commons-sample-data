@@ -1,0 +1,3 @@
+boto3 >= 1.5.22
+cloud-blobstore >= 2.0.1
+hca >= 3.3.0
