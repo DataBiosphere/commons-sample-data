@@ -1,0 +1,1162 @@
+dbGap Variable	dbGap Table	dbGap Description	UChicago Variable	UChicago Table	Type	Enumerations
+sidno	pht001116.v10, pht001111.v4	Share id number	submitter_id	case	number	
+race1c	pht001116.v10, pht001111.v4	Race / ethnicity	race	demographic	enum	WHITE, CAUCASIAN|CHINESE AMERICAN|BLACK, AFRICAN-AMERICAN|HISPANIC
+gender1	pht001116.v10, pht001111.v4	Gender	gender	demographic	enum	FEMALE|MALE
+site1c	pht001116.v10, pht001111.v4	Site	site	case	enum	WFU|COL|JHU|UMN|NWU|UCLA
+dm031c	pht001116.v10, pht001111.v4	Exam 1 diabetes mellitus by 2003 ada fasting criteria algorithm	diabetes_diagnosis	diagnosis	enum	NORMAL|IFG|UNTREATED DIABETES|TREATED DIABETES
+htn1c	pht001116.v10, pht001111.v4	Hypertension by jnc vi (1997) criteria	hypertension_diagnosis	diagnosis	boolean	
+htnstg1c	pht001116.v10, pht001111.v4	Hypertension stage	hypertension_stage	diagnosis	enum	OPTIMAL|NORMAL|HIGH-NORMAL|STAGE 1 HYPERTENSION|STAGE 2 HYPERTENSION|STAGE 3 HYPERTENSION
+cer451q1	pht001116.v10, pht001111.v4	Cholesterol ester transfer protein - r451q genotype	cer451q1	lab_result	enum	RR|RQ|QQ
+oxldl1	pht001116.v10, pht001111.v4	Oxldl (mg/dl)	oxldl1	lab_result	number	
+f81c	pht001116.v10, pht001111.v4	Calibrated factor viii (%)	f81c	lab_result	number	
+renins1c	pht001116.v10, pht001111.v4	Indicator of renal insufficiency (gfr<60)	renins1c	lab_result	number	
+rbrach1	pht001116.v10, pht001111.v4	Right brachial bp (mmhg)	rbrach1	blood_pressure_test	number	
+rdpedis1	pht001116.v10, pht001111.v4	Right dorsalis pedis bp (mmhg)	rdpedis1	blood_pressure_test	number	
+rptib1	pht001116.v10, pht001111.v4	Right posterior tibial bp (mmhg)	rptib1	blood_pressure_test	number	
+lptib1	pht001116.v10, pht001111.v4	Left posterior tibial bp (mmhg)	lptib1	blood_pressure_test	number	
+ldpedis1	pht001116.v10, pht001111.v4	Left dorsalis pedis bp (mmhg)	ldpedis1	blood_pressure_test	number	
+lbrach1	pht001116.v10, pht001111.v4	Left brachial bp (mmhg)	lbrach1	blood_pressure_test	number	
+aabpcmp1	pht001116.v10, pht001111.v4	Aabp completed successfully	aabpcmp1	blood_pressure_test	boolean	
+rluoccl1	pht001116.v10, pht001111.v4	Reason aabp incomplete (r): unable to occlude	rluoccl1	blood_pressure_test	boolean	
+rlulcer1	pht001116.v10, pht001111.v4	Reason aabp incomplete (r): ulceration	rlulcer1	blood_pressure_test	boolean	
+rulocpt1	pht001116.v10, pht001111.v4	Reason aabp incomplete (r): unable to locate pt	rulocpt1	blood_pressure_test	boolean	
+lluoccl1	pht001116.v10, pht001111.v4	Reason aabp incomplete (l): unable to occlude	lluoccl1	blood_pressure_test	boolean	
+llulcer1	pht001116.v10, pht001111.v4	Reason aabp incomplete (l): ulceration	llulcer1	blood_pressure_test	boolean	
+lulocdp1	pht001116.v10, pht001111.v4	Reason aabp incomplete (l): unable to locate dp	lulocdp1	blood_pressure_test	boolean	
+lulocpt1	pht001116.v10, pht001111.v4	Reason aabp incomplete (l): unable to locate pt	lulocpt1	blood_pressure_test	boolean	
+rulocdp1	pht001116.v10, pht001111.v4	Reason aabp incomplete (r): unable to locate dp	rulocdp1	blood_pressure_test	boolean	
+abi1c	pht001116.v10, pht001111.v4	Ankle-brachial index	abi1c	blood_pressure_test	number	
+htcm1	pht001116.v10, pht001111.v4	Height (cm)	height	exposure	number	
+htmodp1	pht001116.v10, pht001111.v4	Height, protocol modification	height_protocol_modification	exposure	boolean	
+wtlb1	pht001116.v10, pht001111.v4	Weight (lbs)	weight	exposure	number	
+wtmodp1	pht001116.v10, pht001111.v4	Weight, protocol modification	weight_protocol_modification	exposure	boolean	
+waistcm1	pht001116.v10, pht001111.v4	Waist circumference (cm)	waist_circumference	exposure	number	
+hwmodp1	pht001116.v10, pht001111.v4	Girth, protocol modification	girth_protocol_modification	exposure	boolean	
+cmtmodp1	pht001116.v10, pht001111.v4	Comments, anthro protocol modification	anthro_protocol_modification	exposure	boolean	
+hipcm1	pht001116.v10, pht001111.v4	Hip circumference (cm)	hip_circumference	exposure	number	
+bmi1c	pht001116.v10, pht001111.v4	Body mass index (kg)/(m^2)	bmi	exposure	number	
+bmicat1c	pht001116.v10, pht001111.v4	Body mass index, who categories	bmi_category	exposure	enum	NORMAL|GRADE 1 OVERWEIGHT|GRADE 2 OVERWEIGHT|GRADE 3 OVERWEIGHT
+bsa1c	pht001116.v10, pht001111.v4	Body surface area	bsa	exposure	number	
+oardis1	pht001116.v10	Flow parameter: aortic distensibility	oardis1	cardiac_mri	number	
+presys1	pht001116.v10	Systolic blood pressure before series 7 mri	presys1	cardiac_mri	number	
+predia1	pht001116.v10	Diastolic blood pressure before series 7 mri	predia1	cardiac_mri	number	
+postsys1	pht001116.v10	Systolic blood pressure after series 7 mri	postsys1	cardiac_mri	number	
+postdia1	pht001116.v10	Diastolic blood pressure after series 7 mri	postdia1	cardiac_mri	number	
+oaormx1	pht001116.v10	Flow parameter: maximum aortic area	oaormx1	cardiac_mri	number	
+oaormn1	pht001116.v10	Flow parameter: minimum aortic area	oaormn1	cardiac_mri	number	
+mripp1	pht001116.v10	Pulse pressures average from the brachial blood pressures before and after series 7	mripp1	cardiac_mri	number	
+nine11	pht001116.v10, pht001111.v4	Ct data corrected because of 9/11/01	nine11	cardiac_ct_scan	boolean	
+agatum1c	pht001116.v10, pht001111.v4	Mean: agatston calcium score, unadjusted	agatum1c	cardiac_ct_scan	number	
+volum1c	pht001116.v10, pht001111.v4	Mean: total calcium volume, unadjusted	volum1c	cardiac_ct_scan	number	
+volsum1c	pht001116.v10, pht001111.v4	Mean: total volume score, unadjusted	volsum1c	cardiac_ct_scan	number	
+massm1c	pht001116.v10, pht001111.v4	Mean: cac arterial mass	massm1c	cardiac_ct_scan	number	
+agatpm1c	pht001116.v10, pht001111.v4	Mean: agatston calcium score, phantom-adjusted	agatpm1c	cardiac_ct_scan	number	
+agatpm1t	pht001116.v10, pht001111.v4	Natural log-transformed phantom-adjusted agatston score (positive scores only) - e1	agatpm1t	cardiac_ct_scan	number	
+cacgt01c	pht001116.v10, pht001111.v4	Presence of calcium indicator - e1	cacgt01c	cardiac_ct_scan	boolean	
+volpm1c	pht001116.v10, pht001111.v4	Mean: total calcium volume, phantom-adjusted	volpm1c	cardiac_ct_scan	number	
+volspm1c	pht001116.v10, pht001111.v4	Mean total isometric volume score, phantom adjusted	volspm1c	cardiac_ct_scan	number	
+agatu11c	pht001116.v10, pht001111.v4	Scan 1: agatston calcium score, unadjusted	agatu11c	cardiac_ct_scan	number	
+volu11c	pht001116.v10, pht001111.v4	Scan 1: total calcium volume, unadjusted	volu11c	cardiac_ct_scan	number	
+volsu11c	pht001116.v10, pht001111.v4	Scan 1: total volume score, unadjusted	volsu11c	cardiac_ct_scan	number	
+mass11c	pht001116.v10, pht001111.v4	Scan 1: cac arterial mass	mass11c	cardiac_ct_scan	number	
+agatp11c	pht001116.v10, pht001111.v4	Scan 1: agatston calcium score, phantom-adjusted	agatp11c	cardiac_ct_scan	number	
+volp11c	pht001116.v10, pht001111.v4	Scan 1: total calcium volume, phantom-adjusted	volp11c	cardiac_ct_scan	number	
+volsp11c	pht001116.v10, pht001111.v4	Scan 1: total volume score, phantom-adjusted	volsp11c	cardiac_ct_scan	number	
+phok11c	pht001116.v10, pht001111.v4	Scan 1: phantom adjustment valid	phok11c	cardiac_ct_scan	enum	NOT VALID|VALID
+agatu21c	pht001116.v10, pht001111.v4	Scan 2: agatston calcium score, unadjusted	agatu21c	cardiac_ct_scan	number	
+volu21c	pht001116.v10, pht001111.v4	Scan 2: total calcium volume, unadjusted	volu21c	cardiac_ct_scan	number	
+volsu21c	pht001116.v10, pht001111.v4	Scan 2: total volume score, unadjusted	volsu21c	cardiac_ct_scan	number	
+mass21c	pht001116.v10, pht001111.v4	Scan 2: cac arterial mass	mass21c	cardiac_ct_scan	number	
+agatp21c	pht001116.v10, pht001111.v4	Scan 2: agatston calcium score, phantom-adjusted	agatp21c	cardiac_ct_scan	number	
+volp21c	pht001116.v10, pht001111.v4	Scan 2: total calcium volume, phantom-adjusted	volp21c	cardiac_ct_scan	number	
+volsp21c	pht001116.v10, pht001111.v4	Scan 2: total volume score, phantom-adjusted	volsp21c	cardiac_ct_scan	number	
+phok21c	pht001116.v10, pht001111.v4	Scan 2: phantom adjustment valid	phok21c	cardiac_ct_scan	enum	NOT VALID|VALID
+cacq1c	pht001116.v10, pht001111.v4	Age, gender, race-adjusted quantiles of cac score (mcclelland, circulation 2006), between prcacgt0 and 1	cacq1c	cardiac_ct_scan	number	
+prcacgt01c	pht001116.v10, pht001111.v4	Age, gender, race-adjusted probability of a non-zero calcium score (mcclelland, circulation 2006)	prcacgt01c	cardiac_ct_scan	number	
+ctsmod1	pht001116.v10, pht001111.v4	Exam 1 ct scanner model	ctsmod1	cardiac_ct_scan	enum	AQUILION|AQUILION 64|IMATRON C-150|INNER EBT|LIGHT SPEED 16|LIGHT SPEED PLUS|LIGHT SPEED PRO 16|LIGHT SPEED QX/I|SENSATION 16|SENSATION CARDIAC 64|VOLUME ZOOM
+cystatc1	pht001116.v10, pht001111.v4	Cystatin c (mg/l)	cystatc1	lab_result	number	
+ecglvh1c	pht001116.v10, pht001111.v4	Left ventricular hypertrophy by novacode	ecglvh1c	electrocardiogram_test	boolean	
+afib1c	pht001116.v10, pht001111.v4	Atrial fibrillation / flutter by novacode	afib1c	electrocardiogram_test	boolean	
+epicare1	pht001116.v10, pht001111.v4	Epicare sequence number	epicare1	electrocardiogram_test	number	
+prdur1	pht001116.v10, pht001111.v4	Pr interval (msec)	prdur1	electrocardiogram_test	number	
+qrsdur1	pht001116.v10, pht001111.v4	Qrs interval (msec)	qrsdur1	electrocardiogram_test	number	
+qtdur1	pht001116.v10, pht001111.v4	Qt interval (msec)	qtdur1	electrocardiogram_test	number	
+qtcdur1	pht001116.v10, pht001111.v4	Qtc interval (msec)	qtcdur1	electrocardiogram_test	number	
+paxis1	pht001116.v10, pht001111.v4	P axis (degrees)	paxis1	electrocardiogram_test	number	
+qrsaxis1	pht001116.v10, pht001111.v4	Qrs axis (degrees)	qrsaxis1	electrocardiogram_test	number	
+taxis1	pht001116.v10, pht001111.v4	T axis (degrees)	taxis1	electrocardiogram_test	number	
+ecgqgrd1	pht001116.v10, pht001111.v4	Ecg quality grade	ecgqgrd1	electrocardiogram_test	number	
+leadswp1	pht001116.v10, pht001111.v4	Lead connection interchange	leadswp1	electrocardiogram_test	number	
+ncvp1a1	pht001116.v10, pht001111.v4	Novacode 1 rhythm score a	ncvp1a1	electrocardiogram_test	string	
+ncvp1b1	pht001116.v10, pht001111.v4	Novacode 1 rhythm score b	ncvp1b1	electrocardiogram_test	string	
+ncvp1c1	pht001116.v10, pht001111.v4	Novacode 1 rhythm score c	ncvp1c1	electrocardiogram_test	string	
+ncvp1d1	pht001116.v10, pht001111.v4	Novacode 1 rhythm score d	ncvp1d1	electrocardiogram_test	string	
+ncvp1e1	pht001116.v10, pht001111.v4	Novacode 1 rhythm score e	ncvp1e1	electrocardiogram_test	string	
+ncvp1f1	pht001116.v10, pht001111.v4	Novacode 1 rhythm score f	ncvp1f1	electrocardiogram_test	string	
+ncvp1g1	pht001116.v10, pht001111.v4	Novacode 1 rhythm score g	ncvp1g1	electrocardiogram_test	string	
+ncsuppa1	pht001116.v10, pht001111.v4	Novacode 1 supplemental score a	ncsuppa1	electrocardiogram_test	string	
+ncsuppb1	pht001116.v10, pht001111.v4	Novacode 1 supplemental score b	ncsuppb1	electrocardiogram_test	string	
+ncsuppc1	pht001116.v10, pht001111.v4	Novacode 1 supplemental score c	ncsuppc1	electrocardiogram_test	string	
+ncsuppd1	pht001116.v10, pht001111.v4	Novacode 1 supplemental score d	ncsuppd1	electrocardiogram_test	string	
+ncsuppe1	pht001116.v10, pht001111.v4	Novacode 1 supplemental score e	ncsuppe1	electrocardiogram_test	string	
+ncsuppf1	pht001116.v10, pht001111.v4	Novacode 1 supplemental score f	ncsuppf1	electrocardiogram_test	string	
+ncsuppg1	pht001116.v10, pht001111.v4	Novacode 1 supplemental score g	ncsuppg1	electrocardiogram_test	string	
+ncsp21	pht001116.v10, pht001111.v4	Novacode prevalent code 2: software	ncsp21	electrocardiogram_test	string	
+ncsp31	pht001116.v10, pht001111.v4	Novacode prevalent code 3: software	ncsp31	electrocardiogram_test	string	
+ncsp41	pht001116.v10, pht001111.v4	Novacode prevalent code 4: software	ncsp41	electrocardiogram_test	string	
+ncsp51	pht001116.v10, pht001111.v4	Novacode prevalent code 5: software	ncsp51	electrocardiogram_test	string	
+ncsp61	pht001116.v10, pht001111.v4	Novacode prevalent code 6: software	ncsp61	electrocardiogram_test	string	
+ncsp71	pht001116.v10, pht001111.v4	Novacode prevalent code 7: software	ncsp71	electrocardiogram_test	string	
+ncsp81	pht001116.v10, pht001111.v4	Novacode prevalent code 8: software	ncsp81	electrocardiogram_test	string	
+ncsp91	pht001116.v10, pht001111.v4	Novacode prevalent code 9: software	ncsp91	electrocardiogram_test	string	
+ncsp101	pht001116.v10, pht001111.v4	Novacode prevalent code 10: software	ncsp101	electrocardiogram_test	string	
+ncvp21	pht001116.v10, pht001111.v4	Novacode prevalent code 2: visual	ncvp21	electrocardiogram_test	string	
+ncvp31	pht001116.v10, pht001111.v4	Novacode prevalent code 3: visual	ncvp31	electrocardiogram_test	string	
+ncvp41	pht001116.v10, pht001111.v4	Novacode prevalent code 4: visual	ncvp41	electrocardiogram_test	string	
+ncvp51	pht001116.v10, pht001111.v4	Novacode prevalent code 5: visual	ncvp51	electrocardiogram_test	string	
+ncvp61	pht001116.v10, pht001111.v4	Novacode prevalent code 6: visual	ncvp61	electrocardiogram_test	string	
+ncvp71	pht001116.v10, pht001111.v4	Novacode prevalent code 7: visual	ncvp71	electrocardiogram_test	string	
+ncvp81	pht001116.v10, pht001111.v4	Novacode prevalent code 8: visual	ncvp81	electrocardiogram_test	string	
+ncvp91	pht001116.v10, pht001111.v4	Novacode prevalent code 9: visual	ncvp91	electrocardiogram_test	string	
+ncvp101	pht001116.v10, pht001111.v4	Novacode prevalent code 10: visual	ncvp101	electrocardiogram_test	string	
+mcl11	pht001116.v10, pht001111.v4	Minnesota code 1 score: l leadgroup	mcl11	electrocardiogram_test	string	
+mcl41	pht001116.v10, pht001111.v4	Minnesota code 4 score: l leadgroup	mcl41	electrocardiogram_test	string	
+mcl51	pht001116.v10, pht001111.v4	Minnesota code 5 score: l leadgroup	mcl51	electrocardiogram_test	string	
+mcl921	pht001116.v10, pht001111.v4	Minnesota code 92 score: l leadgroup	mcl921	electrocardiogram_test	string	
+mcf11	pht001116.v10, pht001111.v4	Minnesota code 1 score: f leadgroup	mcf11	electrocardiogram_test	string	
+mcf41	pht001116.v10, pht001111.v4	Minnesota code 4 score: f leadgroup	mcf41	electrocardiogram_test	string	
+mcf51	pht001116.v10, pht001111.v4	Minnesota code 5 score: f leadgroup	mcf51	electrocardiogram_test	string	
+mcf921	pht001116.v10, pht001111.v4	Minnesota code 92 score: f leadgroup	mcf921	electrocardiogram_test	string	
+mcv11	pht001116.v10, pht001111.v4	Minnesota code 1 score: v leadgroup	mcv11	electrocardiogram_test	string	
+mcv41	pht001116.v10, pht001111.v4	Minnesota code 4 score: v leadgroup	mcv41	electrocardiogram_test	string	
+mcv51	pht001116.v10, pht001111.v4	Minnesota code 5 score: v leadgroup	mcv51	electrocardiogram_test	string	
+mcv921	pht001116.v10, pht001111.v4	Minnesota code 92 score: v leadgroup	mcv921	electrocardiogram_test	string	
+mc21	pht001116.v10, pht001111.v4	Minnesota code 2 score	mc21	electrocardiogram_test	string	
+mc31	pht001116.v10, pht001111.v4	Minnesota code 3 score	mc31	electrocardiogram_test	string	
+mc71	pht001116.v10, pht001111.v4	Minnesota code 7 score	mc71	electrocardiogram_test	string	
+mc911	pht001116.v10, pht001111.v4	Minnesota code 9.1 score	mc911	electrocardiogram_test	string	
+mc931	pht001116.v10, pht001111.v4	Minnesota code 9.3 score	mc931	electrocardiogram_test	string	
+mc941	pht001116.v10, pht001111.v4	Minnesota code 9.4 score	mc941	electrocardiogram_test	string	
+mc951	pht001116.v10, pht001111.v4	Minnesota code 9.5 score	mc951	electrocardiogram_test	string	
+mcr611	pht001116.v10, pht001111.v4	Minnesota code 6 score: visual 1	mcr611	electrocardiogram_test	string	
+mcr621	pht001116.v10, pht001111.v4	Minnesota code 6 score: visual 2	mcr621	electrocardiogram_test	string	
+mcr631	pht001116.v10, pht001111.v4	Minnesota code 6 score: visual 3	mcr631	electrocardiogram_test	string	
+mcr641	pht001116.v10, pht001111.v4	Minnesota code 6 score: visual 4	mcr641	electrocardiogram_test	string	
+mcr651	pht001116.v10, pht001111.v4	Minnesota code 6 score: visual 5	mcr651	electrocardiogram_test	string	
+mcr681	pht001116.v10, pht001111.v4	Minnesota code 6 score: visual 8	mcr681	electrocardiogram_test	string	
+mcr811	pht001116.v10, pht001111.v4	Minnesota code 8 score: visual 1	mcr811	electrocardiogram_test	string	
+mcr821	pht001116.v10, pht001111.v4	Minnesota code 8 score: visual 2	mcr821	electrocardiogram_test	string	
+mcr831	pht001116.v10, pht001111.v4	Minnesota code 8 score: visual 3	mcr831	electrocardiogram_test	string	
+mcr841	pht001116.v10, pht001111.v4	Minnesota code 8 score: visual 4	mcr841	electrocardiogram_test	string	
+mcr861	pht001116.v10, pht001111.v4	Minnesota code 8 score: visual 6	mcr861	electrocardiogram_test	string	
+mcr871	pht001116.v10, pht001111.v4	Minnesota code 8 score: visual 7	mcr871	electrocardiogram_test	string	
+mcr881	pht001116.v10, pht001111.v4	Minnesota code 8 score: visual 8	mcr881	electrocardiogram_test	string	
+mcr891	pht001116.v10, pht001111.v4	Minnesota code 8 score: visual 9	mcr891	electrocardiogram_test	string	
+rmsdd1	pht001116.v10, pht001111.v4	Estimate of heart rate variability short-term components	rmsdd1	electrocardiogram_test	number	
+sdnn1	pht001116.v10, pht001111.v4	Estimate of overall heart rate variability	sdnn1	electrocardiogram_test	number	
+ecgnum1	pht001116.v10, pht001111.v4	Total # ecgs used in heart rate variability analysis	ecgnum1	electrocardiogram_test	number	
+baseseq1	pht001116.v10, pht001111.v4	Baseline seq id of compar rec for serial analysis	baseseq1	electrocardiogram_test	number	
+paxis1c	pht001116.v10, pht001111.v4	P axis (degrees) - with 999 values recoded to missing	paxis1c	electrocardiogram_test	number	
+prdur1c	pht001116.v10, pht001111.v4	Pr interval (msec) - with 0=supressed recoded to missing	prdur1c	electrocardiogram_test	number	
+qktempr1	pht001116.v10, pht001111.v4	I am quick tempered	qktempr1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+frtempr1	pht001116.v10, pht001111.v4	I have a fiery temper	frtempr1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+hothead1	pht001116.v10, pht001111.v4	I am a hotheaded person	hothead1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+angry1	pht001116.v10, pht001111.v4	I get angry when slowed by others' mistakes	angry1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+annoyed1	pht001116.v10, pht001111.v4	I am annoyed when not regognized for good work	annoyed1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+flyoff1	pht001116.v10, pht001111.v4	I fly off the handle	flyoff1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+nasty1	pht001116.v10, pht001111.v4	I say nasty things when mad	nasty1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+furious1	pht001116.v10, pht001111.v4	I get furious when criticized in front of others	furious1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+fruhit1	pht001116.v10, pht001111.v4	I feel like hitting someone when frustrated	fruhit1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+infurat1	pht001116.v10, pht001111.v4	I feel infuriated when i do a good job and get a poor evaluation	infurat1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+steady1	pht001116.v10, pht001111.v4	I am a steady person	steady1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+satisf1	pht001116.v10, pht001111.v4	I feel satisfied with myself	satisf1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+nervous1	pht001116.v10, pht001111.v4	I feel nervous and restless	nervous1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+unhappy1	pht001116.v10, pht001111.v4	I wish to be as happy as others seem to be	unhappy1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+failure1	pht001116.v10, pht001111.v4	I feel like a failure	failure1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+turmoil1	pht001116.v10, pht001111.v4	I feel tension when i think of recent concerns/interests	turmoil1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+secure1	pht001116.v10, pht001111.v4	I feel secure	secure1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+noconf1	pht001116.v10, pht001111.v4	I lack self-confidence	noconf1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+inadeqt1	pht001116.v10, pht001111.v4	I feel inadequate	inadeqt1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+worry1	pht001116.v10, pht001111.v4	I worry too much over something that does not matter	worry1	psychosocial_questionnaire	enum	ALMOST NEVER|SOMETIMES|OFTEN|ALMOST ALWAYS
+hprb1pt1	pht001116.v10, pht001111.v4	Serious ongoing health problem (self)	hprb1pt1	psychosocial_questionnaire	boolean	
+hprb2pt1	pht001116.v10, pht001111.v4	Ongoing health problem (self), > 6 mothths	hprb2pt1	psychosocial_questionnaire	boolean	
+hprb3pt1	pht001116.v10, pht001111.v4	Ongoing health problem (self), how stressful	hprb3pt1	psychosocial_questionnaire	enum	NOT VERY STRESSFUL|MODERATELY STRESSFUL|VERY STRESSFUL
+hprb1ot1	pht001116.v10, pht001111.v4	Serious ongoing health problem (someone close to you)	hprb1ot1	psychosocial_questionnaire	boolean	
+hprb2ot1	pht001116.v10, pht001111.v4	Ongoing health problem (someone close to you), >6 months	hprb2ot1	psychosocial_questionnaire	boolean	
+hprb3ot1	pht001116.v10, pht001111.v4	Ongoing health problem (someone close to you), how stressful	hprb3ot1	psychosocial_questionnaire	enum	NOT VERY STRESSFUL|MODERATELY STRESSFUL|VERY STRESSFUL
+job1prb1	pht001116.v10, pht001111.v4	Ongoing job difficulties	job1prb1	psychosocial_questionnaire	boolean	
+job2prb1	pht001116.v10, pht001111.v4	Ongoing job difficulties, > 6 months	job2prb1	psychosocial_questionnaire	boolean	
+job3prb1	pht001116.v10, pht001111.v4	Ongoing job difficulties, how stressful	job3prb1	psychosocial_questionnaire	enum	NOT VERY STRESSFUL|MODERATELY STRESSFUL|VERY STRESSFUL
+mon1prb1	pht001116.v10, pht001111.v4	Ongoing financial strain	mon1prb1	psychosocial_questionnaire	boolean	
+mon2prb1	pht001116.v10, pht001111.v4	Ongoing financial strain, > 6 months	mon2prb1	psychosocial_questionnaire	boolean	
+mon3prb1	pht001116.v10, pht001111.v4	Ongoing financial strain, how stressful	mon3prb1	psychosocial_questionnaire	enum	NOT VERY STRESSFUL|MODERATELY STRESSFUL|VERY STRESSFUL
+rel1prb1	pht001116.v10, pht001111.v4	Ongoing relationship problems	rel1prb1	psychosocial_questionnaire	boolean	
+rel2prb1	pht001116.v10, pht001111.v4	Ongoing relationship problems, > 6 months	rel2prb1	psychosocial_questionnaire	boolean	
+rel3prb1	pht001116.v10, pht001111.v4	Ongoing relationship problems, how stressful	rel3prb1	psychosocial_questionnaire	enum	NOT VERY STRESSFUL|MODERATELY STRESSFUL|VERY STRESSFUL
+bother1	pht001116.v10, pht001111.v4	Bothered by things, past week	bother1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+noteat1	pht001116.v10, pht001111.v4	Poor appetite, past week	noteat1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+blue1	pht001116.v10, pht001111.v4	Could not shake the blues, past week	blue1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+asgood1	pht001116.v10, pht001111.v4	Felt i was as good as other people, past week	asgood1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+concntr1	pht001116.v10, pht001111.v4	Trouble keeping my mind on what i'm doing, past week	concntr1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+depress1	pht001116.v10, pht001111.v4	Felt depressed, past week	depress1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+effort1	pht001116.v10, pht001111.v4	Felt everything was an effort, past week	effort1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+hopeful1	pht001116.v10, pht001111.v4	Felt hopeful about future, past week	hopeful1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+lffail1	pht001116.v10, pht001111.v4	Thought life had been a failure, past week	lffail1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+fearful1	pht001116.v10, pht001111.v4	Felt fearful, past week	fearful1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+badslp1	pht001116.v10, pht001111.v4	Sleep was restless, past week	badslp1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+happy1	pht001116.v10, pht001111.v4	Was happy, past week	happy1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+lestalk1	pht001116.v10, pht001111.v4	Talked less than usual, past week	lestalk1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+lonely1	pht001116.v10, pht001111.v4	Felt lonely, past week	lonely1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+unfrnly1	pht001116.v10, pht001111.v4	People were unfriendly, past week	unfrnly1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+enjlife1	pht001116.v10, pht001111.v4	Enjoyed life, past week	enjlife1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+cryspel1	pht001116.v10, pht001111.v4	Had crying spells, past week	cryspel1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+sad1	pht001116.v10, pht001111.v4	Felt sad, past week	sad1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+dislikd1	pht001116.v10, pht001111.v4	Felt people disliked me, past week	dislikd1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+getgoin1	pht001116.v10, pht001111.v4	Could not "get going", past week	getgoin1	psychosocial_questionnaire	enum	<1 DAY|1-2 DAYS|3-4 DAYS|5-7 DAYS
+talkto1	pht001116.v10, pht001111.v4	Someone available to listen to you	talkto1	psychosocial_questionnaire	enum	NONE OF THE TIME|A LITTLE OF THE TIME|SOME OF THE TIME|MOST OF THE TIME|ALL OF THE TIME
+advice1	pht001116.v10, pht001111.v4	Someone available to give you advice	advice1	psychosocial_questionnaire	enum	NONE OF THE TIME|A LITTLE OF THE TIME|SOME OF THE TIME|MOST OF THE TIME|ALL OF THE TIME
+affectn1	pht001116.v10, pht001111.v4	Someone available to show you love and affection	affectn1	psychosocial_questionnaire	enum	NONE OF THE TIME|A LITTLE OF THE TIME|SOME OF THE TIME|MOST OF THE TIME|ALL OF THE TIME
+hlpchr1	pht001116.v10, pht001111.v4	Someone available to help with daily chores	hlpchr1	psychosocial_questionnaire	enum	NONE OF THE TIME|A LITTLE OF THE TIME|SOME OF THE TIME|MOST OF THE TIME|ALL OF THE TIME
+emospt1	pht001116.v10, pht001111.v4	Someone available to provide emotional support	emospt1	psychosocial_questionnaire	enum	NONE OF THE TIME|A LITTLE OF THE TIME|SOME OF THE TIME|MOST OF THE TIME|ALL OF THE TIME
+confide1	pht001116.v10, pht001111.v4	Sufficient contact with someone you can confide in	confide1	psychosocial_questionnaire	enum	NONE OF THE TIME|A LITTLE OF THE TIME|SOME OF THE TIME|MOST OF THE TIME|ALL OF THE TIME
+uf1fire1	pht001116.v10, pht001111.v4	Unfairly fired or denied a promotion	uf1fire1	psychosocial_questionnaire	boolean	
+uf2fire1	pht001116.v10, pht001111.v4	Unfairly fired or denied a promotion, reason	uf2fire1	psychosocial_questionnaire	enum	RACE OR ETHNICITY|GENDER|AGE|RELIGION|PHYSICAL APPEARANCE|SEXUAL ORIENTATION|INCOME/SOCIAL CLASS|OTHER
+uf3fire1	pht001116.v10, pht001111.v4	Unfairly fired or denied a promotion, during last 12 months	uf3fire1	psychosocial_questionnaire	boolean	
+uf1hire1	pht001116.v10, pht001111.v4	Unfairly not hired for a job	uf1hire1	psychosocial_questionnaire	boolean	
+uf2hire1	pht001116.v10, pht001111.v4	Unfairly not hired, reason	uf2hire1	psychosocial_questionnaire	enum	RACE OR ETHNICITY|GENDER|AGE|RELIGION|PHYSICAL APPEARANCE|SEXUAL ORIENTATION|INCOME/SOCIAL CLASS|OTHER
+uf3hire1	pht001116.v10, pht001111.v4	Unfairly not hired, during last 12 months	uf3hire1	psychosocial_questionnaire	boolean	
+uf1stop1	pht001116.v10, pht001111.v4	Treated unfairly by the police	uf1stop1	psychosocial_questionnaire	boolean	
+uf2stop1	pht001116.v10, pht001111.v4	Treated unfairly by the police, reason	uf2stop1	psychosocial_questionnaire	enum	RACE OR ETHNICITY|GENDER|AGE|RELIGION|PHYSICAL APPEARANCE|SEXUAL ORIENTATION|INCOME/SOCIAL CLASS|OTHER
+uf3stop1	pht001116.v10, pht001111.v4	Treated unfairly by the police, during last 12 months	uf3stop1	psychosocial_questionnaire	boolean	
+uf1educ1	pht001116.v10, pht001111.v4	Unfairly discouraged by a teacher from continuing education	uf1educ1	psychosocial_questionnaire	boolean	
+uf2educ1	pht001116.v10, pht001111.v4	Unfairly discouraged by a teacher, reason	uf2educ1	psychosocial_questionnaire	enum	RACE OR ETHNICITY|GENDER|AGE|RELIGION|PHYSICAL APPEARANCE|SEXUAL ORIENTATION|INCOME/SOCIAL CLASS|OTHER
+uf3educ1	pht001116.v10, pht001111.v4	Unfairly discouraged by a teacher, during last 12 months	uf3educ1	psychosocial_questionnaire	boolean	
+uf1move1	pht001116.v10, pht001111.v4	Unfairly prevented from moving into a neighborhood	uf1move1	psychosocial_questionnaire	boolean	
+uf2move1	pht001116.v10, pht001111.v4	Unfairly prevented from moving, reason	uf2move1	psychosocial_questionnaire	enum	RACE OR ETHNICITY|GENDER|AGE|RELIGION|PHYSICAL APPEARANCE|SEXUAL ORIENTATION|INCOME/SOCIAL CLASS|OTHER
+uf3move1	pht001116.v10, pht001111.v4	Unfairly prevented from moving, during last 12 months	uf3move1	psychosocial_questionnaire	boolean	
+uf1nghb1	pht001116.v10, pht001111.v4	Neighbors made life difficult for you	uf1nghb1	psychosocial_questionnaire	boolean	
+uf2nghb1	pht001116.v10, pht001111.v4	Neighbors made life difficult, reason	uf2nghb1	psychosocial_questionnaire	enum	RACE OR ETHNICITY|GENDER|AGE|RELIGION|PHYSICAL APPEARANCE|SEXUAL ORIENTATION|INCOME/SOCIAL CLASS|OTHER
+curtesy1	pht001116.v10, pht001111.v4	Treated with less courtesy than others	curtesy1	psychosocial_questionnaire	enum	ALMOST EVERY DAY|AT LEAST ONCE A WEEK|A FEW TIMES A MONTH|A FEW TIMES A YEAR|LESS THAN ONCE A YEAR|NEVER
+respect1	pht001116.v10, pht001111.v4	Treated with less respect than others	respect1	psychosocial_questionnaire	enum	ALMOST EVERY DAY|AT LEAST ONCE A WEEK|A FEW TIMES A MONTH|A FEW TIMES A YEAR|LESS THAN ONCE A YEAR|NEVER
+service1	pht001116.v10, pht001111.v4	Receive poorer service than others	service1	psychosocial_questionnaire	enum	ALMOST EVERY DAY|AT LEAST ONCE A WEEK|A FEW TIMES A MONTH|A FEW TIMES A YEAR|LESS THAN ONCE A YEAR|NEVER
+smart1	pht001116.v10, pht001111.v4	People act as if you are not smart	smart1	psychosocial_questionnaire	enum	ALMOST EVERY DAY|AT LEAST ONCE A WEEK|A FEW TIMES A MONTH|A FEW TIMES A YEAR|LESS THAN ONCE A YEAR|NEVER
+afraid1	pht001116.v10, pht001111.v4	People act as if they are afraid of you	afraid1	psychosocial_questionnaire	enum	ALMOST EVERY DAY|AT LEAST ONCE A WEEK|A FEW TIMES A MONTH|A FEW TIMES A YEAR|LESS THAN ONCE A YEAR|NEVER
+dishon1	pht001116.v10, pht001111.v4	People act as if you are dishonest	dishon1	psychosocial_questionnaire	enum	ALMOST EVERY DAY|AT LEAST ONCE A WEEK|A FEW TIMES A MONTH|A FEW TIMES A YEAR|LESS THAN ONCE A YEAR|NEVER
+better1	pht001116.v10, pht001111.v4	People act as if they are better than you	better1	psychosocial_questionnaire	enum	ALMOST EVERY DAY|AT LEAST ONCE A WEEK|A FEW TIMES A MONTH|A FEW TIMES A YEAR|LESS THAN ONCE A YEAR|NEVER
+insult1	pht001116.v10, pht001111.v4	You are called names or insulted	insult1	psychosocial_questionnaire	enum	ALMOST EVERY DAY|AT LEAST ONCE A WEEK|A FEW TIMES A MONTH|A FEW TIMES A YEAR|LESS THAN ONCE A YEAR|NEVER
+threat1	pht001116.v10, pht001111.v4	You are threatened or harassed	threat1	psychosocial_questionnaire	enum	ALMOST EVERY DAY|AT LEAST ONCE A WEEK|A FEW TIMES A MONTH|A FEW TIMES A YEAR|LESS THAN ONCE A YEAR|NEVER
+uf1resp1	pht001116.v10, pht001111.v4	When treated unfairly, what do you do about it	uf1resp1	psychosocial_questionnaire	enum	ALMOST EVERY DAY|AT LEAST ONCE A WEEK|A FEW TIMES A MONTH|A FEW TIMES A YEAR|LESS THAN ONCE A YEAR|NEVER
+uf2resp1	pht001116.v10, pht001111.v4	When treated unfairly, do you tell others	uf2resp1	psychosocial_questionnaire	enum	TALK TO OTHERS ABOUT IT|KEEP IT TO YOURSELF
+hlfadm1	pht001116.v10, pht001111.v4	Questionnaire administrator - health & life	hlfadm1	psychosocial_questionnaire	enum	SELF-ADMINISTERED|INTERVIEWER-ADMINISTERED
+uf3nghb1	pht001116.v10, pht001111.v4	Neighbors made life difficult, during last 12 months	uf3nghb1	psychosocial_questionnaire	boolean	
+splang1c	pht001116.v10, pht001111.v4	Spielberger trait anger scale	splang1c	psychosocial_questionnaire	number	
+chrbur1c	pht001116.v10, pht001111.v4	Chronic burden	chrbur1c	psychosocial_questionnaire	number	
+chrbu61c	pht001116.v10, pht001111.v4	Chronic burden, >6 months	chrbu61c	psychosocial_questionnaire	number	
+cesd1c	pht001116.v10, pht001111.v4	Center for epidemiologic studies - depression scale	cesd1c	psychosocial_questionnaire	number	
+emot1c	pht001116.v10, pht001111.v4	Emotional social support index	emot1c	psychosocial_questionnaire	number	
+discrl1c	pht001116.v10, pht001111.v4	Perceived discrimination, lifetime	discrl1c	psychosocial_questionnaire	number	
+discry1c	pht001116.v10, pht001111.v4	Perceived discrimination, past year	discry1c	psychosocial_questionnaire	number	
+hassl1c	pht001116.v10, pht001111.v4	Everyday hassles	hassl1c	psychosocial_questionnaire	number	
+splanx1c	pht001116.v10, pht001111.v4	Spielberger trait anxiety scale	splanx1c	psychosocial_questionnaire	number	
+maxcom1c	pht001116.v10	Common carotid intimal-medial thickness (mm)	maxcom1c	carotid_ultrasound_test	number	
+maxint1c	pht001116.v10	Internal carotid intimal-medial thickness (mm)	maxint1c	carotid_ultrasound_test	number	
+zmximt1c	pht001116.v10	Z score maximum imt	zmximt1c	carotid_ultrasound_test	number	
+rsurf1	pht001116.v10	Right surface	rsurf1	carotid_ultrasound_test	enum	SMOOTH|MILDLY IRREGULAR|MARKEDLY IRREGULAR|ULCERATED|NO LESION|CAN'T TELL
+rmorph1	pht001116.v10	Right morphology	rmorph1	carotid_ultrasound_test	enum	NO LESION|HOMOGENEOUS|HETEROGENEOUS|CANNOT TELL
+rsten1	pht001116.v10	Right stenosis	rsten1	carotid_ultrasound_test	enum	1 - 24%|25 - 49%|50 - 74%|75 - 99%|100%|NO LESION|BAD IMAGE/NORMAL DOPPLER|CAN'T TELL
+rloc1	pht001116.v10	Right location	rloc1	carotid_ultrasound_test	enum	NO LESION|HOMOGENEOUS|HETEROGENEOUS|CANNOT TELL
+rdens1	pht001116.v10	Right density	rdens1	carotid_ultrasound_test	enum	NO LESION|HOMOGENEOUS|HETEROGENEOUS|HYPERDENSE|CALCIFIED|CANNOT TELL
+lsurf1	pht001116.v10	Left surface	lsurf1	carotid_ultrasound_test	enum	SMOOTH|MILDLY IRREGULAR|MARKEDLY IRREGULAR|ULCERATED|NO LESION|CAN'T TELL
+lmorph1	pht001116.v10	Left morphology	lmorph1	carotid_ultrasound_test	enum	NO LESION|HOMOGENEOUS|HETEROGENEOUS|CANNOT TELL
+lsten1	pht001116.v10	Left stenosis	lsten1	carotid_ultrasound_test	enum	1 - 24%|25 - 49%|50 - 74%|75 - 99%|100%|NO LESION|BAD IMAGE/NORMAL DOPPLER|CAN'T TELL
+lloc1	pht001116.v10	Left location	lloc1	carotid_ultrasound_test	enum	NO LESION|HOMOGENEOUS|HETEROGENEOUS|CANNOT TELL
+ldens1	pht001116.v10	Left density	ldens1	carotid_ultrasound_test	enum	NO LESION|HOMOGENEOUS|HETEROGENEOUS|ULCERATED|CALCIFIED|NO LESION|CAN'T TELL
+maxstn1c	pht001116.v10	Maximum carotid stenosis, graded	maxstn1c	carotid_ultrasound_test	enum	NO LESION|1 - 24%|25 - 49%|50 - 74%|75 - 99%|100%
+maxsur1c	pht001116.v10	Maximum surface	maxsur1c	carotid_ultrasound_test	enum	SMOOTH|MILDLY IRREGULAR|MARKEDLY IRREGULAR|ULCERATED|NO LESION|CAN'T TELL
+maxmor1c	pht001116.v10	Maximum morphology	maxmor1c	carotid_ultrasound_test	enum	NO LESION|HOMOGENEOUS|HETEROGENEOUS
+maxden1c	pht001116.v10	Maximum density	maxden1c	carotid_ultrasound_test	enum	NO LESION|HOMOGENEOUS|HETEROGENEOUS|HYPERDENSE|CALCIFIED
+tapeid1	pht001116.v10	Videotape on which imt is recorded	tapeid1	carotid_ultrasound_test	number	
+rdopp1	pht001116.v10	Doppler measurement right side (cm/s)	rdopp1	carotid_ultrasound_test	number	
+rcvwmn1	pht001116.v10	Right common carotid vessel width mean (mm)	rcvwmn1	carotid_ultrasound_test	number	
+rcvwsd1	pht001116.v10	Right common carotid vessel width std dev (mm)	rcvwsd1	carotid_ultrasound_test	number	
+rclumax1	pht001116.v10	Right common carotid lumen max (mm)	rclumax1	carotid_ultrasound_test	number	
+rclumn1	pht001116.v10	Right common carotid lumen mean (mm)	rclumn1	carotid_ultrasound_test	number	
+rclusd1	pht001116.v10	Right common carotid lumen std dev (mm)	rclusd1	carotid_ultrasound_test	number	
+rascale1	pht001116.v10	Right anterior oblique image scale - ica (pixels/cm)	rascale1	carotid_ultrasound_test	number	
+raqs1	pht001116.v10	Right anterior oblique image quality score	raqs1	carotid_ultrasound_test	number	
+ralines1	pht001116.v10	Right anterior oblique number of lines drawn	ralines1	carotid_ultrasound_test	number	
+rafwmax1	pht001116.v10	Right anterior oblique far wall max (mm)	rafwmax1	carotid_ultrasound_test	number	
+rafwmin1	pht001116.v10	Right anterior oblique far wall min (mm)	rafwmin1	carotid_ultrasound_test	number	
+rafwmn1	pht001116.v10	Right anterior oblique far wall mean (mm)	rafwmn1	carotid_ultrasound_test	number	
+rafwsd1	pht001116.v10	Right anterior oblique far wall std dev (mm)	rafwsd1	carotid_ultrasound_test	number	
+ranwmax1	pht001116.v10	Right anterior oblique near wall max (mm)	ranwmax1	carotid_ultrasound_test	number	
+ranwmin1	pht001116.v10	Right anterior oblique near wall min (mm)	ranwmin1	carotid_ultrasound_test	number	
+ranwmn1	pht001116.v10	Right anterior oblique near wall mean (mm)	ranwmn1	carotid_ultrasound_test	number	
+ranwsd1	pht001116.v10	Right anterior oblique near wall std dev (mm)	ranwsd1	carotid_ultrasound_test	number	
+ravwmax1	pht001116.v10	Right anterior oblique vessel width max (mm)	ravwmax1	carotid_ultrasound_test	number	
+ravwmin1	pht001116.v10	Right anterior oblique vessel width min (mm)	ravwmin1	carotid_ultrasound_test	number	
+ravwmn1	pht001116.v10	Right anterior oblique vessel width mean (mm)	ravwmn1	carotid_ultrasound_test	number	
+ravwsd1	pht001116.v10	Right anterior oblique vessel width std dev (mm)	ravwsd1	carotid_ultrasound_test	number	
+ralumax1	pht001116.v10	Right anterior oblique lumen max (mm)	ralumax1	carotid_ultrasound_test	number	
+ralumin1	pht001116.v10	Right anterior oblique lumen min (mm)	ralumin1	carotid_ultrasound_test	number	
+ralumn1	pht001116.v10	Right anterior oblique lumen mean (mm)	ralumn1	carotid_ultrasound_test	number	
+ralusd1	pht001116.v10	Right anterior oblique lumen std dev (mm)	ralusd1	carotid_ultrasound_test	number	
+rlscale1	pht001116.v10	Right lateral oblique image scale - ica (pixels/cm)	rlscale1	carotid_ultrasound_test	number	
+rlqs1	pht001116.v10	Right lateral oblique image quality score	rlqs1	carotid_ultrasound_test	number	
+rllines1	pht001116.v10	Right lateral oblique number of lines drawn	rllines1	carotid_ultrasound_test	number	
+rlfwmax1	pht001116.v10	Right lateral oblique far wall max (mm)	rlfwmax1	carotid_ultrasound_test	number	
+rlfwmin1	pht001116.v10	Right lateral oblique far wall min (mm)	rlfwmin1	carotid_ultrasound_test	number	
+rlfwmn1	pht001116.v10	Right lateral oblique far wall mean (mm)	rlfwmn1	carotid_ultrasound_test	number	
+rlfwsd1	pht001116.v10	Right lateral oblique far wall std dev (mm)	rlfwsd1	carotid_ultrasound_test	number	
+rlnwmax1	pht001116.v10	Right lateral oblique near wall max (mm)	rlnwmax1	carotid_ultrasound_test	number	
+rlnwmin1	pht001116.v10	Right lateral oblique near wall min (mm)	rlnwmin1	carotid_ultrasound_test	number	
+rlnwmn1	pht001116.v10	Right lateral oblique near wall mean (mm)	rlnwmn1	carotid_ultrasound_test	number	
+rlnwsd1	pht001116.v10	Right lateral oblique near wall std dev (mm)	rlnwsd1	carotid_ultrasound_test	number	
+rlvwmax1	pht001116.v10	Right lateral oblique vessel width max (mm)	rlvwmax1	carotid_ultrasound_test	number	
+rlvwmin1	pht001116.v10	Right lateral oblique vessel width min (mm)	rlvwmin1	carotid_ultrasound_test	number	
+rlvwmn1	pht001116.v10	Right lateral oblique vessel width mean (mm)	rlvwmn1	carotid_ultrasound_test	number	
+rlvwsd1	pht001116.v10	Right lateral oblique vessel width std dev (mm)	rlvwsd1	carotid_ultrasound_test	number	
+rllumax1	pht001116.v10	Right lateral oblique lumen max (mm)	rllumax1	carotid_ultrasound_test	number	
+rllumin1	pht001116.v10	Right lateral oblique lumen min (mm)	rllumin1	carotid_ultrasound_test	number	
+rllumn1	pht001116.v10	Right lateral oblique lumen mean (mm)	rllumn1	carotid_ultrasound_test	number	
+rllusd1	pht001116.v10	Right lateral oblique lumen std dev (mm)	rllusd1	carotid_ultrasound_test	number	
+rpscale1	pht001116.v10	Right posterior oblique image scale - ica (pixels/cm)	rpscale1	carotid_ultrasound_test	number	
+rpqs1	pht001116.v10	Right posterior oblique image quality score	rpqs1	carotid_ultrasound_test	number	
+rplines1	pht001116.v10	Right posterior oblique number of lines drawn	rplines1	carotid_ultrasound_test	number	
+rpfwmax1	pht001116.v10	Right posterior oblique far wall max (mm)	rpfwmax1	carotid_ultrasound_test	number	
+rpfwmin1	pht001116.v10	Right posterior oblique far wall min (mm)	rpfwmin1	carotid_ultrasound_test	number	
+rpfwmn1	pht001116.v10	Right posterior oblique far wall mean (mm)	rpfwmn1	carotid_ultrasound_test	number	
+rpfwsd1	pht001116.v10	Right posterior oblique far wall std dev (mm)	rpfwsd1	carotid_ultrasound_test	number	
+rpnwmax1	pht001116.v10	Right posterior oblique near wall max (mm)	rpnwmax1	carotid_ultrasound_test	number	
+rpnwmin1	pht001116.v10	Right posterior oblique near wall min (mm)	rpnwmin1	carotid_ultrasound_test	number	
+rpnwmn1	pht001116.v10	Right posterior oblique near wall mean (mm)	rpnwmn1	carotid_ultrasound_test	number	
+rpnwsd1	pht001116.v10	Right posterior oblique near wall std dev (mm)	rpnwsd1	carotid_ultrasound_test	number	
+rpvwmax1	pht001116.v10	Right posterior oblique vessel width max (mm)	rpvwmax1	carotid_ultrasound_test	number	
+rpvwmin1	pht001116.v10	Right posterior oblique vessel width min (mm)	rpvwmin1	carotid_ultrasound_test	number	
+rpvwmn1	pht001116.v10	Right posterior oblique vessel width mean (mm)	rpvwmn1	carotid_ultrasound_test	number	
+rpvwsd1	pht001116.v10	Right posterior oblique vessel width std dev (mm)	rpvwsd1	carotid_ultrasound_test	number	
+rplumax1	pht001116.v10	Right posterior oblique lumen max (mm)	rplumax1	carotid_ultrasound_test	number	
+rplumin1	pht001116.v10	Right posterior oblique lumen min (mm)	rplumin1	carotid_ultrasound_test	number	
+rplumn1	pht001116.v10	Right posterior oblique lumen mean (mm)	rplumn1	carotid_ultrasound_test	number	
+rplusd1	pht001116.v10	Right posterior oblique lumen std dev (mm)	rplusd1	carotid_ultrasound_test	number	
+lcscale1	pht001116.v10	Left common carotid image scale - cca (pixels/cm)	lcscale1	carotid_ultrasound_test	number	
+lcqs1	pht001116.v10	Left common carotid image quality score	lcqs1	carotid_ultrasound_test	number	
+lclines1	pht001116.v10	Left common carotid number of lines drawn	lclines1	carotid_ultrasound_test	number	
+lcfwmax1	pht001116.v10	Left common carotid far wall max (mm)	lcfwmax1	carotid_ultrasound_test	number	
+lcfwmin1	pht001116.v10	Left common carotid far wall min (mm)	lcfwmin1	carotid_ultrasound_test	number	
+lcfwmn1	pht001116.v10	Left common carotid far wall mean (mm)	lcfwmn1	carotid_ultrasound_test	number	
+lcfwsd1	pht001116.v10	Left common carotid far wall std dev (mm)	lcfwsd1	carotid_ultrasound_test	number	
+lcnwmax1	pht001116.v10	Left common carotid near wall max (mm)	lcnwmax1	carotid_ultrasound_test	number	
+lcnwmin1	pht001116.v10	Left common carotid near wall min (mm)	lcnwmin1	carotid_ultrasound_test	number	
+lcnwmn1	pht001116.v10	Left common carotid near wall mean (mm)	lcnwmn1	carotid_ultrasound_test	number	
+lcnwsd1	pht001116.v10	Left common carotid near wall std dev (mm)	lcnwsd1	carotid_ultrasound_test	number	
+lcvwmax1	pht001116.v10	Left common carotid vessel width max (mm)	lcvwmax1	carotid_ultrasound_test	number	
+lcvwmin1	pht001116.v10	Left common carotid vessel width min (mm)	lcvwmin1	carotid_ultrasound_test	number	
+lcvwmn1	pht001116.v10	Left common carotid vessel width mean (mm)	lcvwmn1	carotid_ultrasound_test	number	
+lcvwsd1	pht001116.v10	Left common carotid vessel width std dev (mm)	lcvwsd1	carotid_ultrasound_test	number	
+lclumax1	pht001116.v10	Left common carotid lumen max (mm)	lclumax1	carotid_ultrasound_test	number	
+lclumin1	pht001116.v10	Left common carotid lumen min (mm)	lclumin1	carotid_ultrasound_test	number	
+lclumn1	pht001116.v10	Left common carotid lumen mean (mm)	lclumn1	carotid_ultrasound_test	number	
+lclusd1	pht001116.v10	Left common carotid lumen std dev (mm)	lclusd1	carotid_ultrasound_test	number	
+lascale1	pht001116.v10	Left anterior oblique image scale - ica (pixels/cm)	lascale1	carotid_ultrasound_test	number	
+laqs1	pht001116.v10	Left anterior oblique image quality score	laqs1	carotid_ultrasound_test	number	
+lalines1	pht001116.v10	Left anterior oblique number of lines drawn	lalines1	carotid_ultrasound_test	number	
+lafwmax1	pht001116.v10	Left anterior oblique far wall max (mm)	lafwmax1	carotid_ultrasound_test	number	
+lafwmin1	pht001116.v10	Left anterior oblique far wall min (mm)	lafwmin1	carotid_ultrasound_test	number	
+lafwmn1	pht001116.v10	Left anterior oblique far wall mean (mm)	lafwmn1	carotid_ultrasound_test	number	
+lafwsd1	pht001116.v10	Left anterior oblique far wall std dev (mm)	lafwsd1	carotid_ultrasound_test	number	
+lanwmax1	pht001116.v10	Left anterior oblique near wall max (mm)	lanwmax1	carotid_ultrasound_test	number	
+lanwmin1	pht001116.v10	Left anterior oblique near wall min (mm)	lanwmin1	carotid_ultrasound_test	number	
+lanwmn1	pht001116.v10	Left anterior oblique near wall mean (mm)	lanwmn1	carotid_ultrasound_test	number	
+lanwsd1	pht001116.v10	Left anterior oblique near wall std dev (mm)	lanwsd1	carotid_ultrasound_test	number	
+lavwmax1	pht001116.v10	Left anterior oblique vessel width max (mm)	lavwmax1	carotid_ultrasound_test	number	
+lavwmin1	pht001116.v10	Left anterior oblique vessel width min (mm)	lavwmin1	carotid_ultrasound_test	number	
+lavwmn1	pht001116.v10	Left anterior oblique vessel width mean (mm)	lavwmn1	carotid_ultrasound_test	number	
+lavwsd1	pht001116.v10	Left anterior oblique vessel width std dev (mm)	lavwsd1	carotid_ultrasound_test	number	
+lalumax1	pht001116.v10	Left anterior oblique lumen max (mm)	lalumax1	carotid_ultrasound_test	number	
+lalumin1	pht001116.v10	Left anterior oblique lumen min (mm)	lalumin1	carotid_ultrasound_test	number	
+lalumn1	pht001116.v10	Left anterior oblique lumen mean (mm)	lalumn1	carotid_ultrasound_test	number	
+lalusd1	pht001116.v10	Left anterior oblique lumen std dev (mm)	lalusd1	carotid_ultrasound_test	number	
+llscale1	pht001116.v10	Left lateral oblique image scale - ica (pixels/cm)	llscale1	carotid_ultrasound_test	number	
+llqs1	pht001116.v10	Left lateral oblique image quality score	llqs1	carotid_ultrasound_test	number	
+lllines1	pht001116.v10	Left lateral oblique number of lines drawn	lllines1	carotid_ultrasound_test	number	
+llfwmax1	pht001116.v10	Left lateral oblique far wall max (mm)	llfwmax1	carotid_ultrasound_test	number	
+llfwmin1	pht001116.v10	Left lateral oblique far wall min (mm)	llfwmin1	carotid_ultrasound_test	number	
+llfwmn1	pht001116.v10	Left lateral oblique far wall mean (mm)	llfwmn1	carotid_ultrasound_test	number	
+llfwsd1	pht001116.v10	Left lateral oblique far wall std dev (mm)	llfwsd1	carotid_ultrasound_test	number	
+llnwmax1	pht001116.v10	Left lateral oblique near wall max (mm)	llnwmax1	carotid_ultrasound_test	number	
+llnwmin1	pht001116.v10	Left lateral oblique near wall min (mm)	llnwmin1	carotid_ultrasound_test	number	
+llnwmn1	pht001116.v10	Left lateral oblique near wall mean (mm)	llnwmn1	carotid_ultrasound_test	number	
+llnwsd1	pht001116.v10	Left lateral oblique near wall std dev (mm)	llnwsd1	carotid_ultrasound_test	number	
+llvwmax1	pht001116.v10	Left lateral oblique vessel width max (mm)	llvwmax1	carotid_ultrasound_test	number	
+llvwmin1	pht001116.v10	Left lateral oblique vessel width min (mm)	llvwmin1	carotid_ultrasound_test	number	
+llvwmn1	pht001116.v10	Left lateral oblique vessel width mean (mm)	llvwmn1	carotid_ultrasound_test	number	
+llvwsd1	pht001116.v10	Left lateral oblique vessel width std dev (mm)	llvwsd1	carotid_ultrasound_test	number	
+lllumax1	pht001116.v10	Left lateral oblique lumen max (mm)	lllumax1	carotid_ultrasound_test	number	
+lllumin1	pht001116.v10	Left lateral oblique lumen min (mm)	lllumin1	carotid_ultrasound_test	number	
+lllumn1	pht001116.v10	Left lateral oblique lumen mean (mm)	lllumn1	carotid_ultrasound_test	number	
+lllusd1	pht001116.v10	Left lateral oblique lumen std dev (mm)	lllusd1	carotid_ultrasound_test	number	
+lpscale1	pht001116.v10	Left posterior oblique image scale - ica (pixels/cm)	lpscale1	carotid_ultrasound_test	number	
+lpqs1	pht001116.v10	Left posterior oblique image quality score	lpqs1	carotid_ultrasound_test	number	
+lplines1	pht001116.v10	Left posterior oblique number of lines drawn	lplines1	carotid_ultrasound_test	number	
+lpfwmax1	pht001116.v10	Left posterior oblique far wall max (mm)	lpfwmax1	carotid_ultrasound_test	number	
+lpfwmin1	pht001116.v10	Left posterior oblique far wall min (mm)	lpfwmin1	carotid_ultrasound_test	number	
+lpfwmn1	pht001116.v10	Left posterior oblique far wall mean (mm)	lpfwmn1	carotid_ultrasound_test	number	
+lpfwsd1	pht001116.v10	Left posterior oblique far wall std dev (mm)	lpfwsd1	carotid_ultrasound_test	number	
+lpnwmax1	pht001116.v10	Left posterior oblique near wall max (mm)	lpnwmax1	carotid_ultrasound_test	number	
+lpnwmin1	pht001116.v10	Left posterior oblique near wall min (mm)	lpnwmin1	carotid_ultrasound_test	number	
+lpnwmn1	pht001116.v10	Left posterior oblique near wall mean (mm)	lpnwmn1	carotid_ultrasound_test	number	
+lpnwsd1	pht001116.v10	Left posterior oblique near wall std dev (mm)	lpnwsd1	carotid_ultrasound_test	number	
+lpvwmax1	pht001116.v10	Left posterior oblique vessel width max (mm)	lpvwmax1	carotid_ultrasound_test	number	
+lpvwmin1	pht001116.v10	Left posterior oblique vessel width min (mm)	lpvwmin1	carotid_ultrasound_test	number	
+lpvwmn1	pht001116.v10	Left posterior oblique vessel width mean (mm)	lpvwmn1	carotid_ultrasound_test	number	
+lpvwsd1	pht001116.v10	Left posterior oblique vessel width std dev (mm)	lpvwsd1	carotid_ultrasound_test	number	
+lplumax1	pht001116.v10	Left posterior oblique lumen max (mm)	lplumax1	carotid_ultrasound_test	number	
+lplumin1	pht001116.v10	Left posterior oblique lumen min (mm)	lplumin1	carotid_ultrasound_test	number	
+lplumn1	pht001116.v10	Left posterior oblique lumen mean (mm)	lplumn1	carotid_ultrasound_test	number	
+lplusd1	pht001116.v10	Left posterior oblique lumen std dev (mm)	lplusd1	carotid_ultrasound_test	number	
+rclumin1	pht001116.v10	Right common carotid lumen min (mm)	rclumin1	carotid_ultrasound_test	number	
+ldopp1	pht001116.v10	Doppler measurement left side (cm/s)	ldopp1	carotid_ultrasound_test	number	
+alert1	pht001116.v10	Alert: doppler > 250 (cm/s)	alert1	carotid_ultrasound_test	enum	ALERT|NO ALERT
+rcscale1	pht001116.v10	Right common carotid image scale - cca (pixels/cm)	rcscale1	carotid_ultrasound_test	number	
+rcqs1	pht001116.v10	Right common carotid image quality score	rcqs1	carotid_ultrasound_test	number	
+rclines1	pht001116.v10	Right common carotid number of lines drawn	rclines1	carotid_ultrasound_test	number	
+rcfwmax1	pht001116.v10	Right common carotid far wall max (mm)	rcfwmax1	carotid_ultrasound_test	number	
+rcfwmin1	pht001116.v10	Right common carotid far wall min (mm)	rcfwmin1	carotid_ultrasound_test	number	
+rcfwmn1	pht001116.v10	Right common carotid far wall mean (mm)	rcfwmn1	carotid_ultrasound_test	number	
+rcnwmax1	pht001116.v10	Right common carotid near wall max (mm)	rcnwmax1	carotid_ultrasound_test	number	
+rcnwmin1	pht001116.v10	Right common carotid near wall min (mm)	rcnwmin1	carotid_ultrasound_test	number	
+rcnwmn1	pht001116.v10	Right common carotid near wall mean (mm)	rcnwmn1	carotid_ultrasound_test	number	
+rcnwsd1	pht001116.v10	Right common carotid near wall std dev (mm)	rcnwsd1	carotid_ultrasound_test	number	
+rcvwmax1	pht001116.v10	Right common carotid vessel width max (mm)	rcvwmax1	carotid_ultrasound_test	number	
+rcvwmin1	pht001116.v10	Right common carotid vessel width min (mm)	rcvwmin1	carotid_ultrasound_test	number	
+rcfwsd1	pht001116.v10	Right common carotid far wall std dev (mm)	rcfwsd1	carotid_ultrasound_test	number	
+ccafwm1	pht001116.v10	Mean of mean far wall imt for common carotid artery	ccafwm1	carotid_ultrasound_test	number	
+icafwm1	pht001116.v10	Mean of mean far wall imt for internal carotid artery	icafwm1	carotid_ultrasound_test	number	
+trig1	pht001116.v10, pht001111.v4	Triglycerides (mg/dl)	trig1	lab_result	number	
+glucos1c	pht001116.v10, pht001111.v4	Exam 1 fasting glucose- calibrated	glucos1c	lab_result	number	
+glucos1u	pht001116.v10, pht001111.v4	Exam 1 fasting glucose- original	glucos1u	lab_result	number	
+ldl1	pht001116.v10, pht001111.v4	Ldl cholesterol (mg/dl)	ldl1	lab_result	number	
+hdl1	pht001116.v10, pht001111.v4	Hdl cholesterol (mg/dl)	hdl1	lab_result	number	
+creatin1	pht001116.v10, pht001111.v4	Creatinine (mg/dl)	creatin1	lab_result	number	
+chol1	pht001116.v10, pht001111.v4	Total cholesterol (mg/dl)	chol1	lab_result	number	
+chlcat1c	pht001116.v10, pht001111.v4	Total cholesterol, ncep categories	chlcat1c	lab_result	enum	DESIRABLE, <200|BORDERLINE HIGH, 200-239|HIGH, 240+
+ldlcat1c	pht001116.v10, pht001111.v4	Ldl cholesterol, ncep categories	ldlcat1c	lab_result	enum	OPTIMAL, <100|NEAR OPTIMAL, 100-129|BORDERLINE HIGH, 130-159|HIGH, 160-189|VERY HIGH, 190+
+hdlcat1c	pht001116.v10, pht001111.v4	Hdl cholesterol, ncep categories	hdlcat1c	lab_result	enum	HIGH, 60+|40-59|LOW, <40
+trgcat1c	pht001116.v10, pht001111.v4	Triglycerides, ncep categories	trgcat1c	lab_result	enum	NORMAL, <150|BORDERLINE HIGH, 150-199|HIGH, 200-499|VERY HIGH, 500+
+diabins1	pht001116.v10, pht001111.v4	Insulin or oral hypoglycemics for diabetes?	diabins1	medication	boolean	
+lastdrk1	pht001116.v10, pht001111.v4	How long ago last drink or eat? (hrs)	lastdrk1	lab_result	number	
+hcytot1	pht001116.v10, pht001111.v4	Total homocysteine (thcy) (umol/l)	hcytot1	lab_result	number	
+cpn1c	pht001116.v10, pht001111.v4	Chlamydia pneumoniae results as pos, neg & nsf	cpn1c	lab_result	string	
+cpntite1	pht001116.v10, pht001111.v4	Chlamydia pneumoniae (igg antibodies)	cpntite1	lab_result	enum	NEGATIVE, NO FLUORESCENCE (NEG)|1+, DEFINITE, BUT DIM FLUORESCENCE (POS)|2+, MODERATE TO INTENSE FLUORESCENCE (POS)|3+, MODERATE TO INTENSE FLUORESCENCE (POS)|4+, MODERATE TO INTENSE FLUORESCENCE (POS)
+CPNTIT1M	pht001116.v10, pht001111.v4	Exceptional missing cpn titer	CPNTIT1M	lab_result	enum	NONSPECIFIC FLUORESCENCE, ASSAY NOT INTERPRETABLE
+homair1c	pht001116.v10, pht001111.v4	Homeostasis model assessment for insulin resistance	homair1c	lab_result	number	
+INSUL1M	pht001116.v10, pht001111.v4	Exceptional missing insulin	INSUL1M	lab_result	enum	VALUE BELOW MEASUREMENT LIMITS
+il61	pht001116.v10, pht001111.v4	Interleukin-6 (il-6) (pg/ml)	il61	lab_result	number	
+il61M	pht001116.v10, pht001111.v4	Exceptional missing il61	il61M	lab_result	enum	INVALID (UNREPORTABLE) RESULT|VALUE > 13|VALUE < 0.09 (BELOW MEASUREMENT LIMITS)
+il61t	pht001116.v10, pht001111.v4	Natural log transformed interleukin-6 (il-6)	il61t	lab_result	number	
+pap1	pht001116.v10, pht001111.v4	Plasmin-antiplasmin complex (pap) (nm)	pap1	lab_result	number	
+pap1M	pht001116.v10, pht001111.v4	Exceptional missing pap1	pap1M	lab_result	enum	INVALID (UNREPORTABLE) RESULT|VALUE IS ABOVE MEASUREMENT LIMITS|VALUE < 0.20 (BELOW MEASUREMENT LIMITS)
+fib1	pht001116.v10, pht001111.v4	Fibrinogen antigen (mg/dl)	fib1	lab_result	number	
+crp1	pht001116.v10, pht001111.v4	C-reactive protein (crp) (mg/l)	crp1	lab_result	number	
+crp1t	pht001116.v10, pht001111.v4	Natural log transformed c-reactive protein (crp)	crp1t	lab_result	number	
+ddimer1	pht001116.v10, pht001111.v4	D-dimer (ug/ml)	ddimer1	lab_result	number	
+DDIMER1M	pht001116.v10, pht001111.v4	Exceptional missing ddimer	DDIMER1M	lab_result	enum	INVALID (UNREPORTABLE) RESULT|EXTREME LOW (EXTRAPOLATED)|LOW (EXTRAPOLATED)|LOW (EXTRAPOLATED)|LOW (EXTRAPOLATED)|LOW (EXTRAPOLATED)|HIGH (> 20, EXTRAPOLATED)
+f81	pht001116.v10, pht001111.v4	Factor viii (%)	f81	lab_result	number	
+factr81M	pht001116.v10, pht001111.v4	Extrapolated factor viii	factr81M	lab_result	enum	LOW (EXTRAPOLATED)|HIGH (EXTRAPOLATED)
+cd40l1	pht001116.v10, pht001111.v4	Cd40 ligand (pg/ml)	cd40l1	lab_result	number	
+eselect1	pht001116.v10, pht001111.v4	E-selectin (ng/ml)	eselect1	lab_result	number	
+mmp31	pht001116.v10, pht001111.v4	Matrix metalloproteinase 3 (ng/ml)	mmp31	lab_result	number	
+mmp31t	pht001116.v10, pht001111.v4	Natural log transformed matrix metalloproteinase 3	mmp31t	lab_result	number	
+mmp91	pht001116.v10, pht001111.v4	Matrix metalloproteinase 9 (ng/ml)	mmp91	lab_result	number	
+mmp91t	pht001116.v10, pht001111.v4	Natural log transformed matrix metalloproteinase 9	mmp91t	lab_result	number	
+hsv1	pht001116.v10, pht001111.v4	Herpes simplex virus (eu/ml)	hsv1	lab_result	number	
+hsv1c	pht001116.v10, pht001111.v4	Herpes simplex virus (pos/neg)	hsv1c	lab_result	string	
+cmv1	pht001116.v10, pht001111.v4	Cytomegalovirus (eu/ml)	cmv1	lab_result	number	
+cmv1c	pht001116.v10, pht001111.v4	Cytomegalovirus (pos/neg)	cmv1c	lab_result	string	
+hpylori1	pht001116.v10, pht001111.v4	Helicobacter pylori antibodies	hpylori1	lab_result	number	
+hpylor1c	pht001116.v10, pht001111.v4	Helicobacter pylori antibodies (pos/neg)	hpylor1c	lab_result	string	
+havab1	pht001116.v10, pht001111.v4	Hepatitis a virus antibodies	havab1	lab_result	number	
+havab1c	pht001116.v10, pht001111.v4	Hepatitis a virus antibodies (pos/neg)	havab1c	lab_result	string	
+pai1	pht001116.v10, pht001111.v4	Pai-1 (ng/ml)	pai1	lab_result	number	
+PAI1M	pht001116.v10, pht001111.v4	Exceptional missing pai1	PAI1M	lab_result	enum	VALUE < 1.8 (BELOW DETECTION LIMITS)
+stf1	pht001116.v10, pht001111.v4	Soluble tf (pg/ml)	stf1	lab_result	number	
+STF1M	pht001116.v10, pht001111.v4	Exceptional missing stf1	STF1M	lab_result	enum	VALUE < 2.0 pg/ml (BELOW DETECTION LIMITS)
+tfpi1	pht001116.v10, pht001111.v4	Tfpi (ng/ml)	tfpi1	lab_result	number	
+TFPI1M	pht001116.v10, pht001111.v4	Exceptional missing tfpi1	TFPI1M	lab_result	enum	VALUE > 100 ng/ml (ABOVE DETECTION LIMITS)
+stm1	pht001116.v10, pht001111.v4	Soluble thrombomodulin (ng/ml)	stm1	lab_result	number	
+STM1M	pht001116.v10, pht001111.v4	Exceptional missing stm	STM1M	lab_result	enum	VALUE < 0.8 ng/ml (BELOW DETECTION LIMITS)
+abcact1	pht001116.v10, pht001111.v4	Abca1 -477 c/t genotype	abcact1	lab_result	enum	C/C|C/T|T/T
+abcaga1	pht001116.v10, pht001111.v4	Abca1 1051 g/a (r219k) genotype	abcaga1	lab_result	enum	G/G|G/A|A/A
+rlpc1	pht001116.v10, pht001111.v4	Remnant-like particle cholesterol (mg/dl)	rlpc1	lab_result	number	
+hdl11	pht001116.v10, pht001111.v4	Hdl-1 (%)	hdl11	lab_result	number	
+hdl21	pht001116.v10, pht001111.v4	Hdl-2 (%)	hdl21	lab_result	number	
+hdl31	pht001116.v10, pht001111.v4	Hdl-3 (%)	hdl31	lab_result	number	
+hdl41	pht001116.v10, pht001111.v4	Hdl-4 (%)	hdl41	lab_result	number	
+hdl51	pht001116.v10, pht001111.v4	Hdl-5 (%)	hdl51	lab_result	number	
+hdl61	pht001116.v10, pht001111.v4	Hdl-6 (%)	hdl61	lab_result	number	
+hdl71	pht001116.v10, pht001111.v4	Hdl-7 (%)	hdl71	lab_result	number	
+hdl81	pht001116.v10, pht001111.v4	Hdl-8 (%)	hdl81	lab_result	number	
+hdl1md1	pht001116.v10, pht001111.v4	Hdl-1 (mg/dl)	hdl1md1	lab_result	number	
+hdl2md1	pht001116.v10, pht001111.v4	Hdl-2 (mg/dl)	hdl2md1	lab_result	number	
+hdl3md1	pht001116.v10, pht001111.v4	Hdl-3 (mg/dl)	hdl3md1	lab_result	number	
+hdl4md1	pht001116.v10, pht001111.v4	Hdl-4 (mg/dl)	hdl4md1	lab_result	number	
+hdl5md1	pht001116.v10, pht001111.v4	Hdl-5 (mg/dl)	hdl5md1	lab_result	number	
+hdl6md1	pht001116.v10, pht001111.v4	Hdl-6 (mg/dl)	hdl6md1	lab_result	number	
+hdl7md1	pht001116.v10, pht001111.v4	Hdl-7 (mg/dl)	hdl7md1	lab_result	number	
+hdl8md1	pht001116.v10, pht001111.v4	Hdl-8 (mg/dl)	hdl8md1	lab_result	number	
+antHsp61	pht001116.v10, pht001111.v4	Anti-human heat shock protein-60 (ng/ml)	antHsp61	lab_result	number	
+anthsp61t	pht001116.v10, pht001111.v4	Natural log transformed anti-human heat shock protein-60	anthsp61t	lab_result	number	
+ceact1	pht001116.v10, pht001111.v4	Cholesterol ester transfer protein activity (nmol/ml/hr)	ceact1	lab_result	number	
+cemass1	pht001116.v10, pht001111.v4	Cholesterol ester transfer protein mass (mg/ml)	cemass1	lab_result	number	
+cea373p1	pht001116.v10, pht001111.v4	Cholesterol ester transfer protein - a373p genotype	cea373p1	lab_result	enum	AA|AP|PP
+ce629ca1	pht001116.v10, pht001111.v4	Cholesterol ester transfer protein - -629ca genotype	ce629ca1	lab_result	enum	CC|CA|AA
+CEP6291M	pht001116.v10, pht001111.v4	Exceptional missing cept_629	CEP6291M	lab_result	enum	OTHER MISSING (-77)
+cetaq1b1	pht001116.v10, pht001111.v4	Cholesterol ester transfer protein - taq1b genotype	cetaq1b1	lab_result	enum	B1B1|B1B2|B2B2
+CETP25051	pht001116.v10, pht001111.v4	Cholesterol ester transfer protein - 2505	CETP25051	lab_result	enum	AA|CA|CC|NO AMP|NO SAMPLE
+ISOPROST	pht001116.v10, pht001111.v4	Exam 1 isoprostane (pg/ml)	ISOPROST	lab_result	number	
+ISOPRO1M	pht001116.v10, pht001111.v4	Exceptional missing isoprost	ISOPRO1M	lab_result	enum	POOR PEAK DETECTION (OR OUT OF ASSAY RANGE)
+vwf1	pht001116.v10, pht001111.v4	Percent von willebrand factor (vwf)	vwf1	lab_result	number	
+VWF1M	pht001116.v10, pht001111.v4	Exceptional missing vwf	VWF1M	lab_result	enum	INVALID (UNREPORTABLE) RESULT|LOW (EXTRAPOLATED)
+cpn31	pht001116.v10, pht001111.v4	Chlamydia (from group 3 lipids)	cpn31	lab_result	number	
+cpn31c	pht001116.v10, pht001111.v4	Chlamydia pos/neg (from group3 lipids)	cpn31c	lab_result	string	
+cer452q1	pht001116.v10, pht001111.v4	Cholesterol ester transfer protein - r451q genotype	cer452q1	lab_result	enum	RR|RQ|QQ
+i14_0_e1	pht001116.v10, pht001111.v4	14:0 myristic acid	i14_0_e1	lab_result	number	
+i15_0_e1	pht001116.v10, pht001111.v4	15:0 pentadecanoic acid	i15_0_e1	lab_result	number	
+i16_0_e1	pht001116.v10, pht001111.v4	16:0 hexadecanoic acid	i16_0_e1	lab_result	number	
+i16_1_9t_e1	pht001116.v10, pht001111.v4	16:1 9 trans palmitoleic acid	i16_1_9t_e1	lab_result	number	
+i16_1_9c_e1	pht001116.v10, pht001111.v4	16:1 9 cis palmitoleic acid	i16_1_9c_e1	lab_result	number	
+i18_0_e1	pht001116.v10, pht001111.v4	18:0 stearic acid	i18_0_e1	lab_result	number	
+i18_1_9_11t_e1	pht001116.v10, pht001111.v4	18:1 9-11 trans oleic acid	i18_1_9_11t_e1	lab_result	number	
+i18_1_12_t_e1	pht001116.v10, pht001111.v4	18:1 12 trans oleic acid	i18_1_12_t_e1	lab_result	number	
+i18_1_9_c_e1	pht001116.v10, pht001111.v4	18:1:9 cis linoleic acid	i18_1_9_c_e1	lab_result	number	
+i18_1_11_c_e1	pht001116.v10, pht001111.v4	18:1:11 cis linoleic acid	i18_1_11_c_e1	lab_result	number	
+i18_1_12_c_e1	pht001116.v10, pht001111.v4	18:1:12 cis linoleic acid	i18_1_12_c_e1	lab_result	number	
+i18_2_t_t_e1	pht001116.v10, pht001111.v4	18:2 t/t linoleic acid	i18_2_t_t_e1	lab_result	number	
+i18_2_c_t_e1	pht001116.v10, pht001111.v4	18:2 c/t linoleic acid	i18_2_c_t_e1	lab_result	number	
+i18_2_t_c_e1	pht001116.v10, pht001111.v4	18:2 t/c linoleic acid	i18_2_t_c_e1	lab_result	number	
+i18_2_c_c_e1	pht001116.v10, pht001111.v4	18:2 c/c linoleic acid	i18_2_c_c_e1	lab_result	number	
+i18_3_n6_e1	pht001116.v10, pht001111.v4	18:3 n6 gamma-linolenic acid	i18_3_n6_e1	lab_result	number	
+i18_3_n3_e1	pht001116.v10, pht001111.v4	18:3 n3 alpha-linolenic acid	i18_3_n3_e1	lab_result	number	
+i20_0_e1	pht001116.v10, pht001111.v4	20:0 arachidic acid	i20_0_e1	lab_result	number	
+i20_1_n9_e1	pht001116.v10, pht001111.v4	20:1n9 gadoleic acid	i20_1_n9_e1	lab_result	number	
+i20_2_n6_e1	pht001116.v10, pht001111.v4	20:2n6 eicosanoic acid	i20_2_n6_e1	lab_result	number	
+i20_3_n6_e1	pht001116.v10, pht001111.v4	20:3n6 eicosanoic acid	i20_3_n6_e1	lab_result	number	
+i20_4_n6_e1	pht001116.v10, pht001111.v4	20:4n6 arachidonic acid (aa)	i20_4_n6_e1	lab_result	number	
+i22_0_e1	pht001116.v10, pht001111.v4	22:0 behenic acid	i22_0_e1	lab_result	number	
+i20_5_n3_e1	pht001116.v10, pht001111.v4	20:5n3 timnodonic acid	i20_5_n3_e1	lab_result	number	
+i24_1_n9_e1	pht001116.v10, pht001111.v4	24:1n9 nervonic acid	i24_1_n9_e1	lab_result	number	
+i22_5_n3_e1	pht001116.v10, pht001111.v4	22:5n3 clupanodonic acid	i22_5_n3_e1	lab_result	number	
+i22_6_n3_e1	pht001116.v10, pht001111.v4	22:6n3 docosahexaenoic acid (dha)	i22_6_n3_e1	lab_result	number	
+total_trans_e1c	pht001116.v10, pht001111.v4	Sum of 16:1 9 trans, 18:1 9-11 trans, 18:1 12 trans, 18:2 t/t, 18:2	total_trans_e1c	lab_result	number	
+i16_1_trans_e1c	pht001116.v10, pht001111.v4	16:1 9 trans	i16_1_trans_e1c	lab_result	number	
+i18_1_trans_e1c	pht001116.v10, pht001111.v4	Sum of 18:1 9-11 trans, 18:1 12 trans	i18_1_trans_e1c	lab_result	number	
+i18_2_trans_e1c	pht001116.v10, pht001111.v4	Sum of 18:2 t/t, 18:2 c/t, 18:2 t/c	i18_2_trans_e1c	lab_result	number	
+total_cis_e1c	pht001116.v10, pht001111.v4	Sum of 16:1 9 cis, 18:1 9 cis, 18:1 11 cis, 18:1 12 cis, 18:2 c/c	total_cis_e1c	lab_result	number	
+i16_1_cis_e1c	pht001116.v10, pht001111.v4	16:1 9 cis	i16_1_cis_e1c	lab_result	number	
+i18_1_cis_e1c	pht001116.v10, pht001111.v4	18:1 9 cis, 18:1 11 cis, 18:1 12 cis	i18_1_cis_e1c	lab_result	number	
+i18_2_cis_e1c	pht001116.v10, pht001111.v4	18:2 c/c	i18_2_cis_e1c	lab_result	number	
+epa_dha_e1c	pht001116.v10, pht001111.v4	Sum of 20:5n3 and 22:6n3	epa_dha_e1c	lab_result	number	
+icam1	pht001116.v10, pht001111.v4	Sicam (ng/ml)	icam1	lab_result	number	
+icam11M	pht001116.v10, pht001111.v4	Exceptional missing icam11	icam11M	lab_result	enum	INVALID (UNREPORTABLE) RESULT|VALUE IS > 900 ng/ml (ABOVE MEASUREMENT LIMITS)|VALUE < 0.35 ng/ml (BELOW MEASUREMENT LIMITS)
+emphys1	pht001116.v10, pht001111.v4	Emphysema: self-report	emphys1	medical_history	boolean	
+asthma1	pht001116.v10, pht001111.v4	Asthma: self-report	asthma1	medical_history	boolean	
+arthrit1	pht001116.v10, pht001111.v4	Arthritis: self-report	arthrit1	medical_history	boolean	
+cancer1	pht001116.v10, pht001111.v4	Cancer: self-report	cancer1	medical_history	boolean	
+prostcn1	pht001116.v10, pht001111.v4	Prostate cancer	prostcn1	medical_history	boolean	
+brstcn1	pht001116.v10, pht001111.v4	Breast cancer	brstcn1	medical_history	boolean	
+lungcn1	pht001116.v10, pht001111.v4	Lung cancer	lungcn1	medical_history	boolean	
+coloncn1	pht001116.v10, pht001111.v4	Colon cancer	coloncn1	medical_history	boolean	
+nmskncn1	pht001116.v10, pht001111.v4	Non-melanoma skin cancer	nmskncn1	medical_history	boolean	
+bloodcn1	pht001116.v10, pht001111.v4	Blood cancer	bloodcn1	medical_history	boolean	
+othcn1	pht001116.v10, pht001111.v4	Other cancer	othcn1	medical_history	boolean	
+rheuhv1	pht001116.v10, pht001111.v4	Rheumatic heart disease: self-report	rheuhv1	medical_history	boolean	
+bldclot1	pht001116.v10, pht001111.v4	Blood clots in legs/lungs: self-report	bldclot1	medical_history	boolean	
+liverd1	pht001116.v10, pht001111.v4	Liver disease: self-report	liverd1	medical_history	boolean	
+cirrh1	pht001116.v10, pht001111.v4	Cirrhosis: self-report	cirrh1	medical_history	boolean	
+hepat1	pht001116.v10, pht001111.v4	Hepatitis: self-report	hepat1	medical_history	boolean	
+heptpa1	pht001116.v10, pht001111.v4	Hepatitis, type a	heptpa1	medical_history	boolean	
+heptpb1	pht001116.v10, pht001111.v4	Hepatitis, type b	heptpb1	medical_history	boolean	
+heptpc1	pht001116.v10, pht001111.v4	Hepatitis, type c	heptpc1	medical_history	boolean	
+heptpd1	pht001116.v10, pht001111.v4	Hepatitis, type d	heptpd1	medical_history	boolean	
+heptpe1	pht001116.v10, pht001111.v4	Hepatitis, type e	heptpe1	medical_history	boolean	
+heptpu1	pht001116.v10, pht001111.v4	Hepatitis, unknown type	heptpu1	medical_history	enum	NO HEPATITIS OR TYPE KNOWN|TYPE UNKNOWN
+kdnydis1	pht001116.v10, pht001111.v4	Kidney disease: self-report	kdnydis1	medical_history	boolean	
+highbp1	pht001116.v10, pht001111.v4	Hypertension: self-report	highbp1	medical_history	boolean	
+diabhx1	pht001116.v10, pht001111.v4	Taking meds for diabetes	diabhx1	medication	boolean	
+cholmed1	pht001116.v10, pht001111.v4	Taking meds for high cholesterol	cholmed1	medication	boolean	
+bpmed1	pht001116.v10, pht001111.v4	Taking meds for hypertension	bpmed1	medication	boolean	
+bphxage1	pht001116.v10, pht001111.v4	Hypertension meds, age started use	bphxage1	medical_history	number	
+bpmageu1	pht001116.v10, pht001111.v4	Hypertension meds, age started unknown	bpmageu1	medical_history	enum	AGE UNKNOWN
+hghchol1	pht001116.v10, pht001111.v4	High cholesterol: self-report	hghchol1	medical_history	boolean	
+cholage1	pht001116.v10, pht001111.v4	Cholesterol meds, age started use	cholage1	medication	number	
+chlageu1	pht001116.v10, pht001111.v4	Cholesterol meds, age started unknown	chlageu1	medication	enum	AGE UNKNOWN
+diabet1	pht001116.v10, pht001111.v4	Diabetes: self-report	diabet1	medication	boolean	
+dbhxtyp1	pht001116.v10, pht001111.v4	Diabetes meds, type	dbhxtyp1	medication	enum	INSULIN|PILLS
+dbage1	pht001116.v10, pht001111.v4	Diabetes meds, age started use	dbage1	medication	number	
+dbageu1	pht001116.v10, pht001111.v4	Diabetes meds, age started unknown	dbageu1	medication	enum	AGE UNKNOWN
+dbinsul1	pht001116.v10, pht001111.v4	Was insulin first diabetes medicine	dbinsul1	medication	boolean	
+dbpreg1	pht001116.v10, pht001111.v4	Women: diabetes occur only during pregnancy	dbpreg1	medical_history	boolean	
+hwt3ylb1	pht001116.v10, pht001111.v4	Highest weight in last 3 years (lbs)	hwt3ylb1	medical_history	number	
+wt20lb1	pht001116.v10, pht001111.v4	Weight at age 20 (lbs)	wt20lb1	medical_history	number	
+wt40lb1	pht001116.v10, pht001111.v4	Weight at age 40 (lbs)	wt40lb1	medical_history	number	
+preg1	pht001116.v10, pht001111.v4	Ever been pregnant	preg1	medical_history	boolean	
+pregn1	pht001116.v10, pht001111.v4	# of pregnancies	pregn1	medical_history	number	
+birthn1	pht001116.v10, pht001111.v4	# of live births	birthn1	medical_history	number	
+agebrth1	pht001116.v10, pht001111.v4	Age at first live birth	agebrth1	medical_history	number	
+hystrct1	pht001116.v10, pht001111.v4	Hysterectomy	hystrct1	medical_history	boolean	
+hystage1	pht001116.v10, pht001111.v4	Age at hysterectomy	hystage1	medical_history	number	
+ovarem1	pht001116.v10, pht001111.v4	Surgery to remove ovaries	ovarem1	medical_history	boolean	
+ovaage1	pht001116.v10, pht001111.v4	Age when ovaries removed	ovaage1	medical_history	number	
+ovaremn1	pht001116.v10, pht001111.v4	# of ovaries removed	ovaremn1	medical_history	enum	1 OVARY REMOVED|2 OVARIES REMOVED
+bcpills1	pht001116.v10, pht001111.v4	Ever taken birth control pills	bcpills1	medication	boolean	
+bpillyr1	pht001116.v10, pht001111.v4	# of years took birth control pills	bpillyr1	medication	number	
+mnpause1	pht001116.v10, pht001111.v4	Gone through menopause	mnpause1	medical_history	boolean	
+menop1	pht001116.v10, pht001111.v4	Currently going through menopause	menop1	medical_history	boolean	
+mnspmo1	pht001116.v10, pht001111.v4	Month of last menstrual period	mnspmo1	medical_history	number	
+mnspyr1	pht001116.v10, pht001111.v4	Year of last menstrual period	mnspyr1	medical_history	number	
+prdsnum1	pht001116.v10, pht001111.v4	# of menstrual periods in past 12 months	prdsnum1	medical_history	number	
+menoage1	pht001116.v10, pht001111.v4	Age went through menopause	menoage1	medical_history	number	
+hrmrep1	pht001116.v10, pht001111.v4	Ever taken hormone replacement therapy	hrmrep1	medication	boolean	
+hrmrepc1	pht001116.v10, pht001111.v4	Hormone replacement therapy, current user	hrmrepc1	medication	boolean	
+hrmrage1	pht001116.v10, pht001111.v4	Hormone replacement therapy, age started use (current user)	hrmrage1	medication	number	
+hrmsage1	pht001116.v10, pht001111.v4	Hormone replacement therapy, age started use (former user)	hrmsage1	medication	number	
+hrmage1c	pht001116.v10, pht001111.v4	Age started hrt use, current and former users	hrmage1c	medication	number	
+hrmqage1	pht001116.v10, pht001111.v4	Hormone replacement therapy, age stopped use	hrmqage1	medical_history	number	
+hrmtyp1	pht001116.v10, pht001111.v4	Type of hormone replacement therapy	hrmtyp1	medical_history	enum	ESTROGEN ALONE|ESTROGEN WITH PROGESTIN
+legpain1	pht001116.v10, pht001111.v4	Pain in leg or buttock while walking	legpain1	medical_history	boolean	
+lprest1	pht001116.v10, pht001111.v4	Leg pain begin when standing or sitting	lprest1	medical_history	boolean	
+lpcalf1	pht001116.v10, pht001111.v4	Pain occurs in what portion of leg	lpcalf1	medical_history	enum	PAIN INCLUDES CALF|PAIN DOES NOT INCLUDE CALF
+lpuphl1	pht001116.v10, pht001111.v4	Leg pain if walk uphill or hurry	lpuphl1	medical_history	boolean	
+lpnorm1	pht001116.v10, pht001111.v4	Leg pain if walk at ordinary pace on the level	lpnorm1	medical_history	boolean	
+lpdis1	pht001116.v10, pht001111.v4	Leg pain ever disappear while walking	lpdis1	medical_history	boolean	
+lpstop1	pht001116.v10, pht001111.v4	Stop walking during leg pain	lpstop1	medical_history	enum	STOP OR SLOW DOWN|CONTINUE ON
+lpstnd1	pht001116.v10, pht001111.v4	What happens to leg pain if stand still	lpstnd1	medical_history	enum	RELIEVED|NOT RELIEVED
+lprelv1	pht001116.v10, pht001111.v4	How soon is leg pain relieved when still	lprelv1	medical_history	enum	MORE THAN 10 MINUTES|10 MINUTES OR LESS
+lploc1	pht001116.v10, pht001111.v4	On what side is leg pain predominant	lploc1	medical_history	enum	RIGHT SIDE|LEFT SIDE|BOTH LEGS
+swllft1	pht001116.v10, pht001111.v4	Swelling of feet or ankles	swllft1	medical_history	boolean	
+swllday1	pht001116.v10, pht001111.v4	Feet swelling during day, diminished overnight	swllday1	medical_history	boolean	
+slppllw1	pht001116.v10, pht001111.v4	Sleep on two or more pillows to help breathe	slppllw1	medical_history	boolean	
+wakebr1	pht001116.v10, pht001111.v4	Awakened at night by trouble breathing	wakebr1	medical_history	boolean	
+fever1	pht001116.v10, pht001111.v4	Fever, past two weeks	fever1	medical_history	boolean	
+coldflu1	pht001116.v10, pht001111.v4	Cold or flu, past two weeks	coldflu1	medical_history	boolean	
+urininf1	pht001116.v10, pht001111.v4	Urinary infection, past two weeks	urininf1	medical_history	boolean	
+allrgy1	pht001116.v10, pht001111.v4	Seasonal allergy, past two weeks	allrgy1	medical_history	boolean	
+bronch1	pht001116.v10, pht001111.v4	Bronchitis, past two weeks	bronch1	medical_history	boolean	
+sinuinf1	pht001116.v10, pht001111.v4	Sinus infection, past two weeks	sinuinf1	medical_history	boolean	
+pneumo1	pht001116.v10, pht001111.v4	Pneumonia, past two weeks	pneumo1	medical_history	boolean	
+bldgums1	pht001116.v10, pht001111.v4	Bleeding gums, past two weeks	bldgums1	medical_history	boolean	
+tthinf1	pht001116.v10, pht001111.v4	Tooth infection, past two weeks	tthinf1	medical_history	boolean	
+gout1	pht001116.v10, pht001111.v4	Gout flare-up, past two weeks	gout1	medical_history	boolean	
+arth2wk1	pht001116.v10, pht001111.v4	Arthritis flare-up, past two weeks	arth2wk1	medical_history	boolean	
+abnum1	pht001116.v10, pht001111.v4	# of times treated w/ antibiotics, past year	abnum1	medical_history	number	
+noab1	pht001116.v10, pht001111.v4	# of times treated w/ antibiotics (past year) unknown	noab1	medical_history	enum	# TIMES UNKNOWN
+ab5ynum1	pht001116.v10, pht001111.v4	# of times treated w/ antibiotics, last five years	ab5ynum1	medical_history	number	
+noab5y1	pht001116.v10, pht001111.v4	# of times treated w/ antibiotics (past 5 years) unknown	noab5y1	medical_history	enum	# TIMES UNKNOWN
+aspirin1	pht001116.v10, pht001111.v4	Aspirin: ever used on regular basis	aspirin1	medication	boolean	
+aspsage1	pht001116.v10, pht001111.v4	Aspirin: age started regular use	aspsage1	medication	number	
+aspnow1	pht001116.v10, pht001111.v4	Aspirin: currently using regularly	aspnow1	medication	boolean	
+aspdays1	pht001116.v10, pht001111.v4	Aspirin: days per week	aspdays1	medication	number	
+aspeage1	pht001116.v10, pht001111.v4	Aspirin: age stopped using regularly	aspeage1	medication	number	
+gumdis1	pht001116.v10, pht001111.v4	Periodontitis or gum disease	gumdis1	medical_history	boolean	
+losttth1	pht001116.v10, pht001111.v4	Lost teeth due to gum disease	losttth1	medical_history	boolean	
+tthnum1	pht001116.v10, pht001111.v4	# teeth lost due to gum disease	tthnum1	medical_history	number	
+pmi1	pht001116.v10, pht001111.v4	Family history of heart attack: parent	pmi1	family_history	boolean	
+pamput1	pht001116.v10, pht001111.v4	Family history amputation (not due to injury): parent	pamput1	family_history	boolean	
+pstk1	pht001116.v10, pht001111.v4	Family history of stroke: parent	pstk1	family_history	boolean	
+shrtatt1	pht001116.v10, pht001111.v4	Family history of heart attack: sibling	shrtatt1	family_history	boolean	
+sstk1	pht001116.v10, pht001111.v4	Family history of stroke: sibling	sstk1	family_history	boolean	
+samput1	pht001116.v10, pht001111.v4	Family history amputation (not due to injury): sibling	samput1	family_history	boolean	
+chrtatt1	pht001116.v10, pht001111.v4	Family history of heart attack: children	chrtatt1	family_history	boolean	
+cstk1	pht001116.v10, pht001111.v4	Family history of stroke: children	cstk1	family_history	boolean	
+caumput1	pht001116.v10, pht001111.v4	Family history amputation (not due to injury): children	caumput1	family_history	boolean	
+fhha1c	pht001116.v10, pht001111.v4	Family history of heart attack (parents/siblings/children)	fhha1c	family_history	boolean	
+mhxadm1	pht001116.v10, pht001111.v4	Questionnaire administrator - medical history	mhxadm1	medical_history	enum	SELF-ADMIN|INTERVIEWER-ADMIN
+asacat1c	pht001116.v10, pht001111.v4	Current aspirin use (taking aspirin at least 3 days per week at baseline)	asacat1c	medication	boolean	
+htnmed1c	pht001116.v10, pht001111.v4	Hypertension medication	htnmed1c	medication	boolean	
+totmed1c	pht001116.v10, pht001111.v4	Total number of medications in exam1	totmed1c	medication	number	
+a2a1c	pht001116.v10, pht001111.v4	Angiotensin type 2 antagonists	a2a1c	medication	boolean	
+a2ad1c	pht001116.v10, pht001111.v4	Combinations of angiotensin ii antagonists plus diuretics	a2ad1c	medication	boolean	
+ace1c	pht001116.v10, pht001111.v4	Ace inhibitors without diuretics	ace1c	medication	boolean	
+aced1c	pht001116.v10, pht001111.v4	Ace inhibitors with diuretics	aced1c	medication	boolean	
+adpi1c	pht001116.v10, pht001111.v4	Inhibitors of adp-induced platelet aggregation	adpi1c	medication	boolean	
+agdi1c	pht001116.v10, pht001111.v4	Alpha-glucosidase inhibitors	agdi1c	medication	boolean	
+alpha1c	pht001116.v10, pht001111.v4	Alpha-blockers without diuretics	alpha1c	medication	boolean	
+alphad1c	pht001116.v10, pht001111.v4	Alpha-blockers with diuretics	alphad1c	medication	boolean	
+alzh1c	pht001116.v10, pht001111.v4	Acetylcholine esterase inhibitors for alzh'	alzh1c	medication	boolean	
+amlod1c	pht001116.v10, pht001111.v4	Amlodipine	amlod1c	medication	boolean	
+anar1a1c	pht001116.v10, pht001111.v4	Anti-arrhythmics, class 1a	anar1a1c	medication	boolean	
+anar1b1c	pht001116.v10, pht001111.v4	Anti-arrhythmics, class 1b	anar1b1c	medication	boolean	
+anar1c1c	pht001116.v10, pht001111.v4	Anti-arrhythmics, class 1c	anar1c1c	medication	boolean	
+anar31c	pht001116.v10, pht001111.v4	Anti-arrhythmics, class 3	anar31c	medication	boolean	
+apsy1c	pht001116.v10, pht001111.v4	Anti-psychotic medications	apsy1c	medication	boolean	
+asa1c	pht001116.v10, pht001111.v4	Aspirin from 280804 (anti-inflam agents)	asa1c	medication	boolean	
+basq1c	pht001116.v10, pht001111.v4	Bile-acid sequestrants	basq1c	medication	boolean	
+benzod1c	pht001116.v10, pht001111.v4	Benzodiazepines	benzod1c	medication	boolean	
+beta1c	pht001116.v10, pht001111.v4	Beta-blockers without diuretics	beta1c	medication	boolean	
+betad1c	pht001116.v10, pht001111.v4	Beta-blockers with diuretics	betad1c	medication	boolean	
+bgnd1c	pht001116.v10, pht001111.v4	Biguanides	bgnd1c	medication	boolean	
+ccb1c	pht001116.v10, pht001111.v4	Any calcium-channel blocker = ccir or ccbsr or ccbt	ccb1c	medication	boolean	
+ccbir1c	pht001116.v10, pht001111.v4	Immediate-release ccbs = nifir or dihir or verir or dltir	ccbir1c	medication	boolean	
+ccbsr1c	pht001116.v10, pht001111.v4	Slow-release ccbs = nifsr or dihsr or versr or dltsr or amlod	ccbsr1c	medication	boolean	
+ccbt1c	pht001116.v10, pht001111.v4	T-type calcium-channel blocker	ccbt1c	medication	boolean	
+cox21c	pht001116.v10, pht001111.v4	Cox-2 inhibitors (nsaid agents); separate from nsaid variable	cox21c	medication	boolean	
+dig1c	pht001116.v10, pht001111.v4	Digitalis preparations	dig1c	medication	boolean	
+dihir1c	pht001116.v10, pht001111.v4	Immediate-release dihydropyridines other than nifedipine	dihir1c	medication	boolean	
+dihsr1c	pht001116.v10, pht001111.v4	Slow-release dihydropyridines other than nifedipine or amlopidine	dihsr1c	medication	boolean	
+dltir1c	pht001116.v10, pht001111.v4	Immediate-release diltiazem	dltir1c	medication	boolean	
+dltsr1c	pht001116.v10, pht001111.v4	Slow-release diltiazem	dltsr1c	medication	boolean	
+edd1c	pht001116.v10, pht001111.v4	Erectile dysfunction drugs	edd1c	medication	boolean	
+estrgn1c	pht001116.v10, pht001111.v4	Estrogens, excluding vaginal creams	estrgn1c	medication	boolean	
+fibr1c	pht001116.v10, pht001111.v4	Fibrates	fibr1c	medication	boolean	
+h2b1c	pht001116.v10, pht001111.v4	H-2 blockers	h2b1c	medication	boolean	
+hctz1c	pht001116.v10, pht001111.v4	Thiazide diuretics without k-sparing agents	hctz1c	medication	boolean	
+hctzk1c	pht001116.v10, pht001111.v4	Thiazide diuretics with k-sparing agents	hctzk1c	medication	boolean	
+hprns1c	pht001116.v10, pht001111.v4	Heparins	hprns1c	medication	boolean	
+insln1c	pht001116.v10, pht001111.v4	Insulins	insln1c	medication	boolean	
+iprtr1c	pht001116.v10, pht001111.v4	Anticholinergics + combination with beta2-agonist (121200)	iprtr1c	medication	boolean	
+istrd1c	pht001116.v10, pht001111.v4	Inhaled steroids for asthma	istrd1c	medication	boolean	
+kblkr1c	pht001116.v10, pht001111.v4	K-channel blockers to enhance insulin secretion for diabetics	kblkr1c	medication	boolean	
+kcl1c	pht001116.v10, pht001111.v4	Potassium supplements	kcl1c	medication	boolean	
+kspr1c	pht001116.v10, pht001111.v4	Potassium-sparing agents alone	kspr1c	medication	boolean	
+loop1c	pht001116.v10, pht001111.v4	Loop diuretics	loop1c	medication	boolean	
+maoi1c	pht001116.v10, pht001111.v4	Mao inhibitors	maoi1c	medication	boolean	
+mlpd1c	pht001116.v10, pht001111.v4	Miscellaneous lipid-lowering drugs	mlpd1c	medication	boolean	
+niac1c	pht001116.v10, pht001111.v4	Niacin and nicotinic acid	niac1c	medication	boolean	
+nifir1c	pht001116.v10, pht001111.v4	Immediate-release nifedipine	nifir1c	medication	boolean	
+nifsr1c	pht001116.v10, pht001111.v4	Slow-release nifedipine	nifsr1c	medication	boolean	
+nsaid1c	pht001116.v10, pht001111.v4	Non-steroidal anti-inflammatory agents, excluding aspirin	nsaid1c	medication	boolean	
+ntg1c	pht001116.v10, pht001111.v4	Nitrates	ntg1c	medication	boolean	
+oaia1c	pht001116.v10, pht001111.v4	Oral anti-inflammatory asthma drugs leukotriene receptor antagonists and inhibitors of lipo-oxygenase	oaia1c	medication	boolean	
+ohga1c	pht001116.v10, pht001111.v4	Oral hypoglycemic agents-now constructed from:	ohga1c	medication	boolean	
+ostrd1c	pht001116.v10, pht001111.v4	Oral steroids	ostrd1c	medication	boolean	
+otch2b1c	pht001116.v10, pht001111.v4	Over-the-counter h-2 blockers	otch2b1c	medication	boolean	
+pdei1c	pht001116.v10, pht001111.v4	Phosphodiesterase inhibitors	pdei1c	medication	boolean	
+ppi1c	pht001116.v10, pht001111.v4	Proton pump inhibitors	ppi1c	medication	boolean	
+prgstn1c	pht001116.v10, pht001111.v4	Progestins	prgstn1c	medication	boolean	
+prknsn1c	pht001116.v10, pht001111.v4	Drugs used to treat parkinson's	prknsn1c	medication	boolean	
+prmrn1c	pht001116.v10, pht001111.v4	Premarin (conjugated estrogens)	prmrn1c	medication	boolean	
+prob1c	pht001116.v10, pht001111.v4	Probucol	prob1c	medication	boolean	
+pvdl1c	pht001116.v10, pht001111.v4	Peripheral vasodilators, exclude dipyridamole	pvdl1c	medication	boolean	
+slf11c	pht001116.v10, pht001111.v4	First generation sulfonylureas	slf11c	medication	boolean	
+slf21c	pht001116.v10, pht001111.v4	Second generation surlfonylureas	slf21c	medication	boolean	
+sttn1c	pht001116.v10, pht001111.v4	Hmg coa reductase inhibitors (statins)	sttn1c	medication	boolean	
+sympth1c	pht001116.v10, pht001111.v4	Sympathomimetics, oral and inhaled	sympth1c	medication	boolean	
+tca1c	pht001116.v10, pht001111.v4	Tricyclic anti-depressants	tca1c	medication	boolean	
+tcap1c	pht001116.v10, pht001111.v4	Tricyclic anti-depressants plus anti-psychotics combinations	tcap1c	medication	boolean	
+thry1c	pht001116.v10, pht001111.v4	Thyroid agents	thry1c	medication	boolean	
+thzd1c	pht001116.v10, pht001111.v4	Thiazolidinediones	thzd1c	medication	boolean	
+urcos1c	pht001116.v10, pht001111.v4	Uricosurics	urcos1c	medication	boolean	
+uazqtd1c	pht001116.v10, pht001111.v4	Uaz definite ecg qt interval-altering medication	uazqtd1c	medication	boolean	
+uazqtp1c	pht001116.v10, pht001111.v4	Uaz possible ecg qt interval-altering medication	uazqtp1c	medication	boolean	
+vaso1c	pht001116.v10, pht001111.v4	Vasodilators, a mixed group	vaso1c	medication	boolean	
+vasod1c	pht001116.v10, pht001111.v4	Vasodilators with diuretics, a mixed group	vasod1c	medication	boolean	
+verir1c	pht001116.v10, pht001111.v4	Immediate-release verapamil	verir1c	medication	boolean	
+versr1c	pht001116.v10, pht001111.v4	Slow-release verapamil	versr1c	medication	boolean	
+warf1c	pht001116.v10, pht001111.v4	Oral anticoagulants including warfarin, coumadin, and anisindione	warf1c	medication	boolean	
+wtls1c	pht001116.v10, pht001111.v4	Weight loss drugs	wtls1c	medication	boolean	
+xoi1c	pht001116.v10, pht001111.v4	Xanthine oxidase inhibitors	xoi1c	medication	boolean	
+diur1c	pht001116.v10, pht001111.v4	Any diuretic	diur1c	medication	boolean	
+lipid1c	pht001116.v10, pht001111.v4	Any lipid-lowering medication	lipid1c	medication	boolean	
+aad1c	pht001116.v10	Average aortic diameter (mm)	aad1c	cardiac_mri	number	
+crdout1c	pht001116.v10	Cardiac output (l/min)	crdout1c	cardiac_mri	number	
+odapa1	pht001116.v10	Apical slice: segment a, end-diastole (mm)	odapa1	cardiac_mri	number	
+odapb1	pht001116.v10	Apical slice: segment b, end-diastole (mm)	odapb1	cardiac_mri	number	
+odapc1	pht001116.v10	Apical slice: segment c, end-diastole (mm)	odapc1	cardiac_mri	number	
+odapd1	pht001116.v10	Apical slice: segment d, end-diastole (mm)	odapd1	cardiac_mri	number	
+odape1	pht001116.v10	Apical slice: segment e, end-diastole (mm)	odape1	cardiac_mri	number	
+odapf1	pht001116.v10	Apical slice: segment f, end-diastole (mm)	odapf1	cardiac_mri	number	
+odmda1	pht001116.v10	Mid slice: segment a (inferior septum), end-diastole (mm)	odmda1	cardiac_mri	number	
+odmdb1	pht001116.v10	Mid slice: segment b (superior septum), end-diastole (mm)	odmdb1	cardiac_mri	number	
+odmdc1	pht001116.v10	Mid slice: segment c (anterior wall), end-diastole (mm)	odmdc1	cardiac_mri	number	
+odmdd1	pht001116.v10	Mid slice: segment d (superior lateral wall), end-diastole (mm)	odmdd1	cardiac_mri	number	
+odmde1	pht001116.v10	Mid slice: segment e (inferior lateral wall), end-diastole (mm)	odmde1	cardiac_mri	number	
+odmdf1	pht001116.v10	Mid slice: segment f (inferior wall), end-diastole (mm)	odmdf1	cardiac_mri	number	
+odbsa1	pht001116.v10	Basal slice: segment a (inferior septum), end-diastole (mm)	odbsa1	cardiac_mri	number	
+odbsb1	pht001116.v10	Basal slice: segment b (superior septum), end-diastole (mm)	odbsb1	cardiac_mri	number	
+odbsc1	pht001116.v10	Basal slice: segment c (anterior wall), end-diastole (mm)	odbsc1	cardiac_mri	number	
+odbsd1	pht001116.v10	Basal slice: segment d (superior lateral wall), end-diastole (mm)	odbsd1	cardiac_mri	number	
+odbse1	pht001116.v10	Basal slice: segment e (inferior lateral wall), end-diastole (mm)	odbse1	cardiac_mri	number	
+odbsf1	pht001116.v10	Basal slice: segment f (inferior wall), end-diastole (mm)	odbsf1	cardiac_mri	number	
+osapa1	pht001116.v10	Apical slice: segment a (inferior septum), end-systole (mm)	osapa1	cardiac_mri	number	
+osapb1	pht001116.v10	Apical slice: segment b (superior septum), end-systole (mm)	osapb1	cardiac_mri	number	
+osapc1	pht001116.v10	Apical slice: segment c (anterior wall), end-systole (mm)	osapc1	cardiac_mri	number	
+osapd1	pht001116.v10	Apical slice: segment d (superior lateral wall), end-systole (mm)	osapd1	cardiac_mri	number	
+osape1	pht001116.v10	Apical slice: segment e (inferior lateral wall), end-systole (mm)	osape1	cardiac_mri	number	
+osapf1	pht001116.v10	Apical slice: segment f (inferior wall), end-systole (mm)	osapf1	cardiac_mri	number	
+osmda1	pht001116.v10	Mid slice: segment a (inferior septum), end-systole (mm)	osmda1	cardiac_mri	number	
+osmdb1	pht001116.v10	Mid slice: segment b (superior septum), end-systole (mm)	osmdb1	cardiac_mri	number	
+osmdc1	pht001116.v10	Mid slice: segment c (anterior wall), end-systole (mm)	osmdc1	cardiac_mri	number	
+osmdd1	pht001116.v10	Mid slice: segment d (superior lateral wall), end-systole (mm)	osmdd1	cardiac_mri	number	
+osmde1	pht001116.v10	Mid slice: segment e (inferior lateral wall), end-systole (mm)	osmde1	cardiac_mri	number	
+osmdf1	pht001116.v10	Mid slice: segment f (inferior wall), end-systole (mm)	osmdf1	cardiac_mri	number	
+osbsa1	pht001116.v10	Basal slice: segment a (inferior septum), end-systole (mm)	osbsa1	cardiac_mri	number	
+osbsb1	pht001116.v10	Basal slice: segment b (superior septum), end-systole (mm)	osbsb1	cardiac_mri	number	
+osbsc1	pht001116.v10	Basal slice: segment c (anterior wall), end-systole (mm)	osbsc1	cardiac_mri	number	
+osbsd1	pht001116.v10	Basal slice: segment d (superior lateral wall), end-systole (mm)	osbsd1	cardiac_mri	number	
+osbse1	pht001116.v10	Basal slice: segment e (inferior lateral wall), end-systole (mm)	osbse1	cardiac_mri	number	
+osbsf1	pht001116.v10	Basal slice: segment f (inferior wall), end-systole (mm)	osbsf1	cardiac_mri	number	
+omassv1	pht001116.v10	Version of mass used	omassv1	cardiac_mri	string	
+r1wm1	pht001116.v10	Wall motion, region 1	r1wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r2wm1	pht001116.v10	Wall motion, region 2	r2wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r3wm1	pht001116.v10	Wall motion, region 3	r3wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r4wm1	pht001116.v10	Wall motion, region 4	r4wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r5wm1	pht001116.v10	Wall motion, region 5	r5wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r6wm1	pht001116.v10	Wall motion, region 6	r6wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r7wm1	pht001116.v10	Wall motion, region 7	r7wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r8wm1	pht001116.v10	Wall motion, region 8	r8wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r9wm1	pht001116.v10	Wall motion, region 9	r9wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r10wm1	pht001116.v10	Wall motion, region 10	r10wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r11wm1	pht001116.v10	Wall motion, region 11	r11wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r12wm1	pht001116.v10	Wall motion, region 12	r12wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r13wm1	pht001116.v10	Wall motion, region 13	r13wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r14wm1	pht001116.v10	Wall motion, region 14	r14wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r15wm1	pht001116.v10	Wall motion, region 15	r15wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+r16wm1	pht001116.v10	Wall motion, region 16	r16wm1	cardiac_mri	enum	UNINTERPRETABLE|NORMAL|HYPOKINESIS|AKINESIS|KYSKINESIS|ANEURYSM
+pheval1	pht001116.v10	Was the the study evaluable?	pheval1	cardiac_mri	boolean	
+globscr1	pht001116.v10	Global score	globscr1	cardiac_mri	enum	NORMAL|MINIMAL DYSFUNCTION|MODERATE DYSFUNCTION|SEVERE DYSFUNCTION
+lvh1	pht001116.v10	Lvh alert	lvh1	cardiac_mri	enum	NO REFERRAL|ABNORMAL REFERRAL|URGENT REFERRAL
+aneursm1	pht001116.v10	Aneurysm alert	aneursm1	cardiac_mri	enum	NO REFERRAL|ABNORMAL REFERRAL|URGENT REFERRAL
+perieff1	pht001116.v10	Pericard effusion alert	perieff1	cardiac_mri	enum	NO REFERRAL|ABNORMAL REFERRAL|URGENT REFERRAL
+massnd1	pht001116.v10	Mediastinal mass node alert	massnd1	cardiac_mri	enum	NO REFERRAL|ABNORMAL REFERRAL|URGENT REFERRAL
+lungmss1	pht001116.v10	Lung mass alert	lungmss1	cardiac_mri	enum	NO REFERRAL|ABNORMAL REFERRAL|URGENT REFERRAL
+bnsftts1	pht001116.v10	Bone soft tissue alert	bnsftts1	cardiac_mri	enum	NO REFERRAL|ABNORMAL REFERRAL|URGENT REFERRAL
+othalrt1	pht001116.v10	Other alert	othalrt1	cardiac_mri	enum	NO REFERRAL|ABNORMAL REFERRAL|URGENT REFERRAL
+datrcvd1	pht001116.v10	Rc received the study?	datrcvd1	cardiac_mri	boolean	
+refstat1	pht001116.v10	Overall mri alert status	refstat1	cardiac_mri	string	
+oavflw1	pht001116.v10	Flow parameter: average flow velocity (cm/sec)	oavflw1	cardiac_mri	number	
+osv1	pht001116.v10	Flow parameter: stroke volume	osv1	cardiac_mri	number	
+ovpm1	pht001116.v10	Flow parameter: volume per minute	ovpm1	cardiac_mri	number	
+rchrtrt1	pht001116.v10	Heart rate (bpm)	rchrtrt1	cardiac_mri	number	
+lvedd1c	pht001116.v10	Lv end-diastolic diameter (mm), computed (devereux, am j cardiol 1986)	lvedd1c	cardiac_mri	number	
+nviolen1	pht001116.v10, pht001111.v4	Violence problem in neighborhood	nviolen1	socio_demo_questionnaire	enum	VERY SERIOUS PROBLEM|SOMEWHAT SERIOUS PROBLEM|MINOR PROBLEM|NOT REALLY A PROBLEM
+nsdwlk1	pht001116.v10, pht001111.v4	Poor sidewalks in neighborhood	nsdwlk1	socio_demo_questionnaire	enum	VERY SERIOUS PROBLEM|SOMEWHAT SERIOUS PROBLEM|MINOR PROBLEM|NOT REALLY A PROBLEM
+ntrash1	pht001116.v10, pht001111.v4	Trash and litter problem in neighborhood	ntrash1	socio_demo_questionnaire	enum	VERY SERIOUS PROBLEM|SOMEWHAT SERIOUS PROBLEM|MINOR PROBLEM|NOT REALLY A PROBLEM
+nlparks1	pht001116.v10, pht001111.v4	Lack of parks/playgrounds in neighborhood	nlparks1	socio_demo_questionnaire	enum	VERY SERIOUS PROBLEM|SOMEWHAT SERIOUS PROBLEM|MINOR PROBLEM|NOT REALLY A PROBLEM
+nlfshop1	pht001116.v10, pht001111.v4	Lack of adequate food shopping in neighborhood	nlfshop1	socio_demo_questionnaire	enum	VERY SERIOUS PROBLEM|SOMEWHAT SERIOUS PROBLEM|MINOR PROBLEM|NOT REALLY A PROBLEM
+ntraf1	pht001116.v10, pht001111.v4	Heavy traffic or speeding cars in neighborhood	ntraf1	socio_demo_questionnaire	enum	VERY SERIOUS PROBLEM|SOMEWHAT SERIOUS PROBLEM|MINOR PROBLEM|NOT REALLY A PROBLEM
+nnoise1	pht001116.v10, pht001111.v4	Excessive noise in neighborhood	nnoise1	socio_demo_questionnaire	enum	VERY SERIOUS PROBLEM|SOMEWHAT SERIOUS PROBLEM|MINOR PROBLEM|NOT REALLY A PROBLEM
+nsafe1	pht001116.v10, pht001111.v4	How safe is neighborhood from crime	nsafe1	socio_demo_questionnaire	enum	VERY SAFE|BETWEEN VERY SAFE AND SAFE|SAFE|BETWEEN SAFE AND NOT AT ALL SAFE|NOT AT ALL SAFE
+nvalues1	pht001116.v10, pht001111.v4	People in neighborhood do not share the same values	nvalues1	socio_demo_questionnaire	enum	STRONGLY AGREE|AGREE|NEITHER AGREE NOR DISAGREE|DISAGREE|STRONGLY DISAGREE
+ntrust1	pht001116.v10, pht001111.v4	People in neighborhood can be trusted	ntrust1	socio_demo_questionnaire	enum	STRONGLY AGREE|AGREE|NEITHER AGREE NOR DISAGREE|DISAGREE|STRONGLY DISAGREE
+ndgalng1	pht001116.v10, pht001111.v4	People in neighborhood don't get along	ndgalng1	socio_demo_questionnaire	enum	STRONGLY AGREE|AGREE|NEITHER AGREE NOR DISAGREE|DISAGREE|STRONGLY DISAGREE
+nhelp1	pht001116.v10, pht001111.v4	People willing to help their neighbors	nhelp1	socio_demo_questionnaire	enum	STRONGLY AGREE|AGREE|NEITHER AGREE NOR DISAGREE|DISAGREE|STRONGLY DISAGREE
+nclose1	pht001116.v10, pht001111.v4	Close-knit neighborhood	nclose1	socio_demo_questionnaire	enum	STRONGLY AGREE|AGREE|NEITHER AGREE NOR DISAGREE|DISAGREE|STRONGLY DISAGREE
+nhdmo1	pht001116.v10, pht001111.v4	Number of months lived in neighborhood	nhdmo1	socio_demo_questionnaire	number	
+nhdyrs1	pht001116.v10, pht001111.v4	Number of years lived in neighborhood	nhdyrs1	socio_demo_questionnaire	number	
+nhdblks1	pht001116.v10, pht001111.v4	Number of blocks in neighborhood	nhdblks1	socio_demo_questionnaire	number	
+ncohes1c	pht001116.v10, pht001111.v4	Neighborhood social cohesion score	ncohes1c	socio_demo_questionnaire	number	
+nprob1c	pht001116.v10, pht001111.v4	Neighborhood problems score	nprob1c	socio_demo_questionnaire	number	
+nhdtim1c	pht001116.v10, pht001111.v4	How long lived in neighborhood (yrs)	nhdtim1c	socio_demo_questionnaire	number	
+nhdadm1	pht001116.v10, pht001111.v4	Questionnaire administrator - neighborhood	nhdadm1	socio_demo_questionnaire	enum	SELF-ADMIN|INTERVIEWER-ADMIN
+yrsus1	pht001116.v10, pht001111.v4	# years lived in u.s.a	yrsus1	socio_demo_questionnaire	number	
+RgnBth1c	pht001116.v10, pht001111.v4	Region of birth in us - self	RgnBth1c	socio_demo_questionnaire	enum	WEST|MIDWEST|SOUTH|NORTHEAST
+hctryo1c	pht001116.v10, pht001111.v4	Country or region of hispanic origin	hctryo1c	socio_demo_questionnaire	string	
+cig1c	pht001116.v10, pht001111.v4	Cigarette smoking status	cig1c	socio_demo_questionnaire	enum	NEVER|FORMER|CURRENT
+langhm1	pht001116.v10, pht001111.v4	Language spoken in home	langhm1	socio_demo_questionnaire	enum	ENGLISH|SPANISH|CANTONESE|MANDARIN|OTHER
+lngeng1	pht001116.v10, pht001111.v4	English spoken in home	lngeng1	socio_demo_questionnaire	boolean	
+lngsp1	pht001116.v10, pht001111.v4	Spanish spoken in home	lngsp1	socio_demo_questionnaire	boolean	
+lngcan1	pht001116.v10, pht001111.v4	Cantonese spoken in home	lngcan1	socio_demo_questionnaire	boolean	
+lngman1	pht001116.v10, pht001111.v4	Mandarin spoken in home	lngman1	socio_demo_questionnaire	boolean	
+lngoth1	pht001116.v10, pht001111.v4	Other language spoken in home	lngoth1	socio_demo_questionnaire	boolean	
+otlngtx1	pht001116.v10, pht001111.v4	Specify other language spoken in home	otlngtx1	socio_demo_questionnaire	string	
+marital1	pht001116.v10, pht001111.v4	Marital status	marital1	socio_demo_questionnaire	enum	MARRIED/LIVING AS MARRIED|WIDOWED|DIVORCED|SEPARATED|NEVER MARRIED|PREFER NOT TO ANSWER
+educ1	pht001116.v10, pht001111.v4	Education: highest level completed	educ1	socio_demo_questionnaire	enum	NO SCHOOLING|GRADES 1-8|GRADES 9-11|COMPLETED HIGH SCHOOL/GED|SOME COLLEGE BUT NO DEGREE|TECHNICAL SCHOOL CERTIFICATE|ASSOCIATE DEGREE|BACHELOR'S DEGREE|GRADUATE OR PROFESSIONAL SCHOOL
+othssn1	pht001116.v10, pht001111.v4	Get medicare benefits using ssn other than own	othssn1	socio_demo_questionnaire	boolean	
+curjob1	pht001116.v10, pht001111.v4	Current occupation	curjob1	socio_demo_questionnaire	enum	HOMEMAKER|EMPLOYED FULL TIME|EMPLOYED PART TIME|EMPLOYED ON-LEAVE (HEALTH)|EMPLOYED ON-LEAVE (NON-HEALTH)|UNEMPLOYED < 6 MONTHS|UNEMPLOYED > 6 MONTHS|RETIRED NOT WORKING|RETIRED WORKING|RETIRED VOLUNTEERING
+homemkr1	pht001116.v10, pht001111.v4	Current homemaker: previously work outside the home	homemkr1	socio_demo_questionnaire	boolean	
+income1	pht001116.v10, pht001111.v4	Total gross family income, past 12 months	income1	socio_demo_questionnaire	enum	< $5,000|$5,000 - 7,999|$8,000 - 11,999|$12,000 - 15,999|$16,000 - 19,999|$20,000 - 24,999|$25,000 - 29,999|$30,000 - 34,999|$35,000 - 39,999|$40,000 - 49,999|$50,000 - 74,999|$75,000 - 99,999|$100,000 +
+nhhldc1	pht001116.v10, pht001111.v4	# children supported by family income	nhhldc1	socio_demo_questionnaire	number	
+numhhld1	pht001116.v10, pht001111.v4	# people supported by family income	numhhld1	socio_demo_questionnaire	number	
+nhhlde1	pht001116.v10, pht001111.v4	# adults age > 65 supported by family income	nhhlde1	socio_demo_questionnaire	number	
+hometyp1	pht001116.v10, pht001111.v4	Residence - own or rent	hometyp1	socio_demo_questionnaire	enum	RENT|PAY A MORTGAGE|OWN FREE AND CLEAR|OTHER
+medcare1	pht001116.v10, pht001111.v4	Where do you go for medical care	medcare1	socio_demo_questionnaire	enum	DOCTOR'S OFFICE/CLINIC|HOSPITAL OR EMERGENCY ROOM|OTHER
+hiprv1	pht001116.v10, pht001111.v4	Hmo, private insurance	hiprv1	socio_demo_questionnaire	boolean	
+himdcr1	pht001116.v10, pht001111.v4	Medicare	himdcr1	socio_demo_questionnaire	boolean	
+himdcd1	pht001116.v10, pht001111.v4	Medicaid	himdcd1	socio_demo_questionnaire	boolean	
+himil1	pht001116.v10, pht001111.v4	Military or va sponsored medical care	himil1	socio_demo_questionnaire	boolean	
+hinone1	pht001116.v10, pht001111.v4	No health insurance	hinone1	socio_demo_questionnaire	boolean	
+hioth1	pht001116.v10, pht001111.v4	Other type of health insurance	hioth1	exposure	boolean	
+evsmk1	pht001116.v10, pht001111.v4	Smoked at least 100 cigarettes in lifetime	evsmk1	exposure	boolean	
+agesmk1	pht001116.v10, pht001111.v4	Cigarettes: age started smoking	agesmk1	exposure	number	
+cursmk1	pht001116.v10, pht001111.v4	Cigarettes: smoked in last 30 days	cursmk1	exposure	boolean	
+agequit1	pht001116.v10, pht001111.v4	Cigarettes: age quit smoking	agequit1	exposure	number	
+cigsday1	pht001116.v10, pht001111.v4	Cigarettes: average # smoked per day	cigsday1	exposure	number	
+othtob1	pht001116.v10, pht001111.v4	Ever used other tobacco products	othtob1	exposure	boolean	
+cigar1	pht001116.v10, pht001111.v4	Smoked more than 20 cigars in lifetime	cigar1	exposure	boolean	
+cgrage1	pht001116.v10, pht001111.v4	Cigars: age started smoking	cgrage1	exposure	number	
+cgrcur1	pht001116.v10, pht001111.v4	Cigars: smoked in last 30 days	cgrcur1	exposure	boolean	
+cgrageq1	pht001116.v10, pht001111.v4	Cigars: age quit smoking	cgrageq1	exposure	number	
+cgrday1	pht001116.v10, pht001111.v4	Cigars: average # smoked per day	cgrday1	exposure	number	
+pipe1	pht001116.v10, pht001111.v4	Smoked at least 20 pipefuls of tobacco in lifetime	pipe1	exposure	boolean	
+pipage1	pht001116.v10, pht001111.v4	Pipe: age started smoking	pipage1	exposure	number	
+pipcur1	pht001116.v10, pht001111.v4	Pipe: smoked in last 30 days	pipcur1	exposure	boolean	
+pipageq1	pht001116.v10, pht001111.v4	Pipe: age quit smoking	pipageq1	exposure	number	
+pipday1	pht001116.v10, pht001111.v4	Pipe: average # smoked per day	pipday1	exposure	number	
+chew1	pht001116.v10, pht001111.v4	Chewed tobacco at least 20 times in lifetime	chew1	exposure	boolean	
+chwage1	pht001116.v10, pht001111.v4	Chewing tobacco: age started use	chwage1	exposure	number	
+chwcur1	pht001116.v10, pht001111.v4	Chewing tobacco: used in last 30 days	chwcur1	exposure	boolean	
+chwageq1	pht001116.v10, pht001111.v4	Chewing tobacco: age quit use	chwageq1	exposure	number	
+chwday1	pht001116.v10, pht001111.v4	Chewing tobacco: average # uses per day	chwday1	exposure	number	
+snuff1	pht001116.v10, pht001111.v4	Used snuff at least 20 times in lifetime	snuff1	exposure	boolean	
+snfage1	pht001116.v10, pht001111.v4	Snuff: age started use	snfage1	exposure	number	
+snfcur1	pht001116.v10, pht001111.v4	Snuff: used in last 30 days	snfcur1	exposure	boolean	
+snfageq1	pht001116.v10, pht001111.v4	Snuff: age quit use	snfageq1	exposure	number	
+snfday1	pht001116.v10, pht001111.v4	Snuff: average # uses per day	snfday1	exposure	number	
+shndsmk1	pht001116.v10, pht001111.v4	Exposure to second-hand smoke, hours per week	shndsmk1	exposure	number	
+alcohol1	pht001116.v10, pht001111.v4	Ever consumed alcoholic beverages	alcohol1	exposure	boolean	
+alcage1	pht001116.v10, pht001111.v4	Alcohol: age started drinking	alcage1	exposure	number	
+curalc1	pht001116.v10, pht001111.v4	Alcohol: current use	curalc1	exposure	boolean	
+yrsalcp1	pht001116.v10, pht001111.v4	# years drinking alcohol (former drinkers)	yrsalcp1	exposure	number	
+wine1	pht001116.v10, pht001111.v4	Drank wine (former drinkers)	wine1	exposure	boolean	
+beer1	pht001116.v10, pht001111.v4	Drank beer (former drinkers)	beer1	exposure	boolean	
+hardliq1	pht001116.v10, pht001111.v4	Hard liquor (former drinkers)	hardliq1	exposure	boolean	
+othalc1	pht001116.v10, pht001111.v4	Other alcohol (former drinkers)	othalc1	exposure	boolean	
+alcwkp1	pht001116.v10, pht001111.v4	# drinks per week when drinking (former drinkers)	alcwkp1	exposure	number	
+yrsalcc1	pht001116.v10, pht001111.v4	# years drinking alcohol (current drinkers)	yrsalcc1	exposure	number	
+yrsalc1c	pht001116.v10, pht001111.v4	# years drinking alcohol (current and former drinkers)	yrsalc1c	exposure	number	
+alcwkc1	pht001116.v10, pht001111.v4	# drinks per week (current drinkers)	alcwkc1	exposure	number	
+alcwk1c	pht001116.v10, pht001111.v4	# drinks per week (current and former drinkers)	alcwk1c	exposure	number	
+alc24hr1	pht001116.v10, pht001111.v4	Drinks in past 24 hours (current drinkers)	alc24hr1	exposure	number	
+phxloch1	pht001116.v10, pht001111.v4	Form completed at home	phxloch1	exposure	boolean	
+phxlocc1	pht001116.v10, pht001111.v4	Form completed at clinic	phxlocc1	exposure	boolean	
+phxadm1	pht001116.v10, pht001111.v4	Questionnaire administrator - personal history	phxadm1	exposure	enum	SELF-ADMIN|INTERVIEWER-ADMIN
+highalc1	pht001116.v10, pht001111.v4	Largest # of drinks in one day, in past month (current drinkers)	highalc1	exposure	number	
+cgr1c	pht001116.v10, pht001111.v4	Cigar smoking status	cgr1c	exposure	enum	NEVER|FORMER|CURRENT
+cgryrs1c	pht001116.v10, pht001111.v4	Cigar smoking amount (cigars per day * years)	cgryrs1c	exposure	number	
+pip1c	pht001116.v10, pht001111.v4	Pipe smoking status	pip1c	exposure	enum	NEVER|FORMER|CURRENT
+pipyrs1c	pht001116.v10, pht001111.v4	Pipe smoking amount (pipefuls per day * years)	pipyrs1c	exposure	number	
+chew1c	pht001116.v10, pht001111.v4	Chewing tobacco use	chew1c	exposure	enum	NEVER|FORMER|CURRENT
+chwyrs1c	pht001116.v10, pht001111.v4	Chewing tobacco amount (# times chewed per day * years)	chwyrs1c	exposure	number	
+snf1c	pht001116.v10, pht001111.v4	Snuff use	snf1c	exposure	enum	NEVER|FORMER|CURRENT
+snfyrs1c	pht001116.v10, pht001111.v4	Snuff use amount (# times use per day * years)	snfyrs1c	exposure	number	
+alc1c	pht001116.v10, pht001111.v4	Alcohol use	alc1c	exposure	enum	NEVER|FORMER|CURRENT
+pactadm1	pht001116.v10, pht001111.v4	Pa questionnaire: mode of administration	pactadm1	exposure	enum	MISSING|SELF-ADMINISTERED|INTERVIEWER-ADMINISTERED
+q01hlcn1	pht001116.v10, pht001111.v4	1: light household chores min/wk m-su	q01hlcn1	physical_activity_questionnaire	number	
+q01hlcm1	pht001116.v10, pht001111.v4	1: light household chores met-min/wk m-su	q01hlcm1	physical_activity_questionnaire	number	
+q02hmcn1	pht001116.v10, pht001111.v4	2: moderate household chores min/wk m-su	q02hmcn1	physical_activity_questionnaire	number	
+q02hmcm1	pht001116.v10, pht001111.v4	2: moderate household chores met-min/wk m-su	q02hmcm1	physical_activity_questionnaire	number	
+hsemn1c	pht001116.v10, pht001111.v4	Total household chores min/wk m-su	hsemn1c	physical_activity_questionnaire	number	
+hsemt1c	pht001116.v10, pht001111.v4	Total household chores met-min/wk m-su	hsemt1c	physical_activity_questionnaire	number	
+q03ymcn1	pht001116.v10, pht001111.v4	3: moderate yard work min/wk m-su	q03ymcn1	physical_activity_questionnaire	number	
+q03ymcm1	pht001116.v10, pht001111.v4	3: moderate yard work met-min/wk m-su	q03ymcm1	physical_activity_questionnaire	number	
+q04yvcn1	pht001116.v10, pht001111.v4	4: vigorous yard work min/wk m-su	q04yvcn1	physical_activity_questionnaire	number	
+q04yvcm1	pht001116.v10, pht001111.v4	4: vigorous yard work met-min/wk m-su	q04yvcm1	physical_activity_questionnaire	number	
+yrdmn1c	pht001116.v10, pht001111.v4	Total yard work min/wk m-su	yrdmn1c	physical_activity_questionnaire	number	
+yrdmt1c	pht001116.v10, pht001111.v4	Total yard work met-min/wk m-su	yrdmt1c	physical_activity_questionnaire	number	
+q05olcn1	pht001116.v10, pht001111.v4	5: light care others min/wk m-su	q05olcn1	physical_activity_questionnaire	number	
+q05olcm1	pht001116.v10, pht001111.v4	5: light care others met-min/wk m-su	q05olcm1	physical_activity_questionnaire	number	
+q06omcn1	pht001116.v10, pht001111.v4	6: moderate care others min/wk m-su	q06omcn1	physical_activity_questionnaire	number	
+q06omcm1	pht001116.v10, pht001111.v4	6: moderate care others met-min/wk m-su	q06omcm1	physical_activity_questionnaire	number	
+caremn1c	pht001116.v10, pht001111.v4	Total care others min/wk m-su	caremn1c	physical_activity_questionnaire	number	
+caremt1c	pht001116.v10, pht001111.v4	Total care others met-min/wk m-su	caremt1c	physical_activity_questionnaire	number	
+q07tlcn1	pht001116.v10, pht001111.v4	7: light transportation min/wk m-su	q07tlcn1	physical_activity_questionnaire	number	
+q07tlcm1	pht001116.v10, pht001111.v4	7: light transportation met-min/wk m-su	q07tlcm1	physical_activity_questionnaire	number	
+trnmn1c	pht001116.v10, pht001111.v4	Total transportation min/wk m-su	trnmn1c	physical_activity_questionnaire	number	
+trnmt1c	pht001116.v10, pht001111.v4	Total transportation met-min/wk m-su	trnmt1c	physical_activity_questionnaire	number	
+q08wmcn1	pht001116.v10, pht001111.v4	8: moderate walking min/wk m-su	q08wmcn1	physical_activity_questionnaire	number	
+q08wmcm1	pht001116.v10, pht001111.v4	8: moderate walking met-min/wk m-su	q08wmcm1	physical_activity_questionnaire	number	
+q09wmcn1	pht001116.v10, pht001111.v4	9: moderate walking exercise min/wk m-su	q09wmcn1	physical_activity_questionnaire	number	
+q09wmcm1	pht001116.v10, pht001111.v4	9: moderate walking exercise met-min/wk m-su	q09wmcm1	physical_activity_questionnaire	number	
+walkmn1c	pht001116.v10, pht001111.v4	Total walking min//wk m-su	walkmn1c	physical_activity_questionnaire	number	
+walkmt1c	pht001116.v10, pht001111.v4	Total walking met-min/wk m-su	walkmt1c	physical_activity_questionnaire	number	
+q10smcn1	pht001116.v10, pht001111.v4	10: moderate dance min/wk m-su	q10smcn1	physical_activity_questionnaire	number	
+q10smcm1	pht001116.v10, pht001111.v4	10: moderate dance met-min/wk m-su	q10smcm1	physical_activity_questionnaire	number	
+q11svcn1	pht001116.v10, pht001111.v4	11: vigorous team sports min/wk m-su	q11svcn1	physical_activity_questionnaire	number	
+q11svcm1	pht001116.v10, pht001111.v4	11: vigorous team sports met-min/wk m-su	q11svcm1	physical_activity_questionnaire	number	
+q12svcn1	pht001116.v10, pht001111.v4	12: vigorous dual sports min/wk m-su	q12svcn1	physical_activity_questionnaire	number	
+q12svcm1	pht001116.v10, pht001111.v4	12: vigorous dual sports met-min/wk m-su	q12svcm1	physical_activity_questionnaire	number	
+q13smcn1	pht001116.v10, pht001111.v4	13: moderate individual activities min/wk m-su	q13smcn1	physical_activity_questionnaire	number	
+q13smcm1	pht001116.v10, pht001111.v4	13: moderate individual activities met-min/wk m-su	q13smcm1	physical_activity_questionnaire	number	
+sptnmn1c	pht001116.v10, pht001111.v4	Total dance/sport min/wk m-su	sptnmn1c	physical_activity_questionnaire	number	
+sptnmt1c	pht001116.v10, pht001111.v4	Total dance/sport met-min/wk m-su	sptnmt1c	physical_activity_questionnaire	number	
+q14cmcn1	pht001116.v10, pht001111.v4	14: moderate conditioning min/wk m-su	q14cmcn1	physical_activity_questionnaire	number	
+q14cmcm1	pht001116.v10, pht001111.v4	14: moderate conditioning met-min/wk m-su	q14cmcm1	physical_activity_questionnaire	number	
+q15cvcn1	pht001116.v10, pht001111.v4	15: vigorous conditioning min/wk m-su	q15cvcn1	physical_activity_questionnaire	number	
+q15cvcm1	pht001116.v10, pht001111.v4	15: vigorous conditioning met-min/wk m-su	q15cvcm1	physical_activity_questionnaire	number	
+condmn1c	pht001116.v10, pht001111.v4	Total conditioning min/wk m-su	condmn1c	physical_activity_questionnaire	number	
+condmt1c	pht001116.v10, pht001111.v4	Total conditioning met-min/wk m-su	condmt1c	physical_activity_questionnaire	number	
+q16ilcn1	pht001116.v10, pht001111.v4	16: light leisure tv min/wk m-su	q16ilcn1	physical_activity_questionnaire	number	
+q16ilcm1	pht001116.v10, pht001111.v4	16: light leisure tv met-min/wk m-su	q16ilcm1	physical_activity_questionnaire	number	
+q17ilcn1	pht001116.v10, pht001111.v4	17: light leisure read min/wk m-su	q17ilcn1	physical_activity_questionnaire	number	
+q17ilcm1	pht001116.v10, pht001111.v4	17: light leisure read met-min/wk m-su	q17ilcm1	physical_activity_questionnaire	number	
+leismn1c	pht001116.v10, pht001111.v4	Total leisure min/wk m-su	leismn1c	physical_activity_questionnaire	number	
+leismt1c	pht001116.v10, pht001111.v4	Total leisure met-min/wk m-su	leismt1c	physical_activity_questionnaire	number	
+q18jyn1	pht001116.v10, pht001111.v4	Work to earn money?	q18jyn1	physical_activity_questionnaire	number	
+q19wcn1	pht001116.v10, pht001111.v4	19: total work (q19) min/wk m-su	q19wcn1	physical_activity_questionnaire	number	
+q20jlcn1	pht001116.v10, pht001111.v4	20: light work sitting min/wk m-su	q20jlcn1	physical_activity_questionnaire	number	
+q20jlcm1	pht001116.v10, pht001111.v4	20: light work sitting met-min/wk m-su	q20jlcm1	physical_activity_questionnaire	number	
+q21jlcn1	pht001116.v10, pht001111.v4	21: light work standing min/wk m-su	q21jlcn1	physical_activity_questionnaire	number	
+q21jlcm1	pht001116.v10, pht001111.v4	21: light work standing met-min/wk m-su	q21jlcm1	physical_activity_questionnaire	number	
+q22jmcn1	pht001116.v10, pht001111.v4	22: moderate work min/wk m-su	q22jmcn1	physical_activity_questionnaire	number	
+q22jmcm1	pht001116.v10, pht001111.v4	22: moderate work met-min/wk m-su	q22jmcm1	physical_activity_questionnaire	number	
+q23jvcn1	pht001116.v10, pht001111.v4	23: vigorous work min/wk m-su	q23jvcn1	physical_activity_questionnaire	number	
+q23jvcm1	pht001116.v10, pht001111.v4	23: vigorous work met-min/wk m-su	q23jvcm1	physical_activity_questionnaire	number	
+occmn1c	pht001116.v10, pht001111.v4	Total work min m-su/wk	occmn1c	physical_activity_questionnaire	number	
+occmt1c	pht001116.v10, pht001111.v4	Total work met-min/wk m-su	occmt1c	physical_activity_questionnaire	number	
+q24uyn1	pht001116.v10, pht001111.v4	24: work as a volunteer?	q24uyn1	physical_activity_questionnaire	number	
+q25ulcn1	pht001116.v10, pht001111.v4	25: light volunteer min/wk m-su	q25ulcn1	physical_activity_questionnaire	number	
+q25ulcm1	pht001116.v10, pht001111.v4	25: light volunteer met-min/wk m-su	q25ulcm1	physical_activity_questionnaire	number	
+q26umcn1	pht001116.v10, pht001111.v4	26: moderate volunteer min/wk m-su	q26umcn1	physical_activity_questionnaire	number	
+q26umcm1	pht001116.v10, pht001111.v4	26: moderate volunteer met-min/wk m-su	q26umcm1	physical_activity_questionnaire	number	
+q27uvcn1	pht001116.v10, pht001111.v4	27: vigorous volunteer min/wk m-su	q27uvcn1	physical_activity_questionnaire	number	
+q27uvcm1	pht001116.v10, pht001111.v4	27: vigorous volunteer met-min/wk m-su	q27uvcm1	physical_activity_questionnaire	number	
+volmn1c	pht001116.v10, pht001111.v4	Total volunteer min/wk m-su	volmn1c	physical_activity_questionnaire	number	
+volmt1c	pht001116.v10, pht001111.v4	Total volunteer met-min/wk m-su	volmt1c	physical_activity_questionnaire	number	
+wlkpace1	pht001116.v10, pht001111.v4	Walking pace outside home	wlkpace1	physical_activity_questionnaire	enum	NO WALKING AT ALL|CASUAL STROLLING (<2 MPH)|AVERAGE OR NORMAL (2-3 MPH)|FAIRLY BRISKLY (4-5 MPH)|BRISK OR STRIDING (>5 MPH)
+pahrdy1c	pht001116.v10, pht001111.v4	Reported total pa hours per day	pahrdy1c	physical_activity_questionnaire	number	
+wkhrwk1c	pht001116.v10, pht001111.v4	Reported total work hours per week	wkhrwk1c	physical_activity_questionnaire	number	
+exercm1c	pht001116.v10, pht001111.v4	Total intentional exercise (q9-15) met-min/wk	exercm1c	physical_activity_questionnaire	number	
+pamcm1c	pht001116.v10, pht001111.v4	Moderate physical activity total (met-min/wk m-su)	pamcm1c	physical_activity_questionnaire	number	
+pavcm1c	pht001116.v10, pht001111.v4	Vigorous physical activity total (met-min/wk m-su)	pavcm1c	physical_activity_questionnaire	number	
+pamvcm1c	pht001116.v10, pht001111.v4	Moderate and vigorous physical activity total (met-min/wk m-su)	pamvcm1c	physical_activity_questionnaire	number	
+sbpcp1	pht001116.v10, pht001111.v4	Systolic blood pressure (from oscillometric cuff), (mmhg)	sbpcp1	blood_pressure_test	number	
+dbpcp1	pht001116.v10, pht001111.v4	Diastolic blood pressure (from oscillometric cuff), (mmhg)	dbpcp1	blood_pressure_test	number	
+mnapcp1	pht001116.v10, pht001111.v4	Mean arterial pressure (from oscillometric cuff), (mmhg)	mnapcp1	blood_pressure_test	number	
+pprescp1	pht001116.v10, pht001111.v4	Pulse pressure (from oscillometric cuff), (mmhg)	pprescp1	blood_pressure_test	number	
+pulsecp1	pht001116.v10, pht001111.v4	Pulse rate (from oscillometric cuff), (beats/minute)	pulsecp1	blood_pressure_test	number	
+sbpwp1	pht001116.v10, pht001111.v4	Systolic blood pressure (from waveform analysis), (mmhg)	sbpwp1	blood_pressure_test	number	
+dbpwp1	pht001116.v10, pht001111.v4	Diastolic blood pressure (from waveform analysis), (mmhg)	dbpwp1	blood_pressure_test	number	
+mnapwp1	pht001116.v10, pht001111.v4	Mean arterial pressure (from waveform analysis), (mmhg)	mnapwp1	blood_pressure_test	number	
+pulsewp1	pht001116.v10, pht001111.v4	Pulse rate (from waveform analysis), (beats/minute)	pulsewp1	blood_pressure_test	number	
+lae1c	pht001116.v10, pht001111.v4	Large artery elasticity index (ml/mmhg x10)	lae1c	blood_pressure_test	number	
+sae1c	pht001116.v10, pht001111.v4	Small artery elasticity index (ml/mmhg x100)	sae1c	blood_pressure_test	number	
+svr1c	pht001116.v10, pht001111.v4	Systemic vascular resistance (dyne sec / cm5)	svr1c	blood_pressure_test	number	
+totvip1	pht001116.v10, pht001111.v4	Total vascular impedance (dyne sec / cm5) (machine computed)	totvip1	blood_pressure_test	number	
+eco1c	pht001116.v10, pht001111.v4	Estimated cardiac output (l/minute)	eco1c	blood_pressure_test	number	
+cardx1c	pht001116.v10, pht001111.v4	Estimated cardiac output index	cardx1c	blood_pressure_test	number	
+cejectp1	pht001116.v10, pht001111.v4	Estimated cardiac ejection time, (millisecond)	cejectp1	blood_pressure_test	number	
+stkvol1c	pht001116.v10, pht001111.v4	Estimated stroke volume (ml/beat)	stkvol1c	blood_pressure_test	number	
+stkvx1c	pht001116.v10, pht001111.v4	Estimated stroke volume index	stkvx1c	blood_pressure_test	number	
+dmapnum1	pht001116.v10, pht001111.v4	Dinamap number	dmapnum1	blood_pressure_test	number	
+armcm1	pht001116.v10, pht001111.v4	Arm circumference (cm)	armcm1	blood_pressure_test	number	
+cuffsz1	pht001116.v10, pht001111.v4	Seated bp cuff size	cuffsz1	blood_pressure_test	enum	SMALL ADULT (17-25cm)|ADULT (25.1-33cm)|LARGE ADULT (33.1-40cm)|THIGH (40.1-50cm)|FOREARM, ADULT (25.1-33cm)|FOREARM, LARGE ADULT (33.1-40cm)
+s1bp1	pht001116.v10, pht001111.v4	Seated bp: systolic 1st reading (mmhg)	s1bp1	blood_pressure_test	number	
+d1bp1	pht001116.v10, pht001111.v4	Seated bp: diastolic 1st reading (mmhg)	d1bp1	blood_pressure_test	number	
+bptm1	pht001116.v10, pht001111.v4	Time of day, seated bp	bptm1	blood_pressure_test	string	
+s2bp1	pht001116.v10, pht001111.v4	Seated bp: systolic 2nd reading (mmhg)	s2bp1	blood_pressure_test	number	
+d2bp1	pht001116.v10, pht001111.v4	Seated bp: diastolic 2nd reading (mmhg)	d2bp1	blood_pressure_test	number	
+s3bp1	pht001116.v10, pht001111.v4	Seated bp: systolic 3rd reading (mmhg)	s3bp1	blood_pressure_test	number	
+d3bp1	pht001116.v10, pht001111.v4	Seated bp: diastolic 3rd reading (mmhg)	d3bp1	blood_pressure_test	number	
+rmtempf1	pht001116.v10, pht001111.v4	Room temperature (fahrenheit), seated bp	rmtempf1	blood_pressure_test	number	
+sbp1c	pht001116.v10, pht001111.v4	Seated systolic blood pressure (mmhg)	sbp1c	blood_pressure_test	number	
+dbp1c	pht001116.v10, pht001111.v4	Seated diastolic blood pressure (mmhg)	dbp1c	blood_pressure_test	number	
+spp1c	pht001116.v10, pht001111.v4	Seated pulse pressure (mmhg)	spp1c	blood_pressure_test	number	
+dcoeff1	pht001116.v10, pht001111.v4	Distensibility coefficient	dcoeff1	blood_pressure_test	number	
+youngm1	pht001116.v10, pht001111.v4	Youngs modulus	youngm1	blood_pressure_test	number	
+ualbumn1	pht001116.v10, pht001111.v4	Urinary albumin (mg/dl)	ualbumn1	lab_result	number	
+ualbcre1	pht001116.v10, pht001111.v4	Urinary albumin/creatinine (mg/g)	ualbcre1	lab_result	number	
+ualbcre1t	pht001116.v10, pht001111.v4	Natural log transformed ratio of urinary albumin (mg) to creatinine (g)	ualbcre1t	lab_result	number	
+ucreat1	pht001116.v10, pht001111.v4	Urinary creatinine (mg/dl)	ucreat1	lab_result	number	
+uabcat1c	pht001116.v10, pht001111.v4	Urine: microalbuminuria	uabcat1c	lab_result	enum	NORMAL|MICROALBUMINURIA|MACROALBUMINURIA
+dmtype1c	pht001116.v10, pht001111.v4	Diabetes type	dmtype1c	diagnosis	enum	TYPE 1 DIABETES|TYPE 2 DIABETES|NOT APPLICABLE
+mtsy031c	pht001116.v10, pht001111.v4	Metabolic syndrome by updated ncep guidelines (circulation 2004;109;433-438)	mtsy031c	diagnosis	boolean	
+inslnr1t	pht001116.v10, pht001111.v4	Serum insulin recoded to e5 elecsys scale (mu/l)	inslnr1t	lab_result	number	
+vldlp31c	pht001116.v10, pht001111.v4	Vldl particles (total) (nmol/l) from nmr lipoprofile-3 spectral analysis	vldlp31c	lab_result	number	
+vl31	pht001116.v10, pht001111.v4	Large vldl >60 nm (nmol/l) from nmr lipoprofile-3 spectral analysis	vl31	lab_result	number	
+vm31	pht001116.v10, pht001111.v4	Medium vldl 35-60 nm (nmol/l) from nmr lipoprofile-3 spectral analysis	vm31	lab_result	number	
+vs31	pht001116.v10, pht001111.v4	Small vldl 29-35 nm (nmol/l) from nmr lipoprofile-3 spectral analysis	vs31	lab_result	number	
+ldlp31c	pht001116.v10, pht001111.v4	Ldl particles (total) (nmol/l) from nmr lipoprofile-3 spectral analysis	ldlp31c	lab_result	number	
+idl31	pht001116.v10, pht001111.v4	Idl 23-29 nm (nmol/l) from nmr lipoprofile-3 spectral analysis	idl31	lab_result	number	
+ll31	pht001116.v10, pht001111.v4	Large ldl 20.5-23 nm (nmol/l) from nmr lipoprofile-3 spectral analysis	ll31	lab_result	number	
+ls31	pht001116.v10, pht001111.v4	Small ldl 18-20.5 nm (nmol/l) from nmr lipoprofile-3 spectral analysis	ls31	lab_result	number	
+hdlp31c	pht001116.v10, pht001111.v4	Hdl particles (total) (umol/l) from nmr lipoprofile-3 spectral analysis	hdlp31c	lab_result	number	
+hl31	pht001116.v10, pht001111.v4	Large hdl 9.4-14 nm (umol/l) from nmr lipoprofile-3 spectral analysis	hl31	lab_result	number	
+hm31	pht001116.v10, pht001111.v4	Medium hdl 8.2-9.4 nm (umol/l) from nmr lipoprofile-3 spectral analysis	hm31	lab_result	number	
+hs31	pht001116.v10, pht001111.v4	Small hdl 7.3-8.2 nm (umol/l) from nmr lipoprofile-3 spectral analysis	hs31	lab_result	number	
+vz31	pht001116.v10, pht001111.v4	Mean vldl size (nm) from nmr lipoprofile-3 spectral analysis	vz31	lab_result	number	
+lz31	pht001116.v10, pht001111.v4	Mean ldl size (nm) from nmr lipoprofile-3 spectral analysis	lz31	lab_result	number	
+hz31	pht001116.v10, pht001111.v4	Mean hdl size (nm) from nmr lipoprofile-3 spectral analysis	hz31	lab_result	number	
+ntrg31c	pht001116.v10, pht001111.v4	Calculated total triglycerides (mg/dl) from nmr lipoprofile-3 spectral analysis	ntrg31c	lab_result	number	
+nvtrg31c	pht001116.v10, pht001111.v4	Calculated vldl triglycerides (mg/dl) from nmr lipoprofile-3 spectral analysis	nvtrg31c	lab_result	number	
+nhdlc31c	pht001116.v10, pht001111.v4	Calculated hdl cholesterol (mg/dl) from nmr lipoprofile-3 spectral analysis	nhdlc31c	lab_result	number	
+lp3lpir1	pht001116.v10, pht001111.v4	Lipoprotein insulin resistance score from nmr lipoprofile-3 spectral analysis	lp3lpir1	lab_result	number	
+lpcomm31	pht001116.v10, pht001111.v4	Comments from nmr lipoprofile-3 spectral analysis	lpcomm31	lab_result	string	
+il2sr1	pht001116.v10, pht001111.v4	Interleukin-2 (pg/ml)	il2sr1	lab_result	number	
+il2sr1t	pht001116.v10, pht001111.v4	Natural log transformed interleukin-2	il2sr1t	lab_result	number	
+tnfri1	pht001116.v10, pht001111.v4	Tumor necrosis factor-a soluble receptors (pg/ml)	tnfri1	lab_result	number	
+age1c	pht001116.v10, pht001111.v4	Age	age1c	demographic	number	
+agecat1c	pht001116.v10, pht001111.v4	Age categories	agecat1c	demographic	enum	45 - 54|55 - 64|65 - 74|75 - 84
+frncep1c	pht001116.v10, pht001111.v4	10 yr hard chd risk--ncep version	frncep1c	medical_history	number	
+frjama1c	pht001116.v10, pht001111.v4	10yr hard chd risk per jama 2001 paper	frjama1c	medical_history	number	
+frcirc1c	pht001116.v10, pht001111.v4	10yr hard chd risk per circ 1998 paper	frcirc1c	medical_history	number	
+frci081c	pht001116.v10, pht001111.v4	Framingham global cvd risk per circ 2008 paper	frci081c	medical_history	number	
+egfr1c	pht001116.v10, pht001111.v4	Estimated glomerular filtration rate by simplified mdrd equation	egfr1c	medical_history	number	
+cepgfr1c	pht001116.v10, pht001111.v4	Exam 1 (calibrated cr) egfr using ckd-epi equation	cepgfr1c	medical_history	number	
+hrtrate1	pht001116.v10, pht001111.v4	Heart rate (beats/min)	hrtrate1	electrocardiogram_test	number	
+supprss1	pht001116.v10, pht001111.v4	Flag for supressed codes	supprss1	electrocardiogram_test	enum	NON-SUPPRESSED|SUPPRESSED
+qsupprs1	pht001116.v10, pht001111.v4	Suppressed q mc1, other than quality issues	qsupprs1	electrocardiogram_test	enum	SUPPRESSED Q MC1, OTHER THAN QUALITY ISSUES
+ssupprs1	pht001116.v10, pht001111.v4	Suppressed st mc4, other than quality issues	ssupprs1	electrocardiogram_test	enum	SUPPRESSED ST MC4, OTHER THAN QUALITY ISSUES
+tsupprs1	pht001116.v10, pht001111.v4	Suppressed t mc5, other than quality issues	tsupprs1	electrocardiogram_test	enum	SUPPRESSED T MC5, OTHER THAN QUALITY ISSUES
+minor11	pht001116.v10, pht001111.v4	Minor abnormality 1 per minnesota code: minor-isolated q, qs waves	minor11	electrocardiogram_test	enum	MINOR ISOLATED Q,QS WAVES
+minor21	pht001116.v10, pht001111.v4	Minor abnormality 2 per minnesota code: minor-isolated st, t waves	minor21	electrocardiogram_test	enum	MINOR ISOLATED ST,T ABNORMALITIES
+minor31	pht001116.v10, pht001111.v4	Minor abnormality 3 per minnesota code: high r waves	minor31	electrocardiogram_test	enum	HIGH R WAVES
+minor4l1	pht001116.v10, pht001111.v4	Minor abnormality 4l per minnesota code: st segment elevation, anterolateral site	minor4l1	electrocardiogram_test	enum	ST SEGMENT ELEVATION, ANTEROLATERAL SITE
+minor4f1	pht001116.v10, pht001111.v4	Minor abnormality 4f per minnesota code: st segment elevation, posterior site	minor4f1	electrocardiogram_test	enum	ST SEGMENT ELEVATION, POSTERIOR SITE
+minor4v1	pht001116.v10, pht001111.v4	Minor abnormality 4v per minnesota code: st segment elevation, anterior site	minor4v1	electrocardiogram_test	enum	ST SEGMENT ELEVATION, ANTERIOR SITE
+minor5l1	pht001116.v10, pht001111.v4	Minor abnormality 5l per minnesota code: incomplete lbbb	minor5l1	electrocardiogram_test	enum	INCOMPLETE RBBB
+minor5r1	pht001116.v10, pht001111.v4	Minor abnormality 5r per minnesota code: incomplete rbbb	minor5r1	electrocardiogram_test	enum	INCOMPLETE LBB
+minor61	pht001116.v10, pht001111.v4	Minor abnormality 6 per minnesota code: minor qt prolongation, jti >=112% or minor qt prolongation, qti >=112%	minor61	electrocardiogram_test	enum	MINOR QT PROLONGATION, JTI >|MINOR QT PROLONGATION, QTI >
+minor71	pht001116.v10, pht001111.v4	Minor abnormality 7 per minnesota code: short pr	minor71	electrocardiogram_test	enum	SHORT PR
+minor81	pht001116.v10, pht001111.v4	Minor abnormality 8 per minnesota code: left axis deviation	minor81	electrocardiogram_test	enum	LEFT AXIS DEVIATION
+minor91	pht001116.v10, pht001111.v4	Minor abnormality 9 per minnesota code: right axis deviation	minor91	electrocardiogram_test	enum	RIGHT AXIS DEVIATION
+minor101	pht001116.v10, pht001111.v4	Minor abnormality 10 per minnesota code: frequent ventricular premature beats	minor101	electrocardiogram_test	enum	FREQUENT VENTRICULAR PREMATURE BEATS
+minor11a1	pht001116.v10, pht001111.v4	Minor abnormality 11a per minnesota code: p-r interval > .22 sec	minor11a1	electrocardiogram_test	enum	P-R INTERVAL > .22 SEC
+minor11b1	pht001116.v10, pht001111.v4	Minor abnormality 11b per minnesota code: frequent atrial or junctional premature beats or wandering atrial pacemaker or frequent atrial or ventricular premature beats and wandering atrial pacemaker	minor11b1	electrocardiogram_test	enum	FREQUENT ATRIAL OR JUNCTIONAL PREMATURE BEATS|WANDERING ATRIAL PACEMAKER|FREQUENT ATRIAL OR VENTRICULAR PREMATURE BEATS AND WANDERING ATRIAL PACEMAKER
+minor11c1	pht001116.v10, pht001111.v4	Minor abnormality 11c per minnesota code: supraventricular rhythm	minor11c1	electrocardiogram_test	enum	SUPRAVENTRICULAR RHYTHM
+minor11d1	pht001116.v10, pht001111.v4	Minor abnormality 11d per minnesota code: sinus tachycardia	minor11d1	electrocardiogram_test	enum	SINUS TACHYCARDIA
+minor11e1	pht001116.v10, pht001111.v4	Minor abnormality 11e per minnesota code: sinus bradycardia	minor11e1	electrocardiogram_test	enum	SINUS BRADYCARDIA
+minor11f1	pht001116.v10, pht001111.v4	Minor abnormality 11f per minnesota code: low qrs amplitude	minor11f1	electrocardiogram_test	enum	LOW QRS AMPLITUDE
+minor11g1	pht001116.v10, pht001111.v4	Minor abnormality 11g per minnesota code: p-wave amplitude high	minor11g1	electrocardiogram_test	enum	P-WAVE AMPLITUDE HIGH
+major11	pht001116.v10, pht001111.v4	Major abnormality 1 per minnesota code: complete/intermittent lbbb or complete/intermittent rbbb or nonspecific intraventricular block or complete/intermittent rbbb w/ left anterior hemiblock	major11	electrocardiogram_test	enum	COMPLETE/INTERMITTENT LBBB|COMPLETE/INTERMITTENT RBBB|NONSPECIFIC INTRAVENTRICULAR BLOCK|COMPLETE/INTERMITTENT RBBB W/ LEFT ANTERIOR HEMIBLOCK
+major21	pht001116.v10, pht001111.v4	Major abnormality 2 per minnesota code: major q wave abnormalities [old myocardial infarction (mi)]	major21	electrocardiogram_test	enum	MAJOR Q WAVE ABNORMALITIES [OLD MYOCARDIAL INFARCTION (MI)]
+major31	pht001116.v10, pht001111.v4	Major abnormality 3 per minnesota code: minor q,qs waves with st,t abnormalities (possible old mi)	major31	electrocardiogram_test	enum	MINOR Q,QS WAVES WITH ST,T ABNORMALITIES (POSSIBLE OLD MI)
+major41	pht001116.v10, pht001111.v4	Major abnormality 4 per minnesota code: major isolated_st_t_abnormalities	major41	electrocardiogram_test	enum	MAJOR ISOLATED_ST_T_ABNORMALITIES
+major51	pht001116.v10, pht001111.v4	Major abnormality 5 per minnesota code: left ventricular hypertrophy	major51	electrocardiogram_test	enum	LEFT VENTRICULAR HYPERTROPHY
+major61	pht001116.v10, pht001111.v4	Major abnormality 6 per minnesota code: atrial fibrillation or flutter	major61	electrocardiogram_test	enum	ATRIAL FIBRILLATION OR FLUTTER
+major7a1	pht001116.v10, pht001111.v4	Major abnormality 7a per minnesota code: mobitz type ii or partial (second degree) a-v block or wenckebach's phenomenon	major7a1	electrocardiogram_test	enum	MOBITZ TYPE II|PARTIAL (SECOND DEGREE) A-V BLOCK|WENCKEBACH'S PHENOMENON
+major7b1	pht001116.v10, pht001111.v4	Major abnormality 7b per minnesota code: complete (third degree) a-v block	major7b1	electrocardiogram_test	enum	COMPLETE (THIRD DEGREE) A-V BLOCK
+major7c1	pht001116.v10, pht001111.v4	Major abnormality 7c per minnesota code: a-v dissociation with ventricular pacemaker (without capture) or a-v dissociation with ventricular pacemaker (with capture)	major7c1	electrocardiogram_test	enum	A-V DISSOCIATION WITH VENTRICULAR PACEMAKER (WITHOUT CAPTURE)|A-V DISSOCIATION WITH VENTRICULAR PACEMAKER (WITH CAPTURE)
+major7d1	pht001116.v10, pht001111.v4	Major abnormality 7d per minnesota code: wolff-parkinson-white pattern	major7d1	electrocardiogram_test	enum	WOLFF-PARKINSON-WHITE PATTERN
+major81	pht001116.v10, pht001111.v4	Major abnormality 8 per minnesota code: major qt prolongation, qti >= 116%	major81	electrocardiogram_test	enum	MAJOR QT PROLONGATION, QTI >
+major91	pht001116.v10, pht001111.v4	Major abnormality 9 per minnesota code: pacemaker	major91	electrocardiogram_test	enum	PACEMAKER
+major10a1	pht001116.v10, pht001111.v4	Major abnormality 10a: ventricular fibrillation or ventricular asystole or persistent ventricular rhythm with no codable segment, regardless of rate or intermittent ventricular tachycardia or ventricular parasystole	major10a1	electrocardiogram_test	enum	VENTRICULAR FIBRILLATION OR VENTRICULAR ASYSTOLE|PERSISTENT VENTRICULAR RHYTHM WITH NO CODABLE SEGMENT, REGARDLESS OF RATE|INTERMITTENT VENTRICULAR TACHYCARDIA|VENTRICULAR PARASYSTOLE
+major10b1	pht001116.v10, pht001111.v4	Major abnormality 10b: atrial flutter or intermittent atrial fibrillation	major10b1	electrocardiogram_test	enum	ATRIAL FLUTTER|INTERMITTENT ATRIAL FIBRILLATION
+major10c1	pht001116.v10, pht001111.v4	Major abnormality 10c: supraventricular tachycardia intermittent	major10c1	electrocardiogram_test	enum	SUPRAVENTRICULAR TACHYCARDIA INTERMITTENT
+jtdur1	pht001116.v10, pht001111.v4	Jt duration (qtdur1 - qrsdur1)	jtdur1	electrocardiogram_test	number	
+jtindex1	pht001116.v10, pht001111.v4	Jt index ((jt/518) * (hrtrate1 + 100))	jtindex1	electrocardiogram_test	number	
+qtindex1	pht001116.v10, pht001111.v4	Qt index (qtdur1 * (hrtrate1 + 100)/656)	qtindex1	electrocardiogram_test	number	
+majabn1c	pht001116.v10, pht001111.v4	Any major ecg abnormalities	majabn1c	electrocardiogram_test	boolean	
+minabn1c	pht001116.v10, pht001111.v4	Any minor ecg abnormalities	minabn1c	electrocardiogram_test	boolean	
+pkyrs1c	pht001116.v10, pht001111.v4	Pack-years of cigarette smoking	pkyrs1c	exposure	number	
+olvedm1t	pht001116.v10	Lv end-diastolic mass (g) using ssfg mri pulse sequence	olvedm1t	cardiac_mri	number	
+olvedv1t	pht001116.v10	Lv end-diastolic volume (ml) using ssfg mri pulse sequence	olvedv1t	cardiac_mri	number	
+olvesv1t	pht001116.v10	Lv end-systolic volume (ml) using ssfg mri pulse sequence	olvesv1t	cardiac_mri	number	
+olvef1t	pht001116.v10	Lv ejection fraction (%) using ssfg mri pulse sequence	olvef1t	cardiac_mri	number	
+olvsv1t	pht001116.v10	Lv stroke volume (ml) using ssfg mri pulse sequence	olvsv1t	cardiac_mri	number	
+dpp4i1c	pht001116.v10	Dipeptidyl peptidase-4 inhibitor	dpp4i1c	cardiac_mri	number	
+sari1c	pht001116.v10	Serotonin antagonist and reuptake inhibitor	sari1c	cardiac_mri	number	
+ssri1c	pht001116.v10	Selective serotonin reuptake inhibitors	ssri1c	cardiac_mri	number	
+apoeig1	pht001116.v10	Apolipoprotein e (apo e) isoform genotype	apoeig1	cardiac_mri	string	
+apoea11	pht001116.v10	Apolipoprotein e: allele 1	apoea11	cardiac_mri	enum	E2: ALLELE DENOTES ISOFORM 112CYS/158CYS OF THE MATURE PROTEIN|E3: ALLELE DENOTES ISOFORM 112CYS/158ARG OF THE MATURE PROTEIN|E4: ALLELE DENOTES ISOFORM 112ARG/158ARG OF THE MATURE PROTEIN
+apoea21	pht001116.v10	Apolipoprotein e: allele 2	apoea21	cardiac_mri	enum	E2: ALLELE DENOTES ISOFORM 112CYS/158CYS OF THE MATURE PROTEIN|E3: ALLELE DENOTES ISOFORM 112CYS/158ARG OF THE MATURE PROTEIN|E4: ALLELE DENOTES ISOFORM 112ARG/158ARG OF THE MATURE PROTEIN
+olvedm1	pht001116.v10	Lv mass (g) using fgre mri pulse sequence	olvedm1	cardiac_mri	number	
+olvedv1	pht001116.v10	Lv end-diastolic volume (ml) using fgre mri pulse sequence	olvedv1	cardiac_mri	number	
+olvesv1	pht001116.v10	Lv end-systolic volume (ml) using fgre mri pulse sequence	olvesv1	cardiac_mri	number	
+olvef1	pht001116.v10	Lv ejection fraction (%) using fgre mri pulse sequence	olvef1	cardiac_mri	number	
+olvsv1	pht001116.v10	Lv stroke volume (ml) using fgre mri pulse sequence	olvsv1	cardiac_mri	number	
+ppa_101	pht001116.v10	Pulse pressure amplification x10	ppa_101	cardiac_mri	number	
+rm_101	pht001116.v10	Reflection magnitude x10	rm_101	cardiac_mri	number	
+aix_ao_101	pht001116.v10	Aortic augmentation index x10	aix_ao_101	cardiac_mri	number	
+mmflag1c	pht001116.v10	Any major or minor ecg abnormalities per minnesota code	mmflag1c	cardiac_mri	enum	NORMAL (NO MAJOR OR MINOR)|MINOR (MINOR WITH NO MAJOR)|MAJOR (MAJOR WITH POSSIBLE MINOR ABNORMALITIES)
+ntca1c	pht001116.v10	Non-tricyclic antidepressants other than maoi	ntca1c	cardiac_mri	boolean	
+mlvwall1c	pht001116.v10	Mean lv wall thickness, end-diastole (mm)	mlvwall1c	cardiac_mri	number	
+ndri1c	pht001116.v10	Norepinephrine-dopamine reuptake inhibitor	ndri1c	cardiac_mri	number	
+chdh	pht001123.v7	Coronary Heart Disease (CHD), Hard	chdh	medical_history	boolean	
+chdhtt	pht001123.v7	Time to Hard CHD or Lat Follow-up in days	chdhtt	medical_history	integer	
+chda	pht001123.v7	Coronary Heart Disease (CHD), All	chda	medical_history	boolean	
+chdatt	pht001123.v7	Time to all CHD or Lat Follow-up in days	chdatt	medical_history	integer	
+cvdh	pht001123.v7	Cardiovascular Disease (CHD), Hard	cvdh	medical_history	boolean	
+cvdhtt	pht001123.v7	Time to Hard CVD or Lat Follow-up in days	cvdhtt	medical_history	integer	
+cvda	pht001123.v7	Cardiovascular Disease (CHD), All	cvda	medical_history	boolean	
+cvdatt	pht001123.v7	Time to all CDV or Lat Follow-up in days	cvdatt	medical_history	integer	
