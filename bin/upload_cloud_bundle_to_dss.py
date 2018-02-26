@@ -3,13 +3,14 @@
 """
 Utility to load data files and bundles located in AWS and/or GCP into the HCA Data Storage System (DSS).
 """
-
+import csv
 import json
 import logging
 import sys
 import time
 import typing
 import uuid
+from collections import defaultdict
 
 import boto3
 import os
@@ -38,8 +39,10 @@ STAGING_BUCKET_DEFAULT = "commons-dss-staging"
 SOURCE_BUNDLE_PREFIX_DEFAULT = "topmed_open_access"
 
 # Default values for "topmed_12k" data set
-MANIFEST_PATH_DEFAULT="mbaumann-general/commonsTOPMed12k/manifest.data-commons-pilot.txt"
-METADATA_PREFIX_DEFAULT="topmed12k-redwood-storage/data"
+# TODO Change to get from original/master location in Google?
+MANIFEST_BUCKET_DEFAULT = "mbaumann-general"
+MANIFEST_KEY_DEFAULT = "commonsTOPMed12k/manifest.data-commons-pilot.txt"
+METADATA_PREFIX_DEFAULT = "topmed12k-redwood-storage/data"
 
 CREATOR_ID = 20
 
@@ -166,7 +169,7 @@ class MetadataFileUploader:
         return self.dss_uploader.upload_local_file(file_path, bundle_uuid)
 
 
-class BundleUploader:
+class BundleUploaderForTopMedOpenAccess:
     def __init__(self, dss_uploader: DssUploader, metadata_file_uploader: MetadataFileUploader) -> None:
         self.dss_uploader = dss_uploader
         self.metadata_file_uploader = metadata_file_uploader
@@ -206,6 +209,32 @@ class BundleUploader:
                 file_info_list.append(dict(uuid=file_uuid, version=file_version, name=filename, indexed=False))
         return file_info_list
 
+class BundleUploaderForTopMed12k:
+    def __init__(self, dss_uploader: DssUploader, metadata_file_uploader: MetadataFileUploader,
+                 manifest_bucket: str, manifest_key: str) -> None:
+        self.dss_uploader = dss_uploader
+        self.metadata_file_uploader = metadata_file_uploader
+        self.manifest_bucket = manifest_bucket
+        self.manifest_key = manifest_key
+
+    def load_all_bundles(self):
+        mapSpecimenToFiles = self._get_map_specimen_to_files()
+        # print(str(mapSpecimenToFiles))
+
+    def _get_map_specimen_to_files(self):
+        manifest_text = self.dss_uploader.blobstore.get(self.manifest_bucket, self.manifest_key).decode("utf-8")
+        reader = csv.reader(manifest_text.split('\n'), delimiter='\t')
+        raw_data = [columns for columns in reader]
+        print(raw_data)
+        map_specimen_to_files = defaultdict(set)
+        for x, row in enumerate(raw_data[1:]):
+            if len(row) == 0:
+                break
+            specimen = row[0]
+            for file_index in range(25, 29):
+                map_specimen_to_files[specimen].add(row[file_index])
+        return map_specimen_to_files
+
 
 def suppress_verbose_logging():
     for logger_name in logging.Logger.manager.loggerDict:  # type: ignore
@@ -232,7 +261,7 @@ def main(argv):
                         default=STAGING_BUCKET_DEFAULT,
                         help="The bucket to stage local files for uploading to DSS.")
 
-    subparsers = parser.add_subparsers(help='Data set to load')
+    subparsers = parser.add_subparsers(dest='data_set', help='Data set to load')
     parser_topmed_open_access = subparsers.add_parser("topmed_open_access", help='Load "topmed_open_access"')
     parser_topmed_open_access.add_argument("--source-bundle-prefix", metavar="SOURCE_BUNDLE_PREFIX", required=False,
                                            default=SOURCE_BUNDLE_PREFIX_DEFAULT,
@@ -241,9 +270,12 @@ def main(argv):
                                            help="The key after which to begin processing.")
 
     parser_topmed_12k = subparsers.add_parser("topmed_12k", help='Load "topmed_12k"')
-    parser_topmed_12k.add_argument("--manifest-path", metavar="MANIFEST_PATH", required=False,
-                                   default=MANIFEST_PATH_DEFAULT,
-                                   help="The path to the manifest identifying files to load.")
+    parser_topmed_12k.add_argument("--manifest-bucket", metavar="MANIFEST_BUCKET", required=False,
+                                   default=MANIFEST_BUCKET_DEFAULT,
+                                   help="The bucket containing the manifest that identifies files to load.")
+    parser_topmed_12k.add_argument("--manifest-key", metavar="MANIFEST_KEY", required=False,
+                                   default=MANIFEST_KEY_DEFAULT,
+                                   help="The key for the manifest that identifies files to load.")
     parser_topmed_12k.add_argument("--metadata-prefix", metavar="METADATA_PREFIX", required=False,
                                    default=METADATA_PREFIX_DEFAULT,
                                    help="The prefix to the location of the metadata files.")
@@ -251,11 +283,16 @@ def main(argv):
 
     dss_uploader = DssUploader(options.dss_endpoint, options.staging_bucket, options.dry_run)
     metadata_file_uploader = MetadataFileUploader(dss_uploader)
-    bundle_uploader = BundleUploader(dss_uploader, metadata_file_uploader)
 
-    bundle_uploader.load_all_bundles(options.source_bucket,
-                                     options.source_bundle_prefix,
-                                     options.start_after_key)
+    if options.data_set == "topmed_open_access":
+        bundle_uploader = BundleUploaderForTopMedOpenAccess(dss_uploader, metadata_file_uploader)
+        bundle_uploader.load_all_bundles(options.source_bucket,
+                                         options.source_bundle_prefix,
+                                         options.start_after_key)
+    elif options.data_set == "topmed_12k":
+        bundle_uploader = BundleUploaderForTopMed12k(dss_uploader, metadata_file_uploader,
+                                                     options.manifest_bucket, options.manifest_key)
+        bundle_uploader.load_all_bundles()
 
 
 if __name__ == '__main__':
