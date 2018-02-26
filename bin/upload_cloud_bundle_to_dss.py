@@ -34,7 +34,7 @@ SCHEMA_TYPE = "spinnaker_metadata"
 BUCKET = "cgp-commons-public"
 STAGING_BUCKET = "commons-dss-staging"
 
-BUNDLES_PATH = "topmed_open_access"
+BUNDLES_PREFIX = "topmed_open_access"
 
 CREATOR_ID = 20
 
@@ -161,9 +161,9 @@ class BundleUploader:
         file_info_list = self._load_bundle_files(bucket, bundle_key, bundle_uuid)
         return self._load_bundle(file_info_list, bundle_uuid)
 
-    def load_all_bundles(self, bucket, bundles_key):
+    def load_all_bundles(self, bucket, bundles_key, start_after_key):
         count = 0
-        for key in self.dss_uploader.blobstore.list(bucket, bundles_key):
+        for key in self.dss_uploader.blobstore.list_v2(bucket, bundles_key, start_after_key):
             if key.endswith("/metadata.json"):
                 bundle_key = "/".join(key.split("/")[:-1])
                 bundle_uuid = bundle_key.split("/")[-1]
@@ -232,7 +232,8 @@ def main(args):
     # print(result)
     # Testing/Troubleshooting Start
 
-    bundle_uploader.load_all_bundles(bucket, BUNDLES_PATH)
+    start_after_key = "/".join([BUNDLES_PREFIX, "28bebda7-14b1-5c47-b9b7-52540f091866"])
+    bundle_uploader.load_all_bundles(bucket, BUNDLES_PREFIX, start_after_key)
 
 
 if __name__ == '__main__':
