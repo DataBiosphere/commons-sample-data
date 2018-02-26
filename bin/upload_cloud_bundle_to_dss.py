@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+
+"""
+Utility to load data files and bundles located in AWS and/or GCP into the HCA Data Storage System (DSS).
+"""
+
 import json
 import logging
 import sys
@@ -18,31 +23,27 @@ from io import open
 
 from packages.checksumming_io.checksumming_io import ChecksummingSink, S3Etag
 
-"""
-Utility to load data bundles in AWS S3 into the HCA Data Storage System (DSS).
-"""
-
 logger = logging.getLogger(__name__)
-
-DSS_ENDPOINT = "https://commons-dss.ucsc-cgp-dev.org/v1"
 
 SCHEMA_URL = ("https://raw.githubusercontent.com/DataBiosphere/commons-sample-data/master"
               "/json_schema/spinnaker_metadata/1.1.1/spinnaker_metadata_schema.json")
 SCHEMA_VERSION = "1.1.1"
 SCHEMA_TYPE = "spinnaker_metadata"
 
-BUCKET = "cgp-commons-public"
-STAGING_BUCKET = "commons-dss-staging"
 
-BUNDLES_PREFIX = "topmed_open_access"
+DSS_ENDPOINT_DEFAULT = "https://commons-dss.ucsc-cgp-dev.org/v1"
+SOURCE_BUCKET_DEFAULT = "cgp-commons-public"
+STAGING_BUCKET_DEFAULT = "commons-dss-staging"
+SOURCE_BUNDLE_PREFIX_DEFAULT = "topmed_open_access"
 
 CREATOR_ID = 20
 
 
 class DssUploader:
-    def __init__(self, dss_endpoint: str, staging_bucket: str) -> None:
+    def __init__(self, dss_endpoint: str, staging_bucket: str, dry_run: bool) -> None:
         self.dss_endpoint = dss_endpoint
         self.staging_bucket = staging_bucket
+        self.dry_run = dry_run
         self.s3_client = boto3.client("s3")
         self.blobstore = s3.S3BlobStore(self.s3_client)
         os.environ.pop('HCA_CONFIG_FILE', None)
@@ -58,6 +59,16 @@ class DssUploader:
     def upload_local_file(self, path, bundle_uuid: str):
         file_uuid, key = self._upload_local_file_to_staging(path)
         return self._upload_tagged_cloud_file_to_dss(self.staging_bucket, key, file_uuid, bundle_uuid)
+
+    def load_bundle(self, file_info_list: list, bundle_uuid: str):
+        kwargs = dict(replica="aws", creator_uid=CREATOR_ID, files=file_info_list, uuid=bundle_uuid)
+        if not self.dry_run:
+            response = self.dss_client.put_bundle(**kwargs)
+            version = response['version']
+        else:
+            print("DSS put bundle: " + str(kwargs))
+            version = None
+        return f"{bundle_uuid}.{version}"
 
     @staticmethod
     def get_filename_from_key(key: str):
@@ -100,15 +111,14 @@ class DssUploader:
     def _upload_tagged_cloud_file_to_dss(self, source_bucket: str, source_key: str, file_uuid: str, bundle_uuid: str,
                                          timeout_seconds=1200):
         source_url = f"s3://{source_bucket}/{source_key}"
+        file_name = self.get_filename_from_key(source_key)
 
-        response = self.dss_client.put_file._request(dict(
-            uuid=file_uuid,
-            bundle_uuid=bundle_uuid,
-            creator_uid=CREATOR_ID,
-            source_url=source_url
-        ))
+        request_parameters = dict(uuid=file_uuid, bundle_uuid=bundle_uuid, creator_uid=CREATOR_ID, source_url=source_url)
+        if self.dry_run:
+            print("DSS put file: " + str(request_parameters))
+            return file_uuid, None, file_name
+        response = self.dss_client.put_file._request(request_parameters)
         file_version = response.json().get('version', "blank")
-        # files_uploaded.append(dict(name=filename, version=version, uuid=file_uuid, creator_uid=creator_uid))
 
         if response.status_code in (requests.codes.ok, requests.codes.created):
             logger.info("File %s: Sync copy -> %s", source_url, file_version)
@@ -133,7 +143,6 @@ class DssUploader:
                 raise RuntimeError("File {}: registration FAILED".format(source_url))
             logger.debug("Successfully uploaded file")
 
-        file_name = self.get_filename_from_key(source_key)
         return file_uuid, file_version, file_name
 
 
@@ -159,7 +168,7 @@ class BundleUploader:
 
     def load_bundle(self, bucket, bundle_key, bundle_uuid):
         file_info_list = self._load_bundle_files(bucket, bundle_key, bundle_uuid)
-        return self._load_bundle(file_info_list, bundle_uuid)
+        return self.dss_uploader.load_bundle(file_info_list, bundle_uuid)
 
     def load_all_bundles(self, bucket, bundles_key, start_after_key):
         count = 0
@@ -192,12 +201,6 @@ class BundleUploader:
                 file_info_list.append(dict(uuid=file_uuid, version=file_version, name=filename, indexed=False))
         return file_info_list
 
-    def _load_bundle(self, file_info_list: list, bundle_uuid: str):
-        response = self.dss_uploader.dss_client.put_bundle(replica="aws", creator_uid=CREATOR_ID, files=file_info_list,
-                                                           uuid=bundle_uuid)
-        version = response['version']
-        return f"{bundle_uuid}.{version}"
-
 
 def suppress_verbose_logging():
     for logger_name in logging.Logger.manager.loggerDict:  # type: ignore
@@ -206,34 +209,37 @@ def suppress_verbose_logging():
             logging.getLogger(logger_name).setLevel(logging.WARNING)
 
 
-def main(args):
-    dss_endpoint = DSS_ENDPOINT
-    bucket = BUCKET
-    staging_bucket = STAGING_BUCKET
-    dss_uploader = DssUploader(dss_endpoint, staging_bucket)
+def main(argv):
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--dry-run", action="store_true",
+                     help="Output actions that would otherwise be performed.")
+    group.add_argument("--no-dry-run", dest="dry_run", action="store_false",
+                     help="Perform the actions.")
+    parser.add_argument("--dss-endpoint", metavar="DSS_ENDPOINT", required=False,
+                        default=DSS_ENDPOINT_DEFAULT,
+                        help="The HCA Data Storage System endpoint to use.")
+    parser.add_argument("--source-bucket", metavar="SOURCE_BUCKET", required=False,
+                        default=SOURCE_BUCKET_DEFAULT,
+                        help="The bucket containing the bundles to load.")
+    parser.add_argument("--source-bundle-prefix", metavar="SOURCE_BUNDLE_PREFIX", required=False,
+                        default=SOURCE_BUNDLE_PREFIX_DEFAULT,
+                        help="The path prefix to the bundle(s) to load.")
+    parser.add_argument("--start-after-key", metavar="START_AFTER_KEY", required=False,
+                        help="The key after which to begin processing.")
+    parser.add_argument("--staging-bucket", metavar="STAGING_BUCKET", required=False,
+                        default=STAGING_BUCKET_DEFAULT,
+                        help="The bucket to stage local files for uploading to DSS.")
+    options = parser.parse_args(argv)
+
+    dss_uploader = DssUploader(options.dss_endpoint, options.staging_bucket, options.dry_run)
     metadata_file_uploader = MetadataFileUploader(dss_uploader)
     bundle_uploader = BundleUploader(dss_uploader, metadata_file_uploader)
 
-    # Testing/Troubleshooting Start
-    # key = "topmed_open_access/014a9de5-cb88-5e37-a196-b6e3ab30fff6/NWD759405.recab.cram"
-    # bundle_uuid = "014a9de5-cb88-5e37-a196-b6e3ab30fff6"
-    # file_uuid = str(uuid.uuid4())
-    # result = dss_uploader.upload_cloud_file(bucket, key, bundle_uuid, file_uuid)
-    # print(result)
-    #
-    # result = dss_uploader.upload_local_file(LOCAL_FILE, bundle_uuid)
-    # print(result)
-    #
-    # filename = DssUploader.get_filename_from_key(key)
-    # result = metadata_file_uploader.load_file(bucket, key, filename, SCHEMA_URL, bundle_uuid)
-    # print(result)
-    #
-    # result = bundle_uploader.load_bundle(bucket, BUNDLE_PATH, BUNDLE_UUID)
-    # print(result)
-    # Testing/Troubleshooting Start
-
-    start_after_key = "/".join([BUNDLES_PREFIX, "28bebda7-14b1-5c47-b9b7-52540f091866"])
-    bundle_uploader.load_all_bundles(bucket, BUNDLES_PREFIX, start_after_key)
+    bundle_uploader.load_all_bundles(options.source_bucket,
+                                     options.source_bundle_prefix,
+                                     options.start_after_key)
 
 
 if __name__ == '__main__':
