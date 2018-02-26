@@ -30,11 +30,16 @@ SCHEMA_URL = ("https://raw.githubusercontent.com/DataBiosphere/commons-sample-da
 SCHEMA_VERSION = "1.1.1"
 SCHEMA_TYPE = "spinnaker_metadata"
 
-
 DSS_ENDPOINT_DEFAULT = "https://commons-dss.ucsc-cgp-dev.org/v1"
+
+# Default values for "topmed_open_access" data set
 SOURCE_BUCKET_DEFAULT = "cgp-commons-public"
 STAGING_BUCKET_DEFAULT = "commons-dss-staging"
 SOURCE_BUNDLE_PREFIX_DEFAULT = "topmed_open_access"
+
+# Default values for "topmed_12k" data set
+MANIFEST_PATH_DEFAULT="mbaumann-general/commonsTOPMed12k/manifest.data-commons-pilot.txt"
+METADATA_PREFIX_DEFAULT="topmed12k-redwood-storage/data"
 
 CREATOR_ID = 20
 
@@ -214,23 +219,34 @@ def main(argv):
     parser = argparse.ArgumentParser(description=__doc__)
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--dry-run", action="store_true",
-                     help="Output actions that would otherwise be performed.")
+                       help="Output actions that would otherwise be performed.")
     group.add_argument("--no-dry-run", dest="dry_run", action="store_false",
-                     help="Perform the actions.")
+                       help="Perform the actions.")
     parser.add_argument("--dss-endpoint", metavar="DSS_ENDPOINT", required=False,
                         default=DSS_ENDPOINT_DEFAULT,
                         help="The HCA Data Storage System endpoint to use.")
     parser.add_argument("--source-bucket", metavar="SOURCE_BUCKET", required=False,
                         default=SOURCE_BUCKET_DEFAULT,
                         help="The bucket containing the bundles to load.")
-    parser.add_argument("--source-bundle-prefix", metavar="SOURCE_BUNDLE_PREFIX", required=False,
-                        default=SOURCE_BUNDLE_PREFIX_DEFAULT,
-                        help="The path prefix to the bundle(s) to load.")
-    parser.add_argument("--start-after-key", metavar="START_AFTER_KEY", required=False,
-                        help="The key after which to begin processing.")
     parser.add_argument("--staging-bucket", metavar="STAGING_BUCKET", required=False,
                         default=STAGING_BUCKET_DEFAULT,
                         help="The bucket to stage local files for uploading to DSS.")
+
+    subparsers = parser.add_subparsers(help='Data set to load')
+    parser_topmed_open_access = subparsers.add_parser("topmed_open_access", help='Load "topmed_open_access"')
+    parser_topmed_open_access.add_argument("--source-bundle-prefix", metavar="SOURCE_BUNDLE_PREFIX", required=False,
+                                           default=SOURCE_BUNDLE_PREFIX_DEFAULT,
+                                           help="The path prefix to the bundle(s) to load.")
+    parser_topmed_open_access.add_argument("--start-after-key", metavar="START_AFTER_KEY", required=False,
+                                           help="The key after which to begin processing.")
+
+    parser_topmed_12k = subparsers.add_parser("topmed_12k", help='Load "topmed_12k"')
+    parser_topmed_12k.add_argument("--manifest-path", metavar="MANIFEST_PATH", required=False,
+                                   default=MANIFEST_PATH_DEFAULT,
+                                   help="The path to the manifest identifying files to load.")
+    parser_topmed_12k.add_argument("--metadata-prefix", metavar="METADATA_PREFIX", required=False,
+                                   default=METADATA_PREFIX_DEFAULT,
+                                   help="The prefix to the location of the metadata files.")
     options = parser.parse_args(argv)
 
     dss_uploader = DssUploader(options.dss_endpoint, options.staging_bucket, options.dry_run)
