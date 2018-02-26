@@ -42,7 +42,8 @@ SOURCE_BUNDLE_PREFIX_DEFAULT = "topmed_open_access"
 # TODO Change to get from original/master location in Google?
 MANIFEST_BUCKET_DEFAULT = "mbaumann-general"
 MANIFEST_KEY_DEFAULT = "commonsTOPMed12k/manifest.data-commons-pilot.txt"
-METADATA_PREFIX_DEFAULT = "topmed12k-redwood-storage/data"
+METADATA_BUCKET_DEFAULT = "topmed12k-redwood-storage"
+METADATA_PREFIX_DEFAULT = "data"
 
 CREATOR_ID = 20
 
@@ -211,15 +212,19 @@ class BundleUploaderForTopMedOpenAccess:
 
 class BundleUploaderForTopMed12k:
     def __init__(self, dss_uploader: DssUploader, metadata_file_uploader: MetadataFileUploader,
-                 manifest_bucket: str, manifest_key: str) -> None:
+                 manifest_bucket: str, manifest_key: str,
+                 metadata_bucket: str, metadata_prefix: str) -> None:
         self.dss_uploader = dss_uploader
         self.metadata_file_uploader = metadata_file_uploader
         self.manifest_bucket = manifest_bucket
         self.manifest_key = manifest_key
+        self.metadata_bucket = metadata_bucket
+        self.metadata_prefix = metadata_prefix
 
     def load_all_bundles(self):
         mapSpecimenToFiles = self._get_map_specimen_to_files()
-        # print(str(mapSpecimenToFiles))
+        metadata_keys = self._get_metadata_keys()
+        print(metadata_keys)
 
     def _get_map_specimen_to_files(self):
         manifest_text = self.dss_uploader.blobstore.get(self.manifest_bucket, self.manifest_key).decode("utf-8")
@@ -234,6 +239,15 @@ class BundleUploaderForTopMed12k:
             for file_index in range(25, 29):
                 map_specimen_to_files[specimen].add(row[file_index])
         return map_specimen_to_files
+
+    def _get_metadata_keys(self):
+        metadata_keys = []
+        metadata_candidate_keys = self.dss_uploader.blobstore.list(self.metadata_bucket, self.metadata_prefix)
+        # TODO Is there a more pythonic way to do this using list comprehensions that is simple and clean?
+        for metadata_key in metadata_candidate_keys:
+            if metadata_key.endswith(".meta"):
+                metadata_keys.append(metadata_key)
+        return metadata_keys
 
 
 def suppress_verbose_logging():
@@ -276,6 +290,9 @@ def main(argv):
     parser_topmed_12k.add_argument("--manifest-key", metavar="MANIFEST_KEY", required=False,
                                    default=MANIFEST_KEY_DEFAULT,
                                    help="The key for the manifest that identifies files to load.")
+    parser_topmed_12k.add_argument("--metadata-bucket", metavar="METADATA_BUCKET", required=False,
+                                   default=METADATA_BUCKET_DEFAULT,
+                                   help="The bucket containing the metadata files.")
     parser_topmed_12k.add_argument("--metadata-prefix", metavar="METADATA_PREFIX", required=False,
                                    default=METADATA_PREFIX_DEFAULT,
                                    help="The prefix to the location of the metadata files.")
@@ -291,7 +308,8 @@ def main(argv):
                                          options.start_after_key)
     elif options.data_set == "topmed_12k":
         bundle_uploader = BundleUploaderForTopMed12k(dss_uploader, metadata_file_uploader,
-                                                     options.manifest_bucket, options.manifest_key)
+                                                     options.manifest_bucket, options.manifest_key,
+                                                     options.metadata_bucket, options.metadata_prefix)
         bundle_uploader.load_all_bundles()
 
 
