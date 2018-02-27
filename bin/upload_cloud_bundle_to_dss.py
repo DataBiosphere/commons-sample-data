@@ -28,8 +28,8 @@ from packages.checksumming_io.checksumming_io import ChecksummingSink, S3Etag
 logger = logging.getLogger(__name__)
 
 SCHEMA_URL = ("https://raw.githubusercontent.com/DataBiosphere/commons-sample-data/master"
-              "/json_schema/spinnaker_metadata/1.1.1/spinnaker_metadata_schema.json")
-SCHEMA_VERSION = "1.1.1"
+              "/json_schema/spinnaker_metadata/1.2.1/spinnaker_metadata_schema.json")
+SCHEMA_VERSION = "1.2.1"
 SCHEMA_TYPE = "spinnaker_metadata"
 
 DSS_ENDPOINT_DEFAULT = "https://commons-dss.ucsc-cgp-dev.org/v1"
