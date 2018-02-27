@@ -301,6 +301,10 @@ class BundleUploaderForTopMed12k:
         metadata_string = json.dumps(metadata)
         object.put(Body=metadata_string.encode())
 
+    def clear_metadata_cache(self, dry_run: bool):
+        if not dry_run:
+            boto3.client("s3").delete_object(Bucket=self.metadata_cache_bucket, Key=self.metadata_cache_key)
+
 
 def suppress_verbose_logging():
     for logger_name in logging.Logger.manager.loggerDict:  # type: ignore
@@ -360,6 +364,9 @@ def main(argv):
     parser_topmed_12k.add_argument("--metadata-cache-key", metavar="METADATA_CACHE_KEY", required=False,
                                    default=METADATA_CACHE_KEY_DEFAULT,
                                    help="The key of the metadata cache file.")
+    parser_topmed_12k.add_argument("--clear-metadata-cache", required=False,
+                                   default=False, action="store_true",
+                                   help="Clear the metadata cache.")
     options = parser.parse_args(argv)
 
     dss_uploader = DssUploader(options.dss_endpoint, options.staging_bucket, options.dry_run)
@@ -376,6 +383,8 @@ def main(argv):
                                                      options.manifest_start_index, options.manifest_end_index,
                                                      options.metadata_bucket, options.metadata_prefix,
                                                      options.metadata_cache_bucket, options.metadata_cache_key)
+        if options.clear_metadata_cache:
+            bundle_uploader.clear_metadata_cache(options.dry_run)
         bundle_uploader.load_all_bundles()
 
 
