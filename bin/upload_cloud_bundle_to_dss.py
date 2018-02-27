@@ -13,6 +13,7 @@ import uuid
 from collections import defaultdict
 
 import boto3
+import botocore
 import os
 import requests
 from boto3.s3.transfer import TransferConfig
@@ -44,6 +45,8 @@ MANIFEST_BUCKET_DEFAULT = "mbaumann-general"
 MANIFEST_KEY_DEFAULT = "commonsTOPMed12k/manifest.data-commons-pilot.txt"
 METADATA_BUCKET_DEFAULT = "topmed12k-redwood-storage"
 METADATA_PREFIX_DEFAULT = "data"
+METADATA_CACHE_BUCKET_DEFAULT = "mbaumann-general"
+METADATA_CACHE_KEY_DEFAULT = "commonsTOPMed12k/metadata_cache.json"
 
 CREATOR_ID = 20
 
@@ -213,41 +216,90 @@ class BundleUploaderForTopMedOpenAccess:
 class BundleUploaderForTopMed12k:
     def __init__(self, dss_uploader: DssUploader, metadata_file_uploader: MetadataFileUploader,
                  manifest_bucket: str, manifest_key: str,
-                 metadata_bucket: str, metadata_prefix: str) -> None:
+                 manifest_start_index: int, manifest_end_index: int,
+                 metadata_bucket: str, metadata_prefix: str,
+                 metadata_cache_bucket: str, metadata_cache_key: str) -> None:
         self.dss_uploader = dss_uploader
         self.metadata_file_uploader = metadata_file_uploader
         self.manifest_bucket = manifest_bucket
         self.manifest_key = manifest_key
+        self.manifest_start_index = manifest_start_index
+        self.manifest_end_index = manifest_end_index
         self.metadata_bucket = metadata_bucket
         self.metadata_prefix = metadata_prefix
+        self.metadata_cache_bucket = metadata_cache_bucket
+        self.metadata_cache_key = metadata_cache_key
 
     def load_all_bundles(self):
-        mapSpecimenToFiles = self._get_map_specimen_to_files()
-        metadata_keys = self._get_metadata_keys()
-        print(metadata_keys)
+        map_specimen_id_to_cloud_files = self._get_map_specimen_id_to_cloud_files()
+        map_specimen_id_to_metadata = self._get_map_specimen_id_to_metadata()
+        match_count = 0
+        for specimen_id in map_specimen_id_to_cloud_files.keys():
+            if map_specimen_id_to_metadata.keys().__contains__(specimen_id):
+                match_count += 1
+        print(f"match count: {match_count}")
 
-    def _get_map_specimen_to_files(self):
+    def _get_map_specimen_id_to_cloud_files(self):
         manifest_text = self.dss_uploader.blobstore.get(self.manifest_bucket, self.manifest_key).decode("utf-8")
         reader = csv.reader(manifest_text.split('\n'), delimiter='\t')
         raw_data = [columns for columns in reader]
-        print(raw_data)
         map_specimen_to_files = defaultdict(set)
-        for x, row in enumerate(raw_data[1:]):
+        for index, row in enumerate(raw_data[1:]):
+            if index < self.manifest_start_index:
+                continue
+            if index >= self.manifest_end_index:
+                break
             if len(row) == 0:
                 break
-            specimen = row[0]
+            logger.info(f"Processing manifest row: {index}: {row}")
+            specimen = row[3] # sra_sample_id
             for file_index in range(25, 29):
                 map_specimen_to_files[specimen].add(row[file_index])
         return map_specimen_to_files
 
-    def _get_metadata_keys(self):
-        metadata_keys = []
+    def _get_map_specimen_id_to_metadata(self):
+        cached_metadata = self._get_cached_metadata()
+        if cached_metadata is not None:
+            return cached_metadata
+        map_specimen_id_to_metadata = dict()
         metadata_candidate_keys = self.dss_uploader.blobstore.list(self.metadata_bucket, self.metadata_prefix)
-        # TODO Is there a more pythonic way to do this using list comprehensions that is simple and clean?
+        count = 0
         for metadata_key in metadata_candidate_keys:
-            if metadata_key.endswith(".meta"):
-                metadata_keys.append(metadata_key)
-        return metadata_keys
+            count += 1
+            if not metadata_key.endswith(".meta"):
+                try:
+                    metadata_string = None
+                    if self.dss_uploader.blobstore.get_size(self.metadata_bucket, metadata_key) > 12:
+                        logger.info("Reading metadata file %i: %s", count, "/".join([self.metadata_bucket, metadata_key]))
+                        metadata_string = self.dss_uploader.blobstore.get(self.metadata_bucket, metadata_key).decode("utf=8")
+                        metadata_json = json.loads(metadata_string)
+                        specimen_id = metadata_json['specimen'][0]['submitter_specimen_id']
+                        map_specimen_id_to_metadata[specimen_id] = metadata_json
+                except Exception as e:
+                    logger.error(f"Exception occurred processing metadata file: {metadata_key}, {e}, {metadata_string}", exc_info=True)
+        self._write_metadata_cache(map_specimen_id_to_metadata)
+        return map_specimen_id_to_metadata
+
+    def _get_cached_metadata(self):
+        s3 = boto3.resource('s3')
+        try:
+            s3.Object(self.metadata_cache_bucket, self.metadata_cache_key).load()
+        except botocore.exceptions.ClientError as e:
+            if e.response['Error']['Code'] == "404":
+                logger.info(f"No previously cached metadata found in: s3://{self.metadata_cache_bucket}/{self.metadata_cache_key}")
+                return None
+            else:
+                raise
+        logger.info(f"Loading previously cached metadata from: s3://{self.metadata_cache_bucket}/{self.metadata_cache_key}")
+        metadata_cache_string = self.dss_uploader.blobstore.get(self.metadata_cache_bucket, self.metadata_cache_key).decode("utf=8")
+        metadata_cache_json = json.loads(metadata_cache_string)
+        return metadata_cache_json
+
+    def _write_metadata_cache(self, metadata: dict):
+        s3 = boto3.resource('s3')
+        object = s3.Object(self.metadata_cache_bucket, self.metadata_cache_key)
+        metadata_string = json.dumps(metadata)
+        object.put(Body=metadata_string.encode())
 
 
 def suppress_verbose_logging():
@@ -290,12 +342,24 @@ def main(argv):
     parser_topmed_12k.add_argument("--manifest-key", metavar="MANIFEST_KEY", required=False,
                                    default=MANIFEST_KEY_DEFAULT,
                                    help="The key for the manifest that identifies files to load.")
+    parser_topmed_12k.add_argument("--manifest-start-index", metavar="MANIFEST_START_INDEX", type=int, required=False,
+                                   default=0,
+                                   help="The manifest inclusive starting index")
+    parser_topmed_12k.add_argument("--manifest-end-index", metavar="MANIFEST_END_INDEX", type=int, required=False,
+                                   default=1000000,
+                                   help="The manifest exclusive end index")
     parser_topmed_12k.add_argument("--metadata-bucket", metavar="METADATA_BUCKET", required=False,
                                    default=METADATA_BUCKET_DEFAULT,
                                    help="The bucket containing the metadata files.")
     parser_topmed_12k.add_argument("--metadata-prefix", metavar="METADATA_PREFIX", required=False,
                                    default=METADATA_PREFIX_DEFAULT,
                                    help="The prefix to the location of the metadata files.")
+    parser_topmed_12k.add_argument("--metadata-cache-bucket", metavar="METADATA_CACHE_BUCKET", required=False,
+                                   default=METADATA_CACHE_BUCKET_DEFAULT,
+                                   help="The bucket containing the metadata cache file.")
+    parser_topmed_12k.add_argument("--metadata-cache-key", metavar="METADATA_CACHE_KEY", required=False,
+                                   default=METADATA_CACHE_KEY_DEFAULT,
+                                   help="The key of the metadata cache file.")
     options = parser.parse_args(argv)
 
     dss_uploader = DssUploader(options.dss_endpoint, options.staging_bucket, options.dry_run)
@@ -309,12 +373,14 @@ def main(argv):
     elif options.data_set == "topmed_12k":
         bundle_uploader = BundleUploaderForTopMed12k(dss_uploader, metadata_file_uploader,
                                                      options.manifest_bucket, options.manifest_key,
-                                                     options.metadata_bucket, options.metadata_prefix)
+                                                     options.manifest_start_index, options.manifest_end_index,
+                                                     options.metadata_bucket, options.metadata_prefix,
+                                                     options.metadata_cache_bucket, options.metadata_cache_key)
         bundle_uploader.load_all_bundles()
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
-    logger.setLevel(logging.INFO)
+    logging.basicConfig(level=logging.DEBUG)
+    logger.setLevel(logging.DEBUG)
     suppress_verbose_logging()
     main(sys.argv[1:])
