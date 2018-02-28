@@ -252,8 +252,11 @@ class BundleUploaderForTopMedOpenAccess:
         self.metadata_file_uploader = metadata_file_uploader
 
     def load_bundle(self, bucket, bundle_key, bundle_uuid):
-        file_info_list = self._load_bundle_files(bucket, bundle_key, bundle_uuid)
-        return self.dss_uploader.load_bundle(file_info_list, bundle_uuid)
+        try:
+            file_info_list = self._load_bundle_files(bucket, bundle_key, bundle_uuid)
+            return self.dss_uploader.load_bundle(file_info_list, bundle_uuid)
+        except Exception as e:
+            logger.error(f"Exception occured while loading bundle: bundle_key: {bundle_key}, bundle_uuid: {bundle_uuid} {e}", exc_info=True)
 
     def load_all_bundles(self, bucket, bundles_key, start_after_key):
         count = 0
@@ -304,8 +307,11 @@ class BundleUploaderForTopMed12k:
         self.metadata_cache_key = metadata_cache_key
 
     def load_bundle(self, metadata_bucket: str, metadata_key: str, data_files: dict, bundle_uuid: str):
-        file_info_list = self._load_bundle_files(metadata_bucket, metadata_key, data_files, bundle_uuid)
-        return self.dss_uploader.load_bundle(file_info_list, bundle_uuid)
+        try:
+            file_info_list = self._load_bundle_files(metadata_bucket, metadata_key, data_files, bundle_uuid)
+            return self.dss_uploader.load_bundle(file_info_list, bundle_uuid)
+        except Exception as e:
+            logger.error(f"Exception occured while loading bundle: metadata_key: {metadata_key}, bundle_uuid: {bundle_uuid} {e}", exc_info=True)
 
     def load_all_bundles(self):
         map_specimen_id_to_cloud_files = self._get_map_specimen_id_to_cloud_files()
