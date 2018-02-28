@@ -318,6 +318,7 @@ class BundleUploaderForTopMed12k:
         map_specimen_id_to_metadata = self._get_map_specimen_id_to_metadata()
         bundles_loaded_count = 0
         for specimen_id in map_specimen_id_to_cloud_files.keys():
+            logger.info(f"Starting processing of specimen id: {specimen_id}")
             if map_specimen_id_to_metadata.get(specimen_id):
                 bundles_loaded_count += 1
                 metadata_file_key = map_specimen_id_to_metadata[specimen_id]['key']
@@ -325,7 +326,10 @@ class BundleUploaderForTopMed12k:
                 self.load_bundle(self.metadata_bucket, metadata_file_key,
                                  map_specimen_id_to_cloud_files[specimen_id],
                                  bundle_uuid)
-        print(f"match count: {bundles_loaded_count}")
+            else:
+                logger.warning(f"No metadata file found for specimen id: {specimen_id}")
+            logger.info(f"Finished processing of specimen id: {specimen_id}")
+        print(f"Finished loading {bundles_loaded_count} bundles.")
 
     def _load_bundle_files(self, metadata_bucket: str, metadata_key: str, data_files: dict, bundle_uuid: str) \
             -> typing.List[typing.Dict[str, str]]:
