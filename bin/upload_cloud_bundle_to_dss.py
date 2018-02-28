@@ -14,6 +14,7 @@ import sys
 import time
 import typing
 import uuid
+from tempfile import mkdtemp
 from urllib.parse import urlparse
 
 import base64
@@ -131,11 +132,13 @@ class DssUploader:
         return consolidated_metadata
 
     def upload_dict_as_file(self, value: dict, filename: str, bundle_uuid: str, content_type=None):
-        file_path = "/tmp/" + filename
+        tempdir = mkdtemp()
+        file_path = "/".join([tempdir, filename])
         with open(file_path, "w") as fh:
             fh.write(json.dumps(value, indent=4))
         result = self.upload_local_file(file_path, bundle_uuid, content_type)
         os.remove(file_path)
+        os.rmdir(tempdir)
         return result
 
     def upload_local_file(self, path, bundle_uuid: str, content_type=None):
