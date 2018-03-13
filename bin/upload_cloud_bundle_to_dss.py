@@ -463,10 +463,10 @@ def main(argv):
                                    help="The key for the manifest that identifies files to load.")
     parser_topmed_12k.add_argument("--manifest-start-index", metavar="MANIFEST_START_INDEX", type=int, required=False,
                                    default=0,
-                                   help="The manifest inclusive starting index")
+                                   help="The manifest inclusive starting index, zero based and excluding header row.")
     parser_topmed_12k.add_argument("--manifest-end-index", metavar="MANIFEST_END_INDEX", type=int, required=False,
                                    default=1000000,
-                                   help="The manifest exclusive end index")
+                                   help="The manifest exclusive end index, zero based and excluding header row.")
     parser_topmed_12k.add_argument("--metadata-bucket", metavar="METADATA_BUCKET", required=False,
                                    default=METADATA_BUCKET_DEFAULT,
                                    help="The bucket containing the metadata files.")
