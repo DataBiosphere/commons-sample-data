@@ -484,7 +484,7 @@ def main(argv):
                                    help="Clear the metadata cache.")
     options = parser.parse_args(argv)
 
-    # Clear configured credentials, which are likely for service accouts.
+    # Clear configured credentials, which are likely for service accounts.
     os.environ.pop('GOOGLE_APPLICATION_CREDENTIALS', None)
     os.environ.pop('GOOGLE_APPLICATION_SECRETS', None)
 
