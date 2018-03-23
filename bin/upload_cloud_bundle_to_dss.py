@@ -126,8 +126,11 @@ class DssUploader:
 
     @staticmethod
     def _consolidate_metadata(file_cloud_urls: set, s3_metadata: dict, gs_metadata: dict) -> dict:
-        consolidated_metadata = s3_metadata.copy()
-        consolidated_metadata.update(gs_metadata)
+        consolidated_metadata = dict()
+        if s3_metadata:
+            consolidated_metadata.update(s3_metadata)
+        if gs_metadata:
+            consolidated_metadata.update(gs_metadata)
         consolidated_metadata['url'] = list(file_cloud_urls)
         return consolidated_metadata
 
@@ -243,13 +246,22 @@ class MetadataFileUploader:
     def __init__(self, dss_uploader: DssUploader) -> None:
         self.dss_uploader = dss_uploader
 
-    def load_file(self, bucket: str, key: str, filename: str, schema_url: str, schema_version: str, schema_type: str,
-                  bundle_uuid: str) -> tuple:
+    def load_cloud_file(self, bucket: str, key: str, filename: str, schema_url: str, schema_version: str, schema_type: str,
+                        bundle_uuid: str) -> tuple:
         metadata_string = self.dss_uploader.blobstore.get(bucket, key).decode("utf-8")
         metadata = json.loads(metadata_string)
-        metadata['core'] = dict(schema_url=schema_url, schema_version=schema_version, type="metadata")
-        return self.dss_uploader.upload_dict_as_file(metadata, "metadata.json", bundle_uuid)
+        return self.load_dict(metadata, schema_url, schema_version, schema_type, bundle_uuid)
 
+    def load_local_file(self, local_filename:str, filename: str, schema_url: str, schema_version: str, schema_type: str,
+                    bundle_uuid: str) -> tuple:
+        with open(local_filename, "r") as fh:
+            metadata = json.load(fh)
+        return self.load_dict(metadata, filename, schema_url, schema_version, schema_type, bundle_uuid)
+
+    def load_dict(self, metadata: dict, filename: str, schema_url: str, schema_version: str, schema_type: str,
+                        bundle_uuid: str) -> tuple:
+        metadata['core'] = dict(schema_url=schema_url, schema_version=schema_version, type=schema_type)
+        return self.dss_uploader.upload_dict_as_file(metadata, filename, bundle_uuid)
 
 class BundleUploaderForTopMedOpenAccess:
     def __init__(self, dss_uploader: DssUploader, metadata_file_uploader: MetadataFileUploader) -> None:
@@ -283,9 +295,9 @@ class BundleUploaderForTopMedOpenAccess:
                 continue
             elif filename == "metadata.json":
                 file_uuid, file_version, filename = \
-                    self.metadata_file_uploader.load_file(bucket, file_key, filename,
-                                                          SCHEMA_URL, SCHEMA_VERSION, SCHEMA_TYPE,
-                                                          bundle_uuid)
+                    self.metadata_file_uploader.load_cloud_file(bucket, file_key, filename,
+                                                                SCHEMA_URL, SCHEMA_VERSION, SCHEMA_TYPE,
+                                                                bundle_uuid)
                 file_info_list.append(dict(uuid=file_uuid, version=file_version, name=filename, indexed=True))
             else:
                 file_uuid = str(uuid.uuid4())
@@ -341,9 +353,9 @@ class BundleUploaderForTopMed12k:
         file_info_list = []
         # Load metadata file
         file_uuid, file_version, filename = \
-            self.metadata_file_uploader.load_file(metadata_bucket, metadata_key, "metadata.json",
-                                                  SCHEMA_URL, SCHEMA_VERSION, SCHEMA_TYPE,
-                                                  bundle_uuid)
+            self.metadata_file_uploader.load_cloud_file(metadata_bucket, metadata_key, "metadata.json",
+                                                        SCHEMA_URL, SCHEMA_VERSION, SCHEMA_TYPE,
+                                                        bundle_uuid)
         file_info_list.append(dict(uuid=file_uuid, version=file_version, name=filename, indexed=True))
 
         # Load data files by reference
@@ -352,6 +364,7 @@ class BundleUploaderForTopMed12k:
             file_uuid, file_version, filename = self.dss_uploader.upload_cloud_file_by_reference(
                 filename, file_cloud_urls, bundle_uuid, file_uuid)
             file_info_list.append(dict(uuid=file_uuid, version=file_version, name=filename, indexed=False))
+
         return file_info_list
 
     def _get_map_specimen_id_to_cloud_files(self):
@@ -426,6 +439,41 @@ class BundleUploaderForTopMed12k:
             boto3.client("s3").delete_object(Bucket=self.metadata_cache_bucket, Key=self.metadata_cache_key)
 
 
+class SingleBundleUploader:
+    def __init__(self, dss_uploader: DssUploader, metadata_file_uploader: MetadataFileUploader,
+                 metadata_local_file: str, data_file_cloud_urls: list, bundle_uuid: str):
+        self.dss_uploader = dss_uploader
+        self.metadata_file_uploader = metadata_file_uploader
+        self.metadata_local_file = metadata_local_file
+        self.data_file_clould_urls = data_file_cloud_urls
+        self.bundle_uuid = bundle_uuid
+
+    def load_bundle(self):
+        file_info_list = []
+        # Load metadata file
+        file_uuid, file_version, filename = \
+            self.metadata_file_uploader.load_local_file(self.metadata_local_file, "metadata.json",
+                                                        SCHEMA_URL, SCHEMA_VERSION, SCHEMA_TYPE,
+                                                        self.bundle_uuid)
+        file_info_list.append(dict(uuid=file_uuid, version=file_version, name=filename, indexed=True))
+
+        # Load data files by reference
+        filename_to_cloud_urls_map = self._get_filename_to_cloud_urls_map(self.data_file_clould_urls)
+        for filename, file_cloud_urls in filename_to_cloud_urls_map.items():
+            file_uuid = str(uuid.uuid4())
+            file_uuid, file_version, filename = self.dss_uploader.upload_cloud_file_by_reference(
+                filename, file_cloud_urls, self.bundle_uuid, file_uuid)
+            file_info_list.append(dict(uuid=file_uuid, version=file_version, name=filename, indexed=False))
+
+        return self.dss_uploader.load_bundle(file_info_list, self.bundle_uuid)
+
+    def _get_filename_to_cloud_urls_map(self, cloud_urls: list) -> dict:
+        map = defaultdict(set)
+        for cloud_url in cloud_urls:
+            filename = cloud_url.split("/")[-1]
+            map[filename].add(cloud_url)
+        return map
+
 def suppress_verbose_logging():
     for logger_name in logging.Logger.manager.loggerDict:  # type: ignore
         if (logger_name.startswith("botocore") or
@@ -487,6 +535,16 @@ def main(argv):
     parser_topmed_12k.add_argument("--clear-metadata-cache", required=False,
                                    default=False, action="store_true",
                                    help="Clear the metadata cache.")
+
+    parser_single_bundle = subparsers.add_parser("single_bundle", help='Load a single bundle')
+    parser_single_bundle.add_argument("--metadata-local-file", metavar="METADATA_FILE", required=True,
+                                      help="Local metadata file to load")
+    parser_single_bundle.add_argument("--data-file-url", metavar="DATA_FILE_URL", required=True,
+                                      action="append",
+                                      help="Cloud URL to load by reference")
+    parser_single_bundle.add_argument("--bundle-uuid", metavar="BUNDLE_UUID", required=False,
+                                      default=uuid.uuid4(),
+                                      help="Bundle UUID")
     options = parser.parse_args(argv)
 
     # Clear configured credentials, which are likely for service accounts.
@@ -510,7 +568,12 @@ def main(argv):
         if options.clear_metadata_cache:
             bundle_uploader.clear_metadata_cache(options.dry_run)
         bundle_uploader.load_all_bundles()
-
+    elif options.data_set == "single_bundle":
+        bundle_uploader = SingleBundleUploader(dss_uploader, metadata_file_uploader,
+                                               options.metadata_local_file,
+                                               options.data_file_url,
+                                               options.bundle_uuid)
+        bundle_uploader.load_bundle()
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
