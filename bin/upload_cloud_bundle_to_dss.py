@@ -31,7 +31,7 @@ from hca.util import SwaggerAPIException
 from io import open
 
 from packages.checksumming_io.checksumming_io import ChecksummingSink, S3Etag
-from upload_to_cloud import upload_to_cloud
+from upload_to_cloud import upload_to_cloud, encode_tags
 
 logger = logging.getLogger(__name__)
 
@@ -205,27 +205,32 @@ class DssUploader:
         if self.dry_run:
             print("DRY RUN: put file: " + str(request_parameters))
             return file_uuid, None, filename
+
+        copy_start_time = time.time()
         response = self.dss_client.put_file._request(request_parameters)
         file_version = response.json().get('version', "blank")
 
         if response.status_code in (requests.codes.ok, requests.codes.created):
-            logger.info("File %s: Sync copy -> %s", source_url, file_version)
+            logger.info("File %s: Sync copy -> %s (%d seconds)",
+                        source_url, file_version, (time.time() - copy_start_time))
         else:
             assert response.status_code == requests.codes.accepted
-            logger.info("File %s: Async copy -> %s", source_url, file_version)
+            logger.info("File %s: Starting async copy -> %s", source_url, file_version)
 
             timeout = time.time() + timeout_seconds
             wait = 1.0
             while time.time() < timeout:
                 try:
                     self.dss_client.head_file(uuid=file_uuid, replica="aws", version=file_version)
+                    logger.info("File %s: Finished async copy -> %s (approximately %d seconds)",
+                                source_url, file_version, (time.time() - copy_start_time))
                     break
                 except SwaggerAPIException as e:
                     if e.code != requests.codes.not_found:
                         msg = "File {}: Unexpected server response during registration"
                         raise RuntimeError(msg.format(source_url))
                     time.sleep(wait)
-                    wait = min(60.0, wait * self.dss_client.UPLOAD_BACKOFF_FACTOR)
+                    wait = min(10.0, wait * self.dss_client.UPLOAD_BACKOFF_FACTOR)
             else:
                 # timed out. :(
                 raise RuntimeError("File {}: registration FAILED".format(source_url))
